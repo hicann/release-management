@@ -15,7 +15,11 @@ XXXXXXXXXXXXXXXX
 |4|集合通信支持拆分hcomm通信基础包和hccl通信算子包|Accepted|sig-hccl|yanyefeng|
 |5|支持通信算子开发：hcomm基础包提供通信算子开发接口|Accepted|sig-hccl|yanyefeng|
 |6|支持 PyPTO：一款面向 AI 加速器的高性能编程框架，旨在简化复杂融合算子开发流程|Accepted|sig-pto|linjiashu|
-
+|7|aclGraph特性扩大捕获图的数量规格|Accepted|sig-runtime|zhangzijing|
+|8|新增IPC Event功能|Accepted|sig-runtime|zhangzijing|
+|9|驱动包瘦身，部分功能可通过兼容升级包加载|Accepted|sig-runtime|zhangzijing|
+|10|新增A3芯片跨机内存映射和共享特性|Accepted|sig-runtime|zhangzijing|
+|11|msprof支持设备侧str2id信息回传和mspti采集|Accepted|sig-tools|jinyingqi|
 
 ## 废弃特性
 本版本下车的特性，或即将下车的特性和接口
