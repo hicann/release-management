@@ -14,6 +14,7 @@ XXXXXXXXXXXXXXXX
 |3|[MLA非量化场景泛化能力增强](https://gitcode.com/cann/ops-transformer/issues/65)|Accepted|sig-ops-transformer|mabing1118|
 |4|集合通信支持拆分hcomm通信基础包和hccl通信算子包|Accepted|sig-hccl|yanyefeng|
 |5|支持通信算子开发：hcomm基础包提供通信算子开发接口|Accepted|sig-hccl|yanyefeng|
+|6|支持 PyPTO：一款面向 AI 加速器的高性能编程框架，旨在简化复杂融合算子开发流程|Accepted|sig-pto|linjiashu|
 
 
 ## 废弃特性
