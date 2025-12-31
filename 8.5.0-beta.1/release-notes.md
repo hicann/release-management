@@ -20,6 +20,8 @@ XXXXXXXXXXXXXXXX
 |9|驱动包瘦身，部分功能可通过兼容升级包加载|Accepted|sig-runtime|zhangzijing|
 |10|新增A3芯片跨机内存映射和共享特性|Accepted|sig-runtime|zhangzijing|
 |11|msprof支持设备侧str2id信息回传和mspti采集|Accepted|sig-tools|jinyingqi|
+|12|ge支持拆分metadef子包、ge-compiler子包、ge-compiler子包|Accepted|sig-ge|wangtao|
+|13|ge支持更加易用的全新ES构图能力，自定义融合pass增强能力|Accepted|sig-ge|wangtao|
 
 ## 废弃特性
 本版本下车的特性，或即将下车的特性和接口
