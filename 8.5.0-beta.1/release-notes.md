@@ -12,6 +12,8 @@ XXXXXXXXXXXXXXXX
 |1|[支持通信故障快恢相关算子](https://gitcode.com/cann/ops-transformer/issues/59)|Accepted|sig-ops-transformer|YuZhengzhong|
 |2|[MC2算子支持更大通信域](https://gitcode.com/cann/ops-transformer/issues/60)|Accepted|sig-ops-transformer|YuZhengzhong|
 |3|[MLA非量化场景泛化能力增强](https://gitcode.com/cann/ops-transformer/issues/65)|Accepted|sig-ops-transformer|mabing1118|
+|4|集合通信支持拆分hcomm通信基础包和hccl通信算子包|Accepted|sig-hccl|yanyefeng|
+|5|支持通信算子开发：hcomm基础包提供通信算子开发接口|Accepted|sig-hccl|yanyefeng|
 
 
 ## 废弃特性
