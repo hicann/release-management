@@ -1,6 +1,6 @@
-# CANN 8.0.5-beta 1
+# CANN 8.5.0-beta 1
 ## 版本地址
-[CANN 8.0.5-beta 1](https://ascend.devcloud.huaweicloud.com/cann/run/software/8.5.0-beta.1/)
+[CANN 8.5.0-beta 1](https://ascend.devcloud.huaweicloud.com/cann/run/software/8.5.0-beta.1/)
 
 ## 版本配套
 
