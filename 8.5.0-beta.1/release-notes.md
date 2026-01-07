@@ -23,4 +23,9 @@
 |10|msprof支持设备侧str2id信息回传和mspti采集|Accepted|sig-tools|jinyingqi|
 |11|ge支持拆分metadef子包、ge-compiler子包、ge-compiler子包|Accepted|sig-ge|wangtao|
 |12|ge支持更加易用的全新ES构图能力，自定义融合pass增强能力|Accepted|sig-ge|wangtao|
-
+|13|[支持ops-transformer算子独立组件包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-transformer|liubo75|
+|14|[支持ops-nn算子独立组件包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-nn|liubo75|
+|15|[支持ops-cv算子独立组件包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-basic|liubo75|
+|16|[支持ops-math算子独立组件包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-basic|liubo75|
+|17|[支持opbase独立组件包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-basic|liubo75|
+|18|[支持ops组合包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-basic|liubo75|
