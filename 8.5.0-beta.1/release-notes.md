@@ -1,6 +1,21 @@
 # CANN 8.5.0-beta 1
 ## 版本地址
 [CANN 8.5.0-beta 1](https://ascend.devcloud.huaweicloud.com/cann/run/software/8.5.0-beta.1/)
+```
+版本目录说明如下：
+├── aarch64                 # CPU为ARM类型
+│   ├── ops                  # ops算子包目录，用于归档算子子包
+│   ├── Ascend-cann-910b-ops_8.5.0-beta.1_linux-aarch64.run                 # 910b算子包
+│   ├── Ascend-cann-A3-ops_8.5.0-beta.1_linux-aarch64.run                    # A3算子包
+│   ├── Ascend-cann-toolkit_8.5.0-beta.1_linux-aarch64.run                   # toolkit基础包
+│   ├── ...
+├── x86_64                   # CPU为X86类型
+│   ├── ops                  # ops算子包目录，用于归档算子子包
+│   ├── Ascend-cann-910b-ops_8.5.0-beta.1_linux-x86_64.run                 # 910b算子包
+│   ├── Ascend-cann-A3-ops_8.5.0-beta.1_linux-x86_64.run                   # A3算子包
+│   ├── Ascend-cann-toolkit_8.5.0-beta.1_linux-x86_64.run                   # toolkit基础包
+│   ├── ...
+```
 
 ## 版本配套
 
