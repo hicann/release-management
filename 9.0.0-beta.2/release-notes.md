@@ -1,6 +1,6 @@
-# CANN 9.0.0-alpha.1
+# CANN 9.0.0-beta.2
 ## 版本地址
-[CANN 9.0.0-alpha.1]
+[CANN 9.0.0-beta.2]
 
 ## 版本配套
 
