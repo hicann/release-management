@@ -5,15 +5,9 @@
 版本目录说明如下：
 ├── aarch64                 # CPU为ARM类型
 │   ├── ops                  # ops算子包目录，用于归档算子子包
-│   ├── Ascend-cann-910b-ops_8.5.0-beta.1_linux-aarch64.run                 # 910b算子包
-│   ├── Ascend-cann-A3-ops_8.5.0-beta.1_linux-aarch64.run                    # A3算子包
-│   ├── Ascend-cann-toolkit_8.5.0-beta.1_linux-aarch64.run                   # toolkit基础包
 │   ├── ...
 ├── x86_64                   # CPU为X86类型
 │   ├── ops                  # ops算子包目录，用于归档算子子包
-│   ├── Ascend-cann-910b-ops_8.5.0-beta.1_linux-x86_64.run                 # 910b算子包
-│   ├── Ascend-cann-A3-ops_8.5.0-beta.1_linux-x86_64.run                   # A3算子包
-│   ├── Ascend-cann-toolkit_8.5.0-beta.1_linux-x86_64.run                   # toolkit基础包
 │   ├── ...
 ```
 
@@ -22,7 +16,8 @@
 
 |  CANN版本| 配套Ascend HDK版本 |昇腾扩展包  |
 |--|--|--|
-|CANN   8.5.0-beta.1  |Ascend   HDK 25.5.0  |  FrameworkPTAdapter   7.3.0|
+|CANN   8.5.0-beta.1  |Ascend   HDK 25.5.0 [A2](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0)  [A3](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0) |  [FrameworkPTAdapter 7.3.0](https://ascend.devcloud.huaweicloud.com/cann/run/thirdparty/8.5.0-beta.1/)|
+
 
 **2、 CANN独立升级子包版本配套关系**
 
