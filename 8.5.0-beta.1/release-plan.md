@@ -23,11 +23,11 @@
 |7|[ops-transformer仓编译构建能力增强和代码结构优化](https://gitcode.com/cann/ops-transformer/issues/69)|Accepted|sig-ops-transformer|YuZhengzhong|
 |8|[opbase代码结构优化](https://gitcode.com/cann/opsbase/issues/5)|Accepted|sig-ops-basic|zhou-qilong|
 |9|[Matmul算子支持4选2稀疏量化能力](https://gitcode.com/cann/ops-nn/issues/45)|Accepted|sig-ops-nn|tangweiwei2|
-|10|[Ascend-transformer-boost仓算子工程易用性提升]()|Discussion|sig-aal|nino888|
-|11|[CATLASS仓新增FA、Matmul类算子样例]()|Discussion|sig-catlass|hanru-xu|
-|12|[ops-nn仓：Index/Norm/Conv类算子在确定性计算场景下的性能优化]()|Discussion|sig-ops-nn|zhangyuxiang0119|
-|13|[ops-nn仓：Matmul类算子新增量化格式支持能力以及性能优化增强]()|Discussion|sig-ops-nn|zhangyuxiang0119|
-|14|[ops-math仓：新增math类算子cholesky功能实现]()|Discussion|sig-ops-nn|tangyanfeng|
-|15|[增强GMMSwigluQuant算子支持weight tensorList场景下功能泛化]()|Discussion|sig-ops-transformer|cc-z|
-|16|[增强FA正反向算子TND场景下增加接口功能泛化]()|Discussion|sig-ops-transformer|cc-z|
-|17|[增强FAG算子在TND场景和确定性场景下性能表现]()|Discussion|sig-ops-transformer|cc-z|
+|10|[Ascend-transformer-boost仓算子工程易用性提升]()|Accepted|sig-aal|nino888|
+|11|[CATLASS仓新增FA、Matmul类算子样例]()|Accepted|sig-catlass|hanru-xu|
+|12|[ops-nn仓：Index/Norm/Conv类算子在确定性计算场景下的性能优化]()|Accepted|sig-ops-nn|zhangyuxiang0119|
+|13|[ops-nn仓：Matmul类算子新增量化格式支持能力以及性能优化增强]()|Accepted|sig-ops-nn|zhangyuxiang0119|
+|14|[ops-math仓：新增math类算子cholesky功能实现]()|Accepted|sig-ops-nn|tangyanfeng|
+|15|[增强GMMSwigluQuant算子支持weight tensorList场景下功能泛化]()|Accepted|sig-ops-transformer|cc-z|
+|16|[增强FA正反向算子TND场景下增加接口功能泛化]()|Accepted|sig-ops-transformer|cc-z|
+|17|[增强FAG算子在TND场景和确定性场景下性能表现]()|Accepted|sig-ops-transformer|cc-z|
