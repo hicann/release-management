@@ -35,6 +35,9 @@ https://www.hiascend.com/cann/download
 ### 开发与维测工具
 
 #### 性能调优工具
+- 多业务进程采集：msprof动态profiler支持一次性配置多个进程pid，支撑客户同时采集多个业务进程数据（[\#45](https://gitcode.com/cann/oam-tools/pull/45)）。
+- 支持开启对称内存：新增-m 参数，支持开启对称内存（[\#44](https://gitcode.com/cann/oam-tools/pull/44)）。
+- asys支持解析msnpureport导出的UB维测信息（[\#41](https://gitcode.com/cann/oam-tools/pull/41)）。
 
 #### 算子开发工具
 
