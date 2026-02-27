@@ -105,7 +105,15 @@ https://www.hiascend.com/cann/download
 - 废弃特性
 
 ### 运行时
-
+- 新增特性
+  1 提供包版本号查询接口，根据包名查询返回数值版本号和字符串版本号，接口如下：
+    aclError aclsysGetVersionStr(char *pkgName, char * versionStr)
+    aclError aclsysGetVersionNum(char *pkgName，int32_t * versionNum)
+  2 提供 aclrtStreamGetPriority接口用于查询指定流（Stream）的优先级
+  3 提供aclrtStreamGetFlags 接口 用于获取流在创建时设置的标志属性
+  4 Runtime支持查询芯片UUID，函数原型： aclError aclrtDeviceGetUuid (int32_t deviceId, aclrtUuid *uuid)
+  5 新增 aclrtMemGetAddressRange 用于获取待查询地址所属内存块的起始地址以及内存块大小
+  6 支持设置和查询强一致性计算的参数，相关接口为aclrtSetSysParamOpt、aclrtGetSysParamOpt、aclrtCtxSetSysParamOpt、aclrtCtxGetSysParamOpt
 - 删除特性
 - 废弃特性
 
