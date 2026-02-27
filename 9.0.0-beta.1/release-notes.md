@@ -25,8 +25,8 @@ https://www.hiascend.com/cann/download
 
 
 ### 算子编程
-- （示例）易用性增强：在分离式架构芯片下，提供Async异步调用接口，将AIC和AIV操作统一放到回调函数中，简化MIX融合算子编程逻辑（[\#446](https://gitcode.com/cann/ops-nn/issues/446)）。
-- 其他新增特性...。
+- 迁移高阶API样例[ascendc-api-adv](https://gitee.com/ascend/ascendc-api-adv)到[asc-devkit](https://gitcode.com/cann/asc-devkit)仓，并使用[<<<>>>调用方式](https://gitcode.com/cann/asc-devkit/tree/master/examples/03_libraries)。
+- 联合毕昇编译器，优化融合编译性能。
 
 ### 编译器
 
