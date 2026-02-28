@@ -57,6 +57,37 @@ https://www.hiascend.com/cann/download
 ### 编译器
 
 ### 运行时
+  1、 提供包版本号查询接口，根据包名查询返回数值版本号和字符串版本号，接口如下： 
+
+  - [aclError aclsysGetVersionStr(char *pkgName, char * versionStr)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclsysGetVersionStr.md)
+  - [aclError aclsysGetVersionNum(char *pkgName，int32_t * versionNum)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclsysGetVersionNum.md)
+
+  2、 支持查询指定流（Stream）的优先级，接口如下：
+
+  - [aclrtStreamGetPriority](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtStreamGetPriority.md)
+
+  3、 支持查询创建Stream时设置的flag标志，接口如下：
+
+  - [aclError aclrtStreamGetFlags(aclrtStream stream, uint32_t *flags)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtStreamGetFlags.md)
+   
+
+  4、 支持获取Device的唯一标识UUID（Universally Unique Identifier），接口如下：
+  
+  - [aclError aclrtDeviceGetUuid (int32_t deviceId, aclrtUuid *uuid)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtDeviceGetUuid.md)
+
+  5、 支持获取待查询地址所属内存块的起始地址以及内存块大小，接口如下：
+
+  - [aclError aclrtMemGetAddressRange(void *ptr, void **pbase, size_t *psize)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtMemGetAddressRange.md)
+
+  6、 支持设置和查询强一致性计算的参数，相关接口为
+
+  - [aclError aclrtSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtSetSysParamOpt.md)
+
+  - [aclError aclrtGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtGetSysParamOpt.md)
+
+  - [aclError aclrtCtxSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxSetSysParamOpt.md)
+
+  - [aclError aclrtCtxGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxGetSysParamOpt.md)
 
 ### 开发与维测工具
 
@@ -114,40 +145,6 @@ https://www.hiascend.com/cann/download
 - 废弃特性
 
 ### 运行时
-- 新增特性
-
-  1、 提供包版本号查询接口，根据包名查询返回数值版本号和字符串版本号，接口如下： 
-
-  - [aclError aclsysGetVersionStr(char *pkgName, char * versionStr)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclsysGetVersionStr.md)
-  - [aclError aclsysGetVersionNum(char *pkgName，int32_t * versionNum)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclsysGetVersionNum.md)
-
-  2、 支持查询指定流（Stream）的优先级，接口如下：
-
-  - [aclrtStreamGetPriority](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtStreamGetPriority.md)
-
-  3、 支持查询创建Stream时设置的flag标志，接口如下：
-
-  - [aclError aclrtStreamGetFlags(aclrtStream stream, uint32_t *flags)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtStreamGetFlags.md)
-   
-
-  4、 支持获取Device的唯一标识UUID（Universally Unique Identifier），接口如下：
-  
-  - [aclError aclrtDeviceGetUuid (int32_t deviceId, aclrtUuid *uuid)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtDeviceGetUuid.md)
-
-  5、 支持获取待查询地址所属内存块的起始地址以及内存块大小，接口如下：
-
-  - [aclError aclrtMemGetAddressRange(void *ptr, void **pbase, size_t *psize)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtMemGetAddressRange.md)
-
-  6、 支持设置和查询强一致性计算的参数，相关接口为
-
-  - [aclError aclrtSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtSetSysParamOpt.md)
-
-  - [aclError aclrtGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtGetSysParamOpt.md)
-
-  - [aclError aclrtCtxSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxSetSysParamOpt.md)
-
-  - [aclError aclrtCtxGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxGetSysParamOpt.md)
-
 - 删除特性
 - 废弃特性
 
