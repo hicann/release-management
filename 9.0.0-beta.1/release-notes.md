@@ -88,7 +88,7 @@ https://www.hiascend.com/cann/download
 
 #### 算子开发工具
 
-### 模型压缩工具
+#### 模型压缩工具
 - 支持HIF8/MXFPx等低比特数据格式的量化能力：新增HIF8/FP8/FP4/MXFP8/MXFP4量化数据类型，新增HIF8匹配的OFMR量化算法（[\#20](https://gitcode.com/cann/amct/pull/20)）
 
 
