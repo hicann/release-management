@@ -24,6 +24,18 @@ https://www.hiascend.com/cann/download
 - 提供matmul、卷积、norm和hash类算子编程的优秀实践 
   - [MatMul算子VCV性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%E7%AE%97%E5%AD%90VCV%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%E4%B8%8E%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90.md)
   - [MatMul算子性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%E7%AE%97%E5%AD%90%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%E4%B8%8E%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90.md)
+
+- transformer相关算子Atlas A3 能力完善
+  - [MC2 dispatch和combine算子支撑性能维测能力、类deepep接口和扩展泛化能力:moe_distribute_dispatch](https://gitcode.com/cann/ops-transformer/blob/master/mc2/moe_distribute_dispatch_v2/README.md)
+  - [SparseFlashAttentionGrad算子能力强化，支持确定性计算等:sparse_flash_attention_grad](https://gitcode.com/cann/ops-transformer/blob/master/attention/sparse_flash_attention_grad/docs/aclnnSparseFlashAttentionGrad.md)
+  - [SparseFlashAttentionGrad算子能力强化，支持确定性计算等:incre_flash_attention](https://gitcode.com/cann/ops-transformer/blob/master/attention/incre_flash_attention/README.md)
+  - [MoeInitRoutingV2等算子能力强化，支持int4和smoothquant等:moe_init_routing_v2](https://gitcode.com/cann/ops-transformer/blob/master/moe/moe_init_routing_v2/README.md)
+
+- transformer相关算子Atlas A2 能力完善
+   - [新增AllToAllMatmul和MatmulAllToAll算子](https://gitcode.com/cann/ops-transformer/blob/master/mc2/allto_all_matmul/README.md)
+   - [支持QuantMatmulAllToAll算子A8W8](https://gitcode.com/cann/ops-transformer/blob/master/mc2/matmul_allto_all/README.md)
+   - [支持AllToAllQuantMatmul A16W8和A16W4](https://gitcode.com/cann/ops-transformer/blob/master/mc2/allto_all_matmul/README.md)
+
 - 新增<<<>>>的算子开发样例（[!620](https://gitcode.com/cann/ops-nn/pull/620)）。
 - 支持编译生成静态库，发布的nn独立组件包携带静态库（[!391](https://gitcode.com/cann/ops-nn/pull/391)）。
 - 算子工程支持kernel并行编译（[!779](https://gitcode.com/cann/ops-math/pull/779)）
