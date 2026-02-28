@@ -44,10 +44,10 @@ https://www.hiascend.com/cann/download
 ### 领域加速库
 
 ###  图引擎
-
-- （示例）支持离线编译场景下的自动融合功能，通过配置[--input\_hint\_shape](https://www.hiascend.com/document/detail/zh/canncommercial/850/devaids/atctool/atlasatcparam_16_0099.html)参数，可在编译过程中启动自动融合符号化推导功能，提升模型性能（[\#12345](https://issue)）。
-- 其他新增特性...。
-
+- ES构图提供多种场景的sample ([!72](https://gitcode.com/cann/ge/pull/72) 、[!123](https://gitcode.com/cann/ge/pull/123)) 
+- ES构图 Readable Dump支持子图的友好展示
+- 自定义pass改图能力增强，新增原图优化之后改图的能力
+- 图模式多流场景nopadding连续内存支持内存复用
 
 ### 算子编程
 - 迁移高阶API样例[ascendc-api-adv](https://gitee.com/ascend/ascendc-api-adv)到[asc-devkit](https://gitcode.com/cann/asc-devkit)仓，并使用[<<<>>>调用方式](https://gitcode.com/cann/asc-devkit/tree/master/examples/03_libraries)。
@@ -97,27 +97,8 @@ https://www.hiascend.com/cann/download
 
 ### 图引擎
 
-- 删除特性（示例一，删除的接口给出接口名）
-
-  从CANN 8.5.0版本开始，不再提供DataFlow大模型切分特性，如下相关接口下线（[\#2345](https://issue)）：
-
-  - GetModelDistributeDesc
-  - xxx
-
-- 删除特性（示例二，如果某个接口有多个原型，**需要删除其中某几个原型的**，需要给出原型定义）
-
-  从CANN 8.5.0版本开始，不再提供DataFlow大模型切分特性，如下相关接口原型下线（[\#2345](https://issue)）：
-
-  - Status LoadGraph\(const uint32\_t graph\_id, const std::map<std::string, std::string\> &options, const std::string &om\_file\_path\) const
-  - graphStatus aclgrphBuildModel\(const std::vector\<ge::Graph\> &graphs,const std::map<std::string, std::string\> &build\_options, ModelBufferData &model\)
-  - graphStatus aclgrphBuildModel\(const std::vector\<ge::Graph\>&graphs, const std::map<AscendString, AscendString\> &build\_options, ModelBufferData &model\)
-
+- 删除特性
 - 废弃特性
-
-  （示例）如下路径计划在2026年12月30日之后的版本删除（[\#3456](https://issue)）。
-
-  - $\{install\_path\}/latest/runtime/include/graph目录将下线，替换目录为：$\{install\_path\}/cann/include/graph。
-  - $\{install\_path\}/latest/compiler/python/func2graph目录将下线，替换为：$\{install\_path\}/cann/x86\_64-linux\(其他OS相同\)/python目录下的func2graph。
 
 ### 算子编程
 
