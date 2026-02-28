@@ -12,13 +12,8 @@ https://www.hiascend.com/cann/download
 
 ###  软件安装
 
-### 算子库
+### ops-nn 算子库
 
-- 开源算子支持Ascend 950PR/Ascend 950DT芯片
-  - 算子工程适配Ascend 950（[!450](https://gitcode.com/cann/ops-nn/pull/450)）。
-  - Norm类支持Ascend 950（[!995](https://gitcode.com/cann/ops-nn/pull/995)）。
-  - SoftMax类支持Ascend 950（[!1010](https://gitcode.com/cann/ops-nn/pull/1010)）。
-  - RmsNormQuant支持Ascend 950（[!1057](https://gitcode.com/cann/ops-nn/pull/1057)）。
 - 低bit类算子和融合算子支持更多数据类型：fp8/mxfp8/hifp8/mxfp4等,并支持pertensor/perchannel/pertoken/pergroup/perblock等不同量化和组合方式
   - [全量化融合算子:quant_batch_matmul_v4](https://gitcode.com/cann/ops-nn/blob/master/matmul/quant_batch_matmul_v4/README.md)
   - [伪量化融合算子:weight_quant_batch_matmul_v2](https://gitcode.com/cann/ops-nn/blob/master/matmul/weight_quant_batch_matmul_v2/README.md)
