@@ -35,12 +35,12 @@ https://www.hiascend.com/cann/download
 
 ### 通信库
 
-- 集合通信： 支持alltoallv算子aicpu展开模式通信task缓存功能([\#269](https://gitcode.com/cann/hcomm/pull/269))
-- 集合通信： 支持单机多容器部署
-- 集合通信： 支持通信域粒度的超平面QoS配置([\#283](https://gitcode.com/cann/hcomm/pull/283))
-- 集合通信： A3 支持APCPU&HOST 自定义算子场景的profiling信息上报能力，提升自定义通信算子的维测能力([\#102](https://gitcode.com/cann/hccl/pull/102) [\#374](https://gitcode.com/cann/hccl/hcomm/374))
-- 集合通信： A3 AICPU自定义算子场景支持host和aicpu间的kernel同步([\#90](https://gitcode.com/cann/hccl/pull/90))
-- 单边通信： A3 超节点内HCCS场景下支持D2rH直传能力（本端device内存与远端host内存通信能力）([\#33](https://gitcode.com/cann/hixl/issues/33))
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持alltoallv算子aicpu展开模式通信task缓存功能([\#269](https://gitcode.com/cann/hcomm/pull/269))
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持单机多容器部署
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持通信域粒度的超平面QoS配置([\#283](https://gitcode.com/cann/hcomm/pull/283))
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持aicpu&host 自定义算子场景的profiling信息上报能力，提升自定义通信算子的维测能力([\#102](https://gitcode.com/cann/hccl/pull/102) [\#374](https://gitcode.com/cann/hccl/hcomm/374))
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 AICPU自定义算子场景支持host和aicpu间的kernel同步([\#90](https://gitcode.com/cann/hccl/pull/90))
+- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内HCCS场景下支持D2rH直传能力（本端device内存与远端host内存通信能力）([\#33](https://gitcode.com/cann/hixl/issues/33))
 
 ### 领域加速库
 
