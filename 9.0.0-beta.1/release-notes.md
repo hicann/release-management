@@ -12,7 +12,7 @@ https://www.hiascend.com/cann/download
 
 ###  软件安装
 
-### ops-nn 算子库
+### 算子库
 
 - 低bit类算子和融合算子支持更多数据类型：fp8/mxfp8/hifp8/mxfp4等,并支持pertensor/perchannel/pertoken/pergroup/perblock等不同量化和组合方式
   - [全量化融合算子:quant_batch_matmul_v4](https://gitcode.com/cann/ops-nn/blob/master/matmul/quant_batch_matmul_v4/README.md)
@@ -26,6 +26,12 @@ https://www.hiascend.com/cann/download
   - [MatMul算子性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%E7%AE%97%E5%AD%90%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%E4%B8%8E%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90.md)
 - 新增<<<>>>的算子开发样例（[!620](https://gitcode.com/cann/ops-nn/pull/620)）。
 - 支持编译生成静态库，发布的nn独立组件包携带静态库（[!391](https://gitcode.com/cann/ops-nn/pull/391)）。
+- 算子工程支持kernel并行编译（[!779](https://gitcode.com/cann/ops-math/pull/779)）
+- 算子工程日志优化（[#192](https://gitcode.com/cann/ops-math/issues/192)）
+- 算子CI支持算子增量UT与冒烟（[!774](https://gitcode.com/cann/ops-math/pull/774) [!817](https://gitcode.com/cann/ops-math/pull/817)）
+- 算子构建脚本支持导出预编译文件，降低算子问题定位难度（[#536](https://gitcode.com/cann/ops-math/issues/536)）
+- 支持Docker部署（[!547](https://gitcode.com/cann/ops-math/pull/547)）
+
 
 ### 通信库
 
