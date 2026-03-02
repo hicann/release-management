@@ -2,10 +2,9 @@
 ## 版本下载地址
 https://www.hiascend.com/cann/download
 
-## 版本配套（待刷新）
+## 版本配套
 
-- HDK：Ascend HDK 25.5.0 [A2](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0)  [A3](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0)
-- Ascend Extension for Pytorch: [FrameworkPTAdapter 7.3.0](https://ascend.devcloud.huaweicloud.com/cann/run/thirdparty/8.5.0/)
+https://console.ascend.huawei.com/v2/#/contentManagement/softwareResources/cann
 
 
 ##   新增特性
@@ -106,61 +105,7 @@ https://www.hiascend.com/cann/download
 
 ## 删除和废弃特性
 
-### 软件安装
-
-- 删除特性
-- 废弃特性
-
-### 算子库
-
-- 废弃特性（[CANN/ops-transformer](https://gitcode.com/cann/ops-transformer/G)）
-
-  （示例）如下接口在CANN 8.5.0中被标记为废弃，将在2026年12月30日之后的版本删除（[\#12345](https://issue)）。
-
-  - aclnnWeightQuantBatchMatmul接口废弃，替换为：aclnnWeightQuantBatchMatmulV3。
-  - aclnnQuantMatmul/aclnnQuantMatmulV2/aclnnQuantMatmulV3/aclnnQuantMatmulV4接口废弃，替换为：aclnnQuantMatmulV5。
-  - aclnnGroupedMatmul/aclnnGroupedMatmulV2/aclnnGroupedMatmulV3/aclnnGroupedMatmulV4接口废弃，替换为：aclnnGroupedMatmulV5。
-
-### 通信库
-
-- 删除特性
-- 废弃特性
-
-### 领域加速库
-
-- 删除特性
-- 废弃特性
-
-### 图引擎
-
-- 删除特性
-- 废弃特性
-
-### 算子编程
-
-- 删除特性
-- 废弃特性
-
-### 编译器
-
-- 删除特性
-- 废弃特性
-
-### 运行时
-- 删除特性
-- 废弃特性
-
-### 开发与维测工具
-
-#### 性能调优工具
-
-- 删除特性
-- 废弃特性
-
-#### 算子开发工具
-
-- 删除特性
-- 废弃特性
+不涉及。
 
 ##  已知问题
 
@@ -184,8 +129,6 @@ https://www.hiascend.com/cann/download
 
 ## 已修复问题
 
--   修复了“torch\_npu.fused\_linear\_cross\_entropy\_loss\_with\_max\_sum\_grad存在部分用例精度不达标的问题”（[\#12345](https://issue)）。
--   修复了“aclnnInplaceNanToNum算子精度测试不通过，当输入tensor为nan时，输出结果与标杆不符的问题”（[\#12356](https://issue)）。
 - 集合通信：优化快恢时的状态迁移及超时机制，解决快恢失败的问题
 - 集合通信：修复了大规模集群的通信域初始化失败问题（在rootinfo集群信息收集阶段）
 
@@ -224,4 +167,4 @@ https://www.hiascend.com/cann/download
 
 ## 漏洞修补列表
 
-版本开源及第三方软件漏洞修复情况详见《[CANN 8.3.RC1 漏洞修补列表.xlsx](resource/CANN 8.3.RC1 漏洞修补列表.xlsx)》。
+不涉及。
