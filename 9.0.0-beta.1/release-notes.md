@@ -13,35 +13,35 @@ https://console.ascend.huawei.com/v2/#/contentManagement/softwareResources/cann
 
 ### 算子库
 
-- 低bit类算子和融合算子支持更多数据类型：fp8/mxfp8/hifp8/mxfp4等,并支持pertensor/perchannel/pertoken/pergroup/perblock等不同量化和组合方式
-  - [全量化融合算子:quant_batch_matmul_v4](https://gitcode.com/cann/ops-nn/blob/master/matmul/quant_batch_matmul_v4/README.md)
-  - [伪量化融合算子:weight_quant_batch_matmul_v2](https://gitcode.com/cann/ops-nn/blob/master/matmul/weight_quant_batch_matmul_v2/README.md)
-  - [mx动态量化算子:dynamic_mx_quant](https://gitcode.com/cann/ops-nn/blob/master/quant/dynamic_mx_quant/README.md)
-  - [非mx动态量化算子:dynamic_quant_v2](https://gitcode.com/cann/ops-nn/blob/master/quant/dynamic_quant_v2/README.md)
-  - [mx动态量化算子:grouped_dynamic_mx_quant](https://gitcode.com/cann/ops-nn/blob/master/quant/grouped_dynamic_mx_quant/README.md)
-  - [非mx动态量化算子:grouped_dynamic_block_quant](https://gitcode.com/cann/ops-nn/blob/master/quant/grouped_dynamic_block_quant/README.md)
-- 提供matmul、卷积、norm和hash类算子编程的优秀实践 
-  - [MatMul算子VCV性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%E7%AE%97%E5%AD%90VCV%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%E4%B8%8E%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90.md)
-  - [MatMul算子性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%E7%AE%97%E5%AD%90%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%E4%B8%8E%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90.md)
+- 低bit类算子和融合算子支持更多数据类型：fp8/mxfp8/hifp8/mxfp4等,并支持pertensor/perchannel/pertoken/pergroup/perblock等不同量化和组合方式：
+  - [全量化融合算子:quant_batch_matmul_v4](https://gitcode.com/cann/ops-nn/blob/9.0.0-beta.1/matmul/quant_batch_matmul_v4/README.md)。
+  - [伪量化融合算子:weight_quant_batch_matmul_v2](https://gitcode.com/cann/ops-nn/blob/9.0.0-beta.1/matmul/weight_quant_batch_matmul_v2/README.md)。
+  - [mx动态量化算子:dynamic_mx_quant](https://gitcode.com/cann/ops-nn/blob/9.0.0-beta.1/quant/dynamic_mx_quant/README.md)。
+  - [非mx动态量化算子:dynamic_quant_v2](https://gitcode.com/cann/ops-nn/blob/9.0.0-beta.1/quant/dynamic_quant_v2/README.md)。
+  - [mx动态量化算子:grouped_dynamic_mx_quant](https://gitcode.com/cann/ops-nn/blob/9.0.0-beta.1/quant/grouped_dynamic_mx_quant/README.md)。
+  - [非mx动态量化算子:grouped_dynamic_block_quant](https://gitcode.com/cann/ops-nn/blob/9.0.0-beta.1/quant/grouped_dynamic_block_quant/README.md)。
+- 提供matmul、卷积、norm和hash类算子编程的优秀实践： 
+  - [MatMul算子VCV性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%E7%AE%97%E5%AD%90VCV%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%E4%B8%8E%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90.md)。
+  - [MatMul算子性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%E7%AE%97%E5%AD%90%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5%E4%B8%8E%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90.md)。
 
-- transformer相关算子Atlas A3 能力完善
-  - [MC2 dispatch和combine算子支撑性能维测能力、类deepep接口和扩展泛化能力:moe_distribute_dispatch](https://gitcode.com/cann/ops-transformer/blob/master/mc2/moe_distribute_dispatch_v2/README.md)
-  - [SparseFlashAttentionGrad算子能力强化，支持确定性计算等:sparse_flash_attention_grad](https://gitcode.com/cann/ops-transformer/blob/master/attention/sparse_flash_attention_grad/docs/aclnnSparseFlashAttentionGrad.md)
-  - [SparseFlashAttentionGrad算子能力强化，支持确定性计算等:incre_flash_attention](https://gitcode.com/cann/ops-transformer/blob/master/attention/incre_flash_attention/README.md)
-  - [MoeInitRoutingV2等算子能力强化，支持int4和smoothquant等:moe_init_routing_v2](https://gitcode.com/cann/ops-transformer/blob/master/moe/moe_init_routing_v2/README.md)
+- transformer相关算子Atlas A3 能力完善：
+  - [MC2 dispatch和combine算子支撑性能维测能力、类deepep接口和扩展泛化能力:moe_distribute_dispatch](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/moe_distribute_dispatch_v2/README.md)。
+  - [SparseFlashAttentionGrad算子能力强化，支持确定性计算等:sparse_flash_attention_grad](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/attention/sparse_flash_attention_grad/docs/aclnnSparseFlashAttentionGrad.md)。
+  - [SparseFlashAttentionGrad算子能力强化，支持确定性计算等:incre_flash_attention](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/attention/incre_flash_attention/README.md)。
+  - [MoeInitRoutingV2等算子能力强化，支持int4和smoothquant等:moe_init_routing_v2](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/moe/moe_init_routing_v2/README.md)。
 
-- transformer相关算子Atlas A2 能力完善
-   - [新增AllToAllMatmul和MatmulAllToAll算子](https://gitcode.com/cann/ops-transformer/blob/master/mc2/allto_all_matmul/README.md)
-   - [支持QuantMatmulAllToAll算子A8W8](https://gitcode.com/cann/ops-transformer/blob/master/mc2/matmul_allto_all/README.md)
-   - [支持AllToAllQuantMatmul A16W8和A16W4](https://gitcode.com/cann/ops-transformer/blob/master/mc2/allto_all_matmul/README.md)
+- transformer相关算子Atlas A2 能力完善：
+   - [新增AllToAllMatmul和MatmulAllToAll算子](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/allto_all_matmul/README.md)。
+   - [支持QuantMatmulAllToAll算子A8W8](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/matmul_allto_all/README.md)。
+   - [支持AllToAllQuantMatmul A16W8和A16W4](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/allto_all_matmul/README.md)。
 
 - 新增<<<>>>的算子开发样例（[!620](https://gitcode.com/cann/ops-nn/pull/620)）。
 - 支持编译生成静态库，发布的nn独立组件包携带静态库（[!391](https://gitcode.com/cann/ops-nn/pull/391)）。
-- 算子工程支持kernel并行编译（[!779](https://gitcode.com/cann/ops-math/pull/779)）
-- 算子工程日志优化（[#192](https://gitcode.com/cann/ops-math/issues/192)）
-- 算子CI支持算子增量UT与冒烟（[!774](https://gitcode.com/cann/ops-math/pull/774) [!817](https://gitcode.com/cann/ops-math/pull/817)）
-- 算子构建脚本支持导出预编译文件，降低算子问题定位难度（[#536](https://gitcode.com/cann/ops-math/issues/536)）
-- 支持Docker部署（[!547](https://gitcode.com/cann/ops-math/pull/547)）
+- 算子工程支持kernel并行编译（[!779](https://gitcode.com/cann/ops-math/pull/779)）。
+- 算子工程日志优化（[#192](https://gitcode.com/cann/ops-math/issues/192)）。
+- 算子CI支持算子增量UT与冒烟（[!774](https://gitcode.com/cann/ops-math/pull/774) [!817](https://gitcode.com/cann/ops-math/pull/817)）。
+- 算子构建脚本支持导出预编译文件，降低算子问题定位难度（[#536](https://gitcode.com/cann/ops-math/issues/536)）。
+- 支持Docker部署（[!547](https://gitcode.com/cann/ops-math/pull/547)）。
 
 
 ### 通信库
