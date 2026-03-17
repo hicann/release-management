@@ -4,7 +4,7 @@ https://www.hiascend.com/cann/download
 
 ## 版本配套
 
-- HDK：[Ascend HDK 25.5.0](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0) 
+- HDK：[Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0) 
 
 
 ##   新增特性

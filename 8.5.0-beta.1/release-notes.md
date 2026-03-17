@@ -16,7 +16,7 @@
 
 |  CANN版本| 配套Ascend HDK版本 |昇腾扩展包  |
 |--|--|--|
-|CANN   8.5.0-beta.1  |Ascend   HDK 25.5.0 [A2](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0)  [A3](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0) |  [FrameworkPTAdapter 7.3.0](https://ascend.devcloud.huaweicloud.com/cann/run/thirdparty/8.5.0-beta.1/)|
+|CANN   8.5.0-beta.1  |Ascend   HDK 25.5.1 [A2](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0)  [A3](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.0) |  [FrameworkPTAdapter 7.3.0](https://ascend.devcloud.huaweicloud.com/cann/run/thirdparty/8.5.0-beta.1/)|
 
 **2、 CANN独立升级子包版本配套关系**
 | CANN子包版本 | 版本源码标签   | 配套CANN版本|
