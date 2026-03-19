@@ -3,19 +3,19 @@
 https://www.hiascend.com/cann/download
 
 ## 版本配套
-1、CANN与Ascend HDK版本配套关系
+**1、CANN与Ascend HDK版本配套关系**
 |CANN版本  |  配套Ascend HDK版本| 
 |--|--|
 |  CANN 9.0.0-beta.1|  [Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1)|
 
-2、 CANN组合包版本配套关系
+**2、CANN组合包版本配套关系**
 |CANN组合包版本  |配套CANN版本  |  
 |--|--|
 |  [ascend-cann-ops 9.0.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.0.0-beta.1/)|CANN 9.0.0-beta.1  |
 |  [ascend-cann-toolkit 9.0.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.0.0-beta.1/)|CANN 9.0.0-beta.1  |
 
 
-**3、 CANN独立升级子包版本配套关系**
+**3、CANN独立升级子包版本配套关系**
 | CANN子包版本                                                 | 版本源码标签                                                 | 配套CANN版本      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------- |
 | [cann-ops-math 9.0.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.0.0-beta.1/) | [v9.0.0-beta.1](https://gitcode.com/cann/ops-math/tags/v9.0.0-beta.1) | CANN 9.0.0-beta.1 |
