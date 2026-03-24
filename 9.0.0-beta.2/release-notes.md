@@ -74,8 +74,19 @@
   - [支持QuantMatmulAllToAll算子A8W8](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/matmul_allto_all/README.md)。
 
 #### ops-cv库
+- image类算子支持Ascend950，覆盖 `ResizeNearestNeighborV2`、`ResizeNearestNeighborV2Grad`、`UpsampleNearest`、`UpsampleNearest3d` 等（[!284](https://gitcode.com/cann/ops-cv/pull/284) [#97](https://gitcode.com/cann/ops-cv/issues/97) [#93](https://gitcode.com/cann/ops-cv/issues/93)）。
+- CI对Ascend950的编译与 UT 识别能力增强（ [!281](https://gitcode.com/cann/ops-cv/pull/281)、[!368](https://gitcode.com/cann/ops-cv/pull/368)、[#105](https://gitcode.com/cann/ops-cv/issues/105)）。
+- 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于Ascend950适配前置联调与回归（[!567](https://gitcode.com/cann/ops-cv/pull/567) [!397](https://gitcode.com/cann/ops-cv/pull/397)）。
 
 #### ops-math库
+- 数学运算、张量变换及随机数生成支持Ascend950，覆盖`Erfc`、`Sinh`、`Asin`、`Atanh`、`BitwiseXor`、`Asinh`、`Cosh`、`Scale`、`Tan`、`Acos`、`Acosh`等（[#599](https://gitcode.com/cann/ops-math/issues/599)）。
+- aclnnMul/aclnnMuls/aclnnAdd/aclnnAdds/aclnnSum等API支持非连续输入，似的相关接口性能得到提升、内存占用有优化（[!874](https://gitcode.com/cann/ops-math/pull/874)）。
+- Sort算子支持数据类型补齐UINT16/UINT32/UINT64类型补齐，性能相对A2，平均提升1.5+倍（[#557](https://gitcode.com/cann/ops-math/pull/557) [#632](https://gitcode.com/cann/ops-math/pull/632)）。
+- 离散类张量变换类算子性能优化，覆盖`Pad`、`Transpose`、`AsStrided` （[#569](https://gitcode.com/cann/ops-math/issues/569) [#539](https://gitcode.com/cann/ops-math/pull/539) [#495](https://gitcode.com/cann/ops-math/pull/495)）。
+- 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于 Ascend950 适配前置联调与回归（[!563](https://gitcode.com/cann/ops-math/pull/563) [!1215](https://gitcode.com/cann/ops-math/pull/1215)）。
+
+#### opbase库
+- 基础框架库支持Ascend950平台（[#65](https://gitcode.com/cann/opbase/issues/65)）。
 
 ### 通信库
 
