@@ -130,6 +130,9 @@
 ### 开发与维测工具
 
 #### 性能调优工具
+- msprof支持aicore-metrics选项采集自定义PMU指标能力（[\#136](https://gitcode.com/cann/oam-tools/pull/136)）
+- hccl工具支持FP64数据类型（[\#122](https://gitcode.com/cann/oam-tools/pull/122)）
+- hccl工具支持msfp8数据类型（[\#74](https://gitcode.com/cann/oam-tools/pull/74)）
 
 #### 算子开发工具
 
