@@ -68,11 +68,11 @@
 #### ops-transformer库
 
 - transformer相关算子在Atlas A3系列产品上能力完善：
-  - [MC2 dispatch和combine算子支撑性能维测能力、类deepep接口和扩展泛化能力:moe_distribute_dispatch](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/moe_distribute_dispatch_v2/README.md)。
-  - [SparseFlashAttentionGrad算子能力强化，支持确定性计算等:sparse_flash_attention_grad](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/attention/sparse_flash_attention_grad/docs/aclnnSparseFlashAttentionGrad.md)。
-- transformer相关算子在Atlas A2系列产品上能力完善：
-  - [新增AllToAllMatmul和MatmulAllToAll算子](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/allto_all_matmul/README.md)。
-  - [支持QuantMatmulAllToAll算子A8W8](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/matmul_allto_all/README.md)。
+  - [MC2 dispatch和combine算子支撑Aiv直驱Roce能力:moe_distribute_dispatch](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/moe_distribute_dispatch_v2/README.md)。
+  - [Rope 支持算子泛化mrope_section](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/posembedding/rope_with_sin_cos_cache/README.md)。
+  - [BlockSparseAttention算子能力增强](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/attention/block_sparse_attention/README.md)。
+  - [GroupedMatmulSwigluQuantV2算子能力增强支持A4W4动态分块优化](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/gmm/grouped_matmul_swiglu_quant_v2/README.md)。
+  - [GroupedMatmul算子能力增强A4W4支持NZ转置动态分块优化](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/gmm/grouped_matmul/README.md)。
 
 #### ops-cv库
 - image类算子支持Ascend950，覆盖 `ResizeNearestNeighborV2`、`ResizeNearestNeighborV2Grad`、`UpsampleNearest`、`UpsampleNearest3d` 等（[!284](https://gitcode.com/cann/ops-cv/pull/284) [#97](https://gitcode.com/cann/ops-cv/issues/97) [#93](https://gitcode.com/cann/ops-cv/issues/93)）。
