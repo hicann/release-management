@@ -91,7 +91,13 @@
 
 ### 通信库
 
-
+- 集合通信： 通信算子支持Ascend950，覆盖 `Allgather`、`AllgatherV`、`Allreduce`、`AlltoAll`、`AlltoAllV`、`Broadcast`、`Reduce`、`ReduceScatter`、`ReduceScatterV`、`Scatter`、`SendRecv` 等([\#106](https://gitcode.com/cann/hccl/pull/106))。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内AICPU场景下 AlltoAll算子支持使用对称内存功能([\#575](https://gitcode.com/cann/hcomm/pull/575))。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 AICPU场景下 ReduceScatter&AllReduce算子支持Batch一致性([\#483](https://gitcode.com/cann/hcomm/pull/483))。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内 ReduceScatter&AllReduce&AllGather&AlltoAll算子支持多机间的superkernel([\#596](https://gitcode.com/cann/hcomm/pull/596))。
+- 集合通信： 支持离线编译，提升构建易用性([\#126](https://gitcode.com/cann/hccl/pull/126))。
+- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持自动建链模式，无需显式调用connect接口([\#106](https://gitcode.com/cann/hixl/issues/106))。
+- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持Fabric Memory全局统一编址模式，支持使用HCCS进行D2rH的KV Cache直传能力，提升传输效率([\#33](https://gitcode.com/cann/hixl/issues/33))。
 
 ### 领域加速库
 
