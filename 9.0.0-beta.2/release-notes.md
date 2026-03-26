@@ -58,12 +58,21 @@
 
 #### ops-nn库
 
-- 低bit类算子和融合算子支持更多数据类型：fp8/mxfp8/hifp8/mxfp4等，并支持pertensor/perchannel/pertoken/pergroup/perblock等不同量化和组合方式：
-  - [全量化融合算子:quant_batch_matmul_v4](https://gitcode.com/cann/ops-nn/blob/9.0.0-beta.1/matmul/quant_batch_matmul_v4/README.md)。
-  - [伪量化融合算子:weight_quant_batch_matmul_v2](https://gitcode.com/cann/ops-nn/blob/9.0.0-beta.1/matmul/weight_quant_batch_matmul_v2/README.md)。
-- 提供matmul、卷积、norm和hash类算子编程的优秀实践：
-  - [MatMul算子VCV性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%25E7%25AE%2597%25E5%25AD%2590VCV%25E6%2580%25A7%25E8%2583%25BD%25E4%25BC%2598%25E5%258C%2596%25E5%25AE%259E%25E8%25B7%25B5%25E4%25B8%258E%25E6%2595%2588%25E6%259E%259C%25E5%2588%2586%25E6%259E%2590.md)。
-  - [MatMul算子性能优化实践与效果分析](https://gitcode.com/cann/ops-nn/wiki/MatMul%25E7%25AE%2597%25E5%25AD%2590%25E6%2580%25A7%25E8%2583%25BD%25E4%25BC%2598%25E5%258C%2596%25E5%25AE%259E%25E8%25B7%25B5%25E4%25B8%258E%25E6%2595%2588%25E6%259E%259C%25E5%2588%2586%25E6%259E%2590.md)。
+- 开源算子支持Ascend 950PR/Ascend 950DT芯片
+  - 算子工程适配 ([!450](https://gitcode.com/cann/ops-nn/pull/450))。
+  - LogSigmoid ([!1837](https://gitcode.com/cann/ops-nn/pull/1837))。
+  - Norm类 ([!995](https://gitcode.com/cann/ops-nn/pull/995))。
+  - SoftMax类 ([!1010](https://gitcode.com/cann/ops-nn/pull/1010))。
+  - AvgPoolV2Grad ([!1183](https://gitcode.com/cann/ops-nn/pull/1183))。
+  - RmsNormQuant ([!1057](https://gitcode.com/cann/ops-nn/pull/1057))。
+- Ascend 950PR/Ascend 950DT芯片支持Parallel Welford和超长轴二分累加算法，提高Norm类算子的数值稳定性与计算精度，该特性主要涉及算子：
+  - [LayerNormV4](https://gitcode.com/cann/ops-nn/tree/master/norm/layer_norm_v4)
+  - [BatchNormV3](https://gitcode.com/cann/ops-nn/tree/master/norm/batch_norm_v3)在Ascend 950PR/Ascend 950DT芯片上实现
+- Ascend 950PR/Ascend 950DT芯片新增MM融合算子： 
+  -`QuantBatchMatmulInplaceAdd`([!1130](https://gitcode.com/cann/ops-nn/pull/1130))。
+  -`TransposeQuantBatchMatmul`([!1136](https://gitcode.com/cann/ops-nn/pull/1136))。
+  -`DualLevelQuantBatchMatmul`([!1141](https://gitcode.com/cann/ops-nn/pull/1141))。
+- `QuantBatchMatmul`算子基于Ascend 950PR/Ascend 950DT芯片支持mxfp8 weightNz特性,提升网络推理性能([!1144](https://gitcode.com/cann/ops-nn/pull/1144))。
 
 #### ops-transformer库
 
