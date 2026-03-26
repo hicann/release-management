@@ -112,8 +112,10 @@
 
 
 ### 运行时
-
-
+- 运行时Runtime支持Ascend950平台。
+- 易用性增强：1) 支持AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题（[\#461](https://gitcode.com/cann/runtime/pull/461)）。
+             2) 支持Aclgraph场景Event规格扩充，扩充后的Event规格仅取决于Device内存（[\#482](https://gitcode.com/cann/runtime/pull/482)）。
+- 发布Runtime编程指南（[\#1030](https://gitcode.com/cann/runtime/pull/1030)）。
 
 ### 开发与维测工具
 
