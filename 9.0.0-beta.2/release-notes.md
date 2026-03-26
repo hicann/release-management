@@ -99,8 +99,18 @@
 
 ###  图引擎
 
-- 支持离线编译场景下的自动融合功能，通过配置[--input\_hint\_shape](https://www.hiascend.com/document/detail/zh/canncommercial/850/devaids/atctool/atlasatcparam_16_0099.html)参数，可在编译过程中启动自动融合符号化推导功能，提升模型性能（[\#12345](https://issue)）。
-- 其他新增特性...。
+- ES构图支持消费历史原型生成合法的重载cxx接口（[\#643](https://gitcode.com/cann/ge/pull/643)）。
+- 支持算子级控核场景代码优化（[\#450](https://gitcode.com/cann/ge/pull/450)）。
+- 图融合删除模型输出节点时，框架支持识别更新模型输出（[\#434](https://gitcode.com/cann/ge/pull/434)）。
+- 公共子表达式消除优化（[\#622](https://gitcode.com/cann/ge/pull/622)）。
+- 支持通过dump开关使能L0和L1 exception dump（[\#398](https://gitcode.com/cann/ge/pull/398)）。
+- error msg优化整改（[\#685](https://gitcode.com/cann/ge/pull/685)）。
+- 提供端到端Sample：动态分档样例（[\#813](https://gitcode.com/cann/ge/pull/813)）（[\#685](https://gitcode.com/cann/ge/pull/685)），自定义算子入图样例（[\#867](https://gitcode.com/cann/ge/pull/867)），基于graph接口的Matmul+Add融合为GEMM自定义pass样例（[\#1106](https://gitcode.com/cann/ge/pull/1106)）。
+- 编译工程优化（[\#646](https://gitcode.com/cann/ge/pull/646)）（[\#890](https://gitcode.com/cann/ge/pull/890)）。
+- 支持确定性和强一致性配置。
+- 支持TensorMove消除。
+- 在线场景支持用户使用graph级别的option指定模型输出datatype。
+- 去除执行路径上的单例和锁，提升调度性能。
 
 
 ### 算子编程
@@ -158,27 +168,8 @@
 
 ### 图引擎
 
-- 删除特性（示例一，删除的接口给出接口名）
-
-  从CANN 8.5.0版本开始，不再提供DataFlow大模型切分特性，如下相关接口下线（[\#2345](https://issue)）：
-
-  - GetModelDistributeDesc
-  - xxx
-
-- 删除特性（示例二，如果某个接口有多个原型，**需要删除其中某几个原型的**，需要给出原型定义）
-
-  从CANN 8.5.0版本开始，不再提供DataFlow大模型切分特性，如下相关接口原型下线（[\#2345](https://issue)）：
-
-  - Status LoadGraph\(const uint32\_t graph\_id, const std::map<std::string, std::string\> &options, const std::string &om\_file\_path\) const
-  - graphStatus aclgrphBuildModel\(const std::vector\<ge::Graph\> &graphs,const std::map<std::string, std::string\> &build\_options, ModelBufferData &model\)
-  - graphStatus aclgrphBuildModel\(const std::vector\<ge::Graph\>&graphs, const std::map<AscendString, AscendString\> &build\_options, ModelBufferData &model\)
-
+- 删除特性
 - 废弃特性
-
-  如下路径计划在2026年12月30日之后的版本删除（[\#3456](https://issue)）。
-
-  - $\{install\_path\}/latest/runtime/include/graph目录将下线，替换目录为：$\{install\_path\}/cann/include/graph。
-  - $\{install\_path\}/latest/compiler/python/func2graph目录将下线，替换为：$\{install\_path\}/cann/x86\_64-linux\(其他OS相同\)/python目录下的func2graph。
 
 ### 算子编程
 
@@ -252,11 +243,7 @@
 
 ### 图引擎
 
-- 新增章节：构建Graph\>[使用ES极简构图构建Graph](https://www.hiascend.com/document/detail/zh/canncommercial/83RC1/graph/graphdevg/atlasag_25_0081.html)。
-- 新增[推荐网络推理优秀实践](https://www.hiascend.com/document/detail/zh/canncommercial/850/graph/graphdevg/atlasag_25_0101.html)。
-- 自定义Pass开发：[基于Pattern匹配实现自定义Pass修改Graph](https://www.hiascend.com/document/detail/zh/canncommercial/850/graph/graphdevg/atlasag_25_0093.html)。
-- 接口参考：“构图接口”修改为“GE图引擎接口”。
-- 新增[GESession API](https://www.hiascend.com/document/detail/zh/canncommercial/850/API/ascendgraphapi/atlasgeapi_07_0281.html)，后续推荐使用该目录下的接口，原有Session接口逐步废弃。
+
 
 ### 通信库
 
