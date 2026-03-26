@@ -28,6 +28,8 @@
 | [cann-hccl   8.5.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/8.5.0-beta.1/) | [v8.5.0-beta.1](https://gitcode.com/cann/hccl/tags/v8.5.0-beta.1) | CANN   8.5.0-beta.1 |
 | [cann-hixl   8.5.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/8.5.0-beta.1/) | [v8.5.0-beta.1](https://gitcode.com/cann/hixl/tags/v8.5.0-beta.1) | CANN   8.5.0-beta.1 |
 
+子包独立升级的具体操作请参考[子包独立升级](#子包独立升级)。
+
 **3、CANN开源子包版本配套关系**
 | CANN子包版本                         | 版本源码标签                                                 | 配套CANN版本        |
 | ------------------------------------ | ------------------------------------------------------------ | ------------------- |
@@ -65,3 +67,34 @@
 |16|[支持ops-math算子独立组件包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-basic|liubo75|
 |17|[支持opbase独立组件包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-basic|liubo75|
 |18|[支持ops组合包](https://ascend.devcloud.huaweicloud.com/artifactory/cann-run/software/8.5.0-beta.1/)|Accepted|sig-ops-basic|liubo75|
+
+## 子包独立升级
+### 使用场景<a name="section1643318375114"></a>
+
+子包独立升级提供了灵活的按需升级功能。
+
+使用场景举例：某用户已安装了a.b.c版本的组合包Ascend-cann-toolkit和Ascend-cann-ops，由于业务需要，要求将单边通信库能力更新至x.y.z版本，此时，可通过独立升级子包cann-hixl来实现。其中a.b.c和x.y.z请替换为实际版本号。
+
+### 操作步骤<a name="section1988895243218"></a>
+
+升级子包前，请确保已安装配套版本的组合包Ascend-cann-toolkit和Ascend-cann-ops。如未安装，请参考《[CANN软件安装指南](https://hiascend.com/document/redirect/CannCommunityInstSoftware)》进行安装。
+
+子包的升级路径应与组合包的安装路径保持一致。所有子包的升级操作相同，以下以升级 cann-hixl\_x.y.z\_linux-aarch64.run 为例进行说明。
+
+**升级场景一：**
+
+**组合包**Ascend-cann-toolkit和Ascend-cann-ops**安装在默认路径下**（即安装时未使用“--install-path”参数）
+
+```
+chmod +x cann-hixl_x.y.z_linux-aarch64.run 
+./cann-hixl_x.y.z_linux-aarch64.run --upgrade
+```
+
+**升级场景二：**
+
+**组合包**Ascend-cann-toolkit和Ascend-cann-ops**安装在指定路径**“/home/custom\_path”（即安装时指定“--install-path=/home/custom\_path”）
+
+```
+chmod +x cann-hixl_x.y.z_linux-aarch64.run
+./cann-hixl_x.y.z_linux-aarch64.run --upgrade --install-path=/home/custom_path
+```
