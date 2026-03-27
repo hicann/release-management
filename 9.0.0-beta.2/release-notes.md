@@ -58,21 +58,21 @@
 
 #### ops-nn库
 
-- 开源算子支持Ascend 950PR/Ascend 950DT芯片
+- 开源算子支持Ascend950芯片
   - 算子工程适配 ([!450](https://gitcode.com/cann/ops-nn/pull/450))。
   - LogSigmoid ([!1837](https://gitcode.com/cann/ops-nn/pull/1837))。
   - Norm类 ([!995](https://gitcode.com/cann/ops-nn/pull/995))。
   - SoftMax类 ([!1010](https://gitcode.com/cann/ops-nn/pull/1010))。
   - AvgPoolV2Grad ([!1183](https://gitcode.com/cann/ops-nn/pull/1183))。
   - RmsNormQuant ([!1057](https://gitcode.com/cann/ops-nn/pull/1057))。
-- Ascend 950PR/Ascend 950DT芯片支持Parallel Welford和超长轴二分累加算法，提高Norm类算子的数值稳定性与计算精度，该特性主要涉及算子：
+- Ascend950芯片支持Parallel Welford和超长轴二分累加算法，提高Norm类算子的数值稳定性与计算精度，该特性主要涉及算子：
   - [LayerNormV4](https://gitcode.com/cann/ops-nn/tree/master/norm/layer_norm_v4)
-  - [BatchNormV3](https://gitcode.com/cann/ops-nn/tree/master/norm/batch_norm_v3)在Ascend 950PR/Ascend 950DT芯片上实现
-- Ascend 950PR/Ascend 950DT芯片新增MM融合算子： 
-  -`QuantBatchMatmulInplaceAdd`([!1130](https://gitcode.com/cann/ops-nn/pull/1130))。
-  -`TransposeQuantBatchMatmul`([!1136](https://gitcode.com/cann/ops-nn/pull/1136))。
-  -`DualLevelQuantBatchMatmul`([!1141](https://gitcode.com/cann/ops-nn/pull/1141))。
-- `QuantBatchMatmul`算子基于Ascend 950PR/Ascend 950DT芯片支持mxfp8 weightNz特性,提升网络推理性能([!1144](https://gitcode.com/cann/ops-nn/pull/1144))。
+  - [BatchNormV3](https://gitcode.com/cann/ops-nn/tree/master/norm/batch_norm_v3)
+- Ascend950芯片新增MM融合算子： 
+  - `QuantBatchMatmulInplaceAdd`([!1130](https://gitcode.com/cann/ops-nn/pull/1130))。
+  - `TransposeQuantBatchMatmul`([!1136](https://gitcode.com/cann/ops-nn/pull/1136))。
+  - `DualLevelQuantBatchMatmul`([!1141](https://gitcode.com/cann/ops-nn/pull/1141))。
+- `QuantBatchMatmul`算子基于Ascend950芯片支持mxfp8 weightNz特性,提升网络推理性能([!1144](https://gitcode.com/cann/ops-nn/pull/1144))。
 
 #### ops-transformer库
 
