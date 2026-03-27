@@ -46,33 +46,27 @@
 
 ##   新增特性
 
-
-
-###  软件安装
-
-<!--没有新增特性的组件，则删除对应组件；所有组件都不涉及新增，则写“不涉及”。-->
-
 ### 算子库
 
 <!--新增特性仅为示例，请根据实际情况进行替换-->
 
 #### ops-nn库
 
-- 开源算子支持Ascend950芯片
+- 开源算子支持Ascend950PR芯片
   - 算子工程适配 ([!450](https://gitcode.com/cann/ops-nn/pull/450))。
   - LogSigmoid ([!1837](https://gitcode.com/cann/ops-nn/pull/1837))。
   - Norm类 ([!995](https://gitcode.com/cann/ops-nn/pull/995))。
   - SoftMax类 ([!1010](https://gitcode.com/cann/ops-nn/pull/1010))。
   - AvgPoolV2Grad ([!1183](https://gitcode.com/cann/ops-nn/pull/1183))。
   - RmsNormQuant ([!1057](https://gitcode.com/cann/ops-nn/pull/1057))。
-- Ascend950芯片支持Parallel Welford和超长轴二分累加算法，提高Norm类算子的数值稳定性与计算精度，该特性主要涉及算子：
+- Ascend950PR芯片支持Parallel Welford和超长轴二分累加算法，提高Norm类算子的数值稳定性与计算精度，该特性主要涉及算子：
   - [LayerNormV4](https://gitcode.com/cann/ops-nn/tree/master/norm/layer_norm_v4)
   - [BatchNormV3](https://gitcode.com/cann/ops-nn/tree/master/norm/batch_norm_v3)
-- Ascend950芯片新增MM融合算子： 
+- Ascend950PR芯片新增MM融合算子： 
   - `QuantBatchMatmulInplaceAdd`([!1130](https://gitcode.com/cann/ops-nn/pull/1130))。
   - `TransposeQuantBatchMatmul`([!1136](https://gitcode.com/cann/ops-nn/pull/1136))。
   - `DualLevelQuantBatchMatmul`([!1141](https://gitcode.com/cann/ops-nn/pull/1141))。
-- `QuantBatchMatmul`算子基于Ascend950芯片支持mxfp8 weightNz特性,提升网络推理性能([!1144](https://gitcode.com/cann/ops-nn/pull/1144))。
+- `QuantBatchMatmul`算子基于Ascend950PR芯片支持mxfp8 weightNz特性,提升网络推理性能([!1144](https://gitcode.com/cann/ops-nn/pull/1144))。
 
 #### ops-transformer库
 
@@ -84,32 +78,29 @@
   - [GroupedMatmul算子能力增强A4W4支持NZ转置动态分块优化](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/gmm/grouped_matmul/README.md)。
 
 #### ops-cv库
-- image类算子支持Ascend950，覆盖 `ResizeNearestNeighborV2`、`ResizeNearestNeighborV2Grad`、`UpsampleNearest`、`UpsampleNearest3d` 等（[!284](https://gitcode.com/cann/ops-cv/pull/284) [#97](https://gitcode.com/cann/ops-cv/issues/97) [#93](https://gitcode.com/cann/ops-cv/issues/93)）。
-- CI对Ascend950的编译与 UT 识别能力增强（ [!281](https://gitcode.com/cann/ops-cv/pull/281)、[!368](https://gitcode.com/cann/ops-cv/pull/368)、[#105](https://gitcode.com/cann/ops-cv/issues/105)）。
-- 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于Ascend950适配前置联调与回归（[!567](https://gitcode.com/cann/ops-cv/pull/567) [!397](https://gitcode.com/cann/ops-cv/pull/397)）。
+- image类算子支持Ascend950PR，覆盖 `ResizeNearestNeighborV2`、`ResizeNearestNeighborV2Grad`、`UpsampleNearest`、`UpsampleNearest3d` 等（[!284](https://gitcode.com/cann/ops-cv/pull/284) [#97](https://gitcode.com/cann/ops-cv/issues/97) [#93](https://gitcode.com/cann/ops-cv/issues/93)）。
+- CI对Ascend950PR的编译与 UT 识别能力增强（ [!281](https://gitcode.com/cann/ops-cv/pull/281)、[!368](https://gitcode.com/cann/ops-cv/pull/368)、[#105](https://gitcode.com/cann/ops-cv/issues/105)）。
+- 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于Ascend950PR适配前置联调与回归（[!567](https://gitcode.com/cann/ops-cv/pull/567) [!397](https://gitcode.com/cann/ops-cv/pull/397)）。
 
 #### ops-math库
-- 数学运算、张量变换及随机数生成支持Ascend950，覆盖`Erfc`、`Sinh`、`Asin`、`Atanh`、`BitwiseXor`、`Asinh`、`Cosh`、`Scale`、`Tan`、`Acos`、`Acosh`等（[#599](https://gitcode.com/cann/ops-math/issues/599)）。
+- 数学运算、张量变换及随机数生成支持Ascend950PR，覆盖`Erfc`、`Sinh`、`Asin`、`Atanh`、`BitwiseXor`、`Asinh`、`Cosh`、`Scale`、`Tan`、`Acos`、`Acosh`等（[#599](https://gitcode.com/cann/ops-math/issues/599)）。
 - aclnnMul/aclnnMuls/aclnnAdd/aclnnAdds/aclnnSum等API支持非连续输入，似的相关接口性能得到提升、内存占用有优化（[!874](https://gitcode.com/cann/ops-math/pull/874)）。
 - Sort算子支持数据类型补齐UINT16/UINT32/UINT64类型补齐，性能相对A2，平均提升1.5+倍（[#557](https://gitcode.com/cann/ops-math/pull/557) [#632](https://gitcode.com/cann/ops-math/pull/632)）。
 - 离散类张量变换类算子性能优化，覆盖`Pad`、`Transpose`、`AsStrided` （[#569](https://gitcode.com/cann/ops-math/issues/569) [#539](https://gitcode.com/cann/ops-math/pull/539) [#495](https://gitcode.com/cann/ops-math/pull/495)）。
-- 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于 Ascend950 适配前置联调与回归（[!563](https://gitcode.com/cann/ops-math/pull/563) [!1215](https://gitcode.com/cann/ops-math/pull/1215)）。
+- 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于 Ascend950PR 适配前置联调与回归（[!563](https://gitcode.com/cann/ops-math/pull/563) [!1215](https://gitcode.com/cann/ops-math/pull/1215)）。
 
 #### opbase库
-- 基础框架库支持Ascend950平台（[#65](https://gitcode.com/cann/opbase/issues/65)）。
+- 基础框架库支持Ascend950PR（[#65](https://gitcode.com/cann/opbase/issues/65)）。
 
 ### 通信库
 
-- 集合通信： 通信算子支持Ascend950，覆盖 `Allgather`、`AllgatherV`、`Allreduce`、`AlltoAll`、`AlltoAllV`、`Broadcast`、`Reduce`、`ReduceScatter`、`ReduceScatterV`、`Scatter`、`SendRecv` 等([\#106](https://gitcode.com/cann/hccl/pull/106))。
+- 集合通信： 通信算子支持Ascend950PR，覆盖 `Allgather`、`AllgatherV`、`Allreduce`、`AlltoAll`、`AlltoAllV`、`Broadcast`、`Reduce`、`ReduceScatter`、`ReduceScatterV`、`Scatter`、`SendRecv` 等([\#106](https://gitcode.com/cann/hccl/pull/106))。
 - 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内AICPU场景下 AlltoAll算子支持使用对称内存功能([\#575](https://gitcode.com/cann/hcomm/pull/575))。
 - 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 AICPU场景下 ReduceScatter&AllReduce算子支持Batch一致性([\#483](https://gitcode.com/cann/hcomm/pull/483))。
 - 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内 ReduceScatter&AllReduce&AllGather&AlltoAll算子支持多机间的superkernel([\#596](https://gitcode.com/cann/hcomm/pull/596))。
 - 集合通信： 支持离线编译，提升构建易用性([\#126](https://gitcode.com/cann/hccl/pull/126))。
 - 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持自动建链模式，无需显式调用connect接口([\#106](https://gitcode.com/cann/hixl/issues/106))。
 - 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持Fabric Memory全局统一编址模式，支持使用HCCS进行D2rH的KV Cache直传能力，提升传输效率([\#33](https://gitcode.com/cann/hixl/issues/33))。
-
-### 领域加速库
-
 
 
 ###  图引擎
@@ -122,27 +113,24 @@
 - error msg优化整改（[\#685](https://gitcode.com/cann/ge/pull/685)）。
 - 提供端到端Sample：动态分档样例（[\#813](https://gitcode.com/cann/ge/pull/813)）（[\#685](https://gitcode.com/cann/ge/pull/685)），自定义算子入图样例（[\#867](https://gitcode.com/cann/ge/pull/867)），基于graph接口的Matmul+Add融合为GEMM自定义pass样例（[\#1106](https://gitcode.com/cann/ge/pull/1106)）。
 - 编译工程优化（[\#646](https://gitcode.com/cann/ge/pull/646)）（[\#890](https://gitcode.com/cann/ge/pull/890)）。
-- 支持确定性和强一致性配置。
+- 支持确定性和强一致性配置：ge.deterministicLevel。
 - 支持TensorMove消除。
-- 在线场景支持用户使用graph级别的option指定模型输出datatype。
+- 在线场景支持用户使用graph级别的option指定模型输出datatype：ge.outputDatatype。
 - 去除执行路径上的单例和锁，提升调度性能。
 
 
 ### 算子编程
-- Ascend 950支持SIMD编程模式，提供[200+ API 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/dav_c310)跨代兼容能力，可实现A2/A3算子平滑迁移。
-- Ascend 950新增基于Reg的编程方式，提供Reg数据搬运、基础算术、规约计算、同步控制等[90+ Reg编程接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/reg_compute/dav_c310)。
-- Atlas A2/A3、Ascend 950支持[语言扩展层纯 C 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/c_api)，支持数组式内存分配与指针型计算接口，提供原生纯 C 编程体验。
-- Ascend 950支持SIMD与SIMT混合编程，提供约700个[SIMT API接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/simt_api)，包含warp、atomic、基本数学计算、类型转换等基础接口。
-- Ascend 950支持通信高阶API的CCU通信接口，提供基于CCU的[Allreduce，Allgather，Reducescatter，AlltoAll等主流通信原语](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/adv_api/detail/hccl/impl/platform_v310)；Matmul高阶API新增支持[MXFP4/8低比特数据类型的矩阵运算](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/impl/adv_api/detail/matmul/mx_matmul_impl.h)，实现内存占用减半、算力吞吐倍增。
-- Ascend 950新增及兼容支持样例共计约260个，包含SIMT样例、SIMD样例(框架类、基础API、高阶API、最佳实践等)，并按照编程模型和样例类别对[样例目录结构进行调整](https://gitcode.com/cann/asc-devkit/pull/1223)，提升样例目录结构的易读性。
+- Ascend 950PR支持SIMD编程模式，提供[200+ API 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/dav_c310)跨代兼容能力，可实现Atlas A2系列产品和Atlas A3系列产品算子平滑迁移。
+- Ascend 950PR新增基于Reg的编程方式，提供Reg数据搬运、基础算术、规约计算、同步控制等[90+ Reg编程接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/reg_compute/dav_c310)。
+- Atlas A2系列产品、Atlas A3系列产品、Ascend 950PR支持[语言扩展层纯 C 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/c_api)，支持数组式内存分配与指针型计算接口，提供原生纯 C 编程体验。
+- Ascend 950PR支持SIMD与SIMT混合编程，提供约700个[SIMT API接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/simt_api)，包含warp、atomic、基本数学计算、类型转换等基础接口。
+- Ascend 950PR支持通信高阶API的CCU通信接口，提供基于CCU的[Allreduce，Allgather，Reducescatter，AlltoAll等主流通信原语](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/adv_api/detail/hccl/impl/platform_v310)；Matmul高阶API新增支持[MXFP4/8低比特数据类型的矩阵运算](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/impl/adv_api/detail/matmul/mx_matmul_impl.h)，实现内存占用减半、算力吞吐倍增。
+- Ascend 950PR新增及兼容支持样例共计约260个，包含SIMT样例、SIMD样例(框架类、基础API、高阶API、最佳实践等)，并按照编程模型和样例类别对[样例目录结构进行调整](https://gitcode.com/cann/asc-devkit/pull/1223)，提升样例目录结构的易读性。
 - 融合编译与<<<>>>调用方式支持[CPU模式](https://gitcode.com/cann/asc-tools/pull/138)以及[SIM仿真模式](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/cmake/asc/asc_modules/CMakeASCInformation.cmake)。
-
-### 编译器
-
 
 
 ### 运行时
-- 运行时Runtime支持Ascend950平台。
+- 运行时Runtime支持Ascend950PR。
 - 易用性增强：1) 支持AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题（[\#461](https://gitcode.com/cann/runtime/pull/461)）。
              2) 支持Aclgraph场景Event规格扩充，扩充后的Event规格仅取决于Device内存（[\#482](https://gitcode.com/cann/runtime/pull/482)）。
 - 发布Runtime编程指南（[\#1030](https://gitcode.com/cann/runtime/pull/1030)）。
@@ -157,102 +145,21 @@
 #### AMCT模型压缩工具
 - 支持HIF8分位量化算法（[\#54](https://gitcode.com/cann/amct/pull/54)）
 
-#### 算子开发工具
-
 
 
 ## 删除和废弃特性
 
-<!--没有删除特性的，则删除对应组件；所有组件都不涉及，则写“不涉及”。-->
+无。
 
-### 软件安装
-
-- 删除特性
-- 废弃特性
-
-### 算子库
-
-<!--废弃特性内容仅为示例，请根据实际情况进行替换-->
-
-#### ops-transformer库废弃特性：
-
-如下接口在CANN 8.5.0中被标记为废弃，将在2026年12月30日之后的版本删除（[\#12345](https://issue)）。
-
-- aclnnWeightQuantBatchMatmul接口废弃，替换为：aclnnWeightQuantBatchMatmulV3。
-- aclnnQuantMatmul/aclnnQuantMatmulV2/aclnnQuantMatmulV3/aclnnQuantMatmulV4接口废弃，替换为：aclnnQuantMatmulV5。
-- aclnnGroupedMatmul/aclnnGroupedMatmulV2/aclnnGroupedMatmulV3/aclnnGroupedMatmulV4接口废弃，替换为：aclnnGroupedMatmulV5。
-
-### 通信库
-
-- 删除特性
-- 废弃特性
-
-### 领域加速库
-
-- 删除特性
-- 废弃特性
-
-### 图引擎
-
-- 删除特性
-- 废弃特性
-
-### 算子编程
-
-- 删除特性
-- 废弃特性
-
-### 编译器
-
-- 删除特性
-- 废弃特性
-
-### 运行时
-
-- 删除特性
-- 废弃特性
-
-### 开发与维测工具
-
-#### 性能调优工具
-
-- 删除特性
-- 废弃特性
-
-#### 算子开发工具
-
-- 删除特性
-- 废弃特性
 
 ##  已知问题
 
-<!--问题仅为示例，请根据实际情况进行替换-->
-
-### Atlas A3系列产品上，三机PD分离Qwen 235B分布式dp+adxl，跑精度数据集到第二个数据集（math500），P节点报错
-
-  【引入版本】CANN 8.5.0
-
-  【缺陷影响】HCCL展开模式（HCCL\_OP\_EXPANSION\_MODE）配置为AIV且执行broadcast算子时会偶现超时（[\#123](https://issue)）。
-
-  【规避方案】不开启AIV展开模式。
-
-  ### LinearParallelOperation算子部分用例精度不达标
-
-  【引入版本】CANN 8.2.RC1
-
-  【缺陷影响】matmul多核切K特性为性能优化特性，在算子中总体呈现正向性能收益（966个泛化shape中90%性能有提升，平均优化40%）。当前测试case主要劣化shape为内轴16以及一些非256对齐的场景（此场景技术评估为泛化边界场景），评估影响较小（[\#456](https://issue)）。
-
-  【规避方案】修改知识库中的配置文件，将matmul多核切K的切分方式调整回之前的切分方式。
-
+无。
 
 
 ## 已修复问题
 
-<!--问题仅为示例，请根据实际情况进行替换-->
-
--   修复了“torch\_npu.fused\_linear\_cross\_entropy\_loss\_with\_max\_sum\_grad存在部分用例精度不达标的问题”（[\#12345](https://issue)）。
--   修复了“aclnnInplaceNanToNum算子精度测试不通过，当输入tensor为nan时，输出结果与标杆不符的问题”（[\#12356](https://issue)）。
-
+无。
 
 
 ##  文档变更说明
@@ -278,9 +185,7 @@
 
 ## 漏洞修补列表
 
-<!--表格仅为示例，请根据实际情况进行替换-->
-
-版本开源及第三方软件漏洞修复情况详见《[CANN 8.3.RC1 漏洞修补列表.xlsx](resource/CANN 8.3.RC1 漏洞修补列表.xlsx)》。
+版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/850/releasenote/releasenote_0025.html)。
 
 ## 子包独立升级
 ### 使用场景<a name="section1643318375114"></a>
