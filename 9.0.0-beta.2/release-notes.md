@@ -154,6 +154,9 @@
 - hccl工具支持FP64数据类型（[\#122](https://gitcode.com/cann/oam-tools/pull/122)）
 - hccl工具支持msfp8数据类型（[\#74](https://gitcode.com/cann/oam-tools/pull/74)）
 
+#### AMCT模型压缩工具
+- 支持HIF8分位量化算法（[\#54](https://gitcode.com/cann/amct/pull/54)）
+
 #### 算子开发工具
 
 
