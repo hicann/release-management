@@ -129,8 +129,13 @@
 
 
 ### 算子编程
-- 易用性增强：在分离式架构芯片下，提供Async异步调用接口，将AIC和AIV操作统一放到回调函数中，简化MIX融合算子编程逻辑（[\#446](https://gitcode.com/cann/ops-nn/issues/446)）。
-- 其他新增特性...。
+- Ascend 950支持SIMD编程模式，提供[200+ API 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/dav_c310)跨代兼容能力，可实现A2/A3算子平滑迁移。
+- Ascend 950新增基于Reg的编程方式，提供Reg数据搬运、基础算术、规约计算、同步控制等[90+ Reg编程接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/reg_compute/dav_c310)。
+- Atlas A2/A3、Ascend 950支持[语言扩展层纯 C 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/c_api)，支持数组式内存分配与指针型计算接口，提供原生纯 C 编程体验。
+- Ascend 950支持SIMD与SIMT混合编程，提供约700个[SIMT API接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/simt_api)，包含warp、atomic、基本数学计算、类型转换等基础接口。
+- Ascend 950支持通信高阶API的CCU通信接口，提供基于CCU的[Allreduce，Allgather，Reducescatter，AlltoAll等主流通信原语](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/adv_api/detail/hccl/impl/platform_v310)；Matmul高阶API新增支持[MXFP4/8低比特数据类型的矩阵运算](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/impl/adv_api/detail/matmul/mx_matmul_impl.h)，实现内存占用减半、算力吞吐倍增。
+- Ascend 950新增及兼容支持样例共计约260个，包含SIMT样例、SIMD样例(框架类、基础API、高阶API、最佳实践等)，并按照编程模型和样例类别对[样例目录结构进行调整](https://gitcode.com/cann/asc-devkit/pull/1223)，提升样例目录结构的易读性。
+- 融合编译与<<<>>>调用方式支持[CPU模式](https://gitcode.com/cann/asc-tools/pull/138)以及[SIM仿真模式](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/cmake/asc/asc_modules/CMakeASCInformation.cmake)。
 
 ### 编译器
 
@@ -253,11 +258,7 @@
 
 ### 算子编程
 
-优化《Ascend C算子开发指南》文档结构，统一相关文档入口。该文档修改以下几方面：
-
-- **[入门教程](https://www.hiascend.com/document/detail/zh/canncommercial/850/opdevg/Ascendcopdevg/atlas_ascendc_map_10_0002.html)**：提供快速入门教程，帮助开发者快速上手。
-- **[编程指南](https://www.hiascend.com/document/detail/zh/canncommercial/850/opdevg/Ascendcopdevg/atlas_ascendc_10_00028.html)**：介绍Ascend C编程模型和编程范式、语言拓展、硬件实现等内容。
-- **[算子实践参考](https://www.hiascend.com/document/detail/zh/canncommercial/850/opdevg/Ascendcopdevg/atlas_ascendc_best_practices_10_0001.html)**：整合原有的《Ascend C最佳实践》和典型模式的算子实现介绍为算子实践参考，提供算子开发、调试、性能优化全流程的实践参考。
+- 新增90+ [Reg编程接口API](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/docs/api/context/Reg%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97.md)资料，Reg矢量计算API是面向RegBase架构开发的API，用户可通过该API直接对芯片中涉及Vector计算的寄存器进行操作，实现更大的灵活性和更好的性能。
 
 ### 图引擎
 
