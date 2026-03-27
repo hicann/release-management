@@ -257,29 +257,24 @@
 
 ##  文档变更说明
 
-<!--内容仅为示例，请根据实际情况进行替换-->
-
 ### 算子编程
 
 - 新增90+ [Reg编程接口API](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/docs/api/context/Reg%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97.md)资料，Reg矢量计算API是面向RegBase架构开发的API，用户可通过该API直接对芯片中涉及Vector计算的寄存器进行操作，实现更大的灵活性和更好的性能。
+- 新增SIMT快速入门、编程模型、编译与运行、调试调优和算子实现介绍。
+- 新增SIMD与SIMT混合编程模型、算子实现、性能优化介绍。
+- 新增SMIT API。
+- 新增兼容性迁移指南（220x架构版本迁移到351x架构版本）。
+- 昇腾社区中，Ascend C算子开发新增可视化专区，通过视频呈现Cube和Vector算子的执行过程。
 
 ### 图引擎
 
-
+- 《图引擎开发指南》手册大纲调整，原《AutoFuse自动融合用户手册》合并至该手册中。
+- 《图引擎开发指南》新增“Session到GeSession的迁移指导”章节。
 
 ### 通信库
 
-- 节点变更：“集合通信”变更成“通信库”，并在该节点下新增“HIXL单边通信库”。
-
-  | 变更前                   | 变更后                   |
-  | ------------------------ | ------------------------ |
-  | ![](./figures/Snap1.png) | ![](./figures/Snap0.png) |
-
-- 手册结构变更：根据业务使用场景，将《LLM Datadist开发指南》拆分成《HIXL单边通信库》和《LLM Datadist开发指南》，《HIXL单边通信库》归属“通信库”节点，《LLM Datadist开发指南》位置保持不变。
-
-- 《HCCL集合通信库》手册架构调整，并新增“[通信算子开发](https://www.hiascend.com/document/detail/zh/canncommercial/850/commlib/hcclug/hcclopdev_000001.html)”章节。
-
-
+- 《HCCL集合通信用户指南》的“相关参考>集群信息配置”章节下，新增“rank table配置资源信息（Ascend 950PR/Ascend 950DT）”章节。
+- 《HCCL集合通信用户指南》的“通信算子开发”章节下，新增“AIV算子开发”章节。
 
 ## 漏洞修补列表
 
