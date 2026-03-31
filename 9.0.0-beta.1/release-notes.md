@@ -11,7 +11,7 @@ https://www.hiascend.com/cann/download
 2、 CANN组合包版本配套关系
 |ops版本  |配套toolkit版本  |  
 |--|--|
-|  [ascend-cann-ops 9.0.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.0.0-beta.1/)| [ascend-cann-toolkit 9.0.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.0.0-beta.1/) |
+|  [ascend-cann-ops 9.0.0-beta.1](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0-beta.1)| [ascend-cann-toolkit 9.0.0-beta.1](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0-beta.1) |
 
 
 

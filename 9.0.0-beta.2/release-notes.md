@@ -8,12 +8,12 @@
 **1、CANN与Ascend HDK版本配套关系**
 |CANN版本  |  配套Ascend HDK版本| 
 |--|--|
-|  CANN 9.0.0-beta.2|  [Ascend HDK ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1)|
+|  CANN 9.0.0-beta.2|  [Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1)|
 
 **2、 CANN组合包版本配套关系**
 |ops版本  |配套toolkit版本  |  
 |--|--|
-|  [ascend-cann-ops 9.0.0-beta.2](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.0.0-beta.2/)| [ascend-cann-toolkit 9.0.0-beta.2](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.0.0-beta.2/) |
+|  [ascend-cann-ops 9.0.0-beta.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0-beta.2)| [ascend-cann-toolkit 9.0.0-beta.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0-beta.2) |
 
 
 **3、 CANN独立升级子包版本配套关系**
@@ -47,8 +47,6 @@
 ##   新增特性
 
 ### 算子库
-
-<!--新增特性仅为示例，请根据实际情况进行替换-->
 
 #### ops-nn库
 
@@ -120,6 +118,7 @@
 
 
 ### 算子编程
+
 - Ascend 950PR支持SIMD编程模式，提供[200+ API 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/dav_c310)跨代兼容能力，可实现Atlas A2系列产品和Atlas A3系列产品算子平滑迁移。
 - Ascend 950PR新增基于Reg的编程方式，提供Reg数据搬运、基础算术、规约计算、同步控制等[90+ Reg编程接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/reg_compute/dav_c310)。
 - Atlas A2系列产品、Atlas A3系列产品、Ascend 950PR支持[语言扩展层纯 C 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/c_api)，支持数组式内存分配与指针型计算接口，提供原生纯 C 编程体验。
@@ -130,23 +129,24 @@
 
 
 ### 运行时
+
 - 运行时Runtime支持Ascend950PR。
-- 易用性增强：1) 支持AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题（[\#461](https://gitcode.com/cann/runtime/pull/461)）。
-             2) 支持Aclgraph场景Event规格扩充，扩充后的Event规格仅取决于Device内存（[\#482](https://gitcode.com/cann/runtime/pull/482)）。
+- 易用性增强：1.支持AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题（[\#461](https://gitcode.com/cann/runtime/pull/461)）。
+             2.支持Aclgraph场景Event规格扩充，扩充后的Event规格仅取决于Device内存（[\#482](https://gitcode.com/cann/runtime/pull/482)）。
 - 发布Runtime编程指南（[\#1030](https://gitcode.com/cann/runtime/pull/1030)）。
 - 发布Runtime Ascend950配套资料（[\#1255](https://gitcode.com/cann/runtime/pull/1255)）。
 
 ### 开发与维测工具
 
 #### 性能调优工具
+
 - msprof支持aicore-metrics选项采集自定义PMU指标能力（[\#136](https://gitcode.com/cann/oam-tools/pull/136)）
 - hccl工具支持FP64数据类型（[\#122](https://gitcode.com/cann/oam-tools/pull/122)）
 - hccl工具支持msfp8数据类型（[\#74](https://gitcode.com/cann/oam-tools/pull/74)）
 
 #### AMCT模型压缩工具
+
 - 支持HIF8分位量化算法（[\#54](https://gitcode.com/cann/amct/pull/54)）
-
-
 
 ## 删除和废弃特性
 
@@ -161,7 +161,6 @@
 ## 已修复问题
 
 无。
-
 
 ##  文档变更说明
 
