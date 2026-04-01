@@ -64,7 +64,7 @@
   - `QuantBatchMatmulInplaceAdd`([!1130](https://gitcode.com/cann/ops-nn/pull/1130))。
   - `TransposeQuantBatchMatmul`([!1136](https://gitcode.com/cann/ops-nn/pull/1136))。
   - `DualLevelQuantBatchMatmul`([!1141](https://gitcode.com/cann/ops-nn/pull/1141))。
-- `QuantBatchMatmul`算子基于Ascend950PR芯片支持mxfp8 weightNz特性,提升网络推理性能([!1144](https://gitcode.com/cann/ops-nn/pull/1144))。
+- `QuantBatchMatmul`算子基于Ascend950PR芯片支持mxfp8 weightNz特性，提升网络推理性能([!1144](https://gitcode.com/cann/ops-nn/pull/1144))。
 
 #### ops-transformer库
 
@@ -82,7 +82,7 @@
 
 #### ops-math库
 - 数学运算、张量变换及随机数生成支持Ascend950PR，覆盖`Erfc`、`Sinh`、`Asin`、`Atanh`、`BitwiseXor`、`Asinh`、`Cosh`、`Scale`、`Tan`、`Acos`、`Acosh`等（[#599](https://gitcode.com/cann/ops-math/issues/599)）。
-- aclnnMul/aclnnMuls/aclnnAdd/aclnnAdds/aclnnSum等API支持非连续输入，似的相关接口性能得到提升、内存占用有优化（[!874](https://gitcode.com/cann/ops-math/pull/874)）。
+- aclnnMul/aclnnMuls/aclnnAdd/aclnnAdds/aclnnSum等API支持非连续输入，使相关接口性能得到提升、内存占用有优化（[!874](https://gitcode.com/cann/ops-math/pull/874)）。
 - Sort算子在Ascend950PR上相较于Atlas A3，新增UINT16/UINT32/UINT64类型。Atlas A3支持的数据类型在Ascend950PR性能平均提升1.5+倍（[#557](https://gitcode.com/cann/ops-math/pull/557) [#632](https://gitcode.com/cann/ops-math/pull/632)）。
 - 离散类张量变换类算子性能优化，覆盖`Pad`、`Transpose`、`AsStrided` （[#569](https://gitcode.com/cann/ops-math/issues/569) [#539](https://gitcode.com/cann/ops-math/pull/539) [#495](https://gitcode.com/cann/ops-math/pull/495)）。
 - 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于 Ascend950PR 适配前置联调与回归（[!563](https://gitcode.com/cann/ops-math/pull/563) [!1215](https://gitcode.com/cann/ops-math/pull/1215)）。
@@ -124,15 +124,16 @@
 - Atlas A2系列产品、Atlas A3系列产品、Ascend 950PR支持[语言扩展层纯 C 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/c_api)，支持数组式内存分配与指针型计算接口，提供原生纯 C 编程体验。
 - Ascend 950PR支持SIMD与SIMT混合编程，提供约700个[SIMT API接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/simt_api)，包含warp、atomic、基本数学计算、类型转换等基础接口。
 - Ascend 950PR支持通信高阶API的CCU通信接口，提供基于CCU的[Allreduce，Allgather，Reducescatter，AlltoAll等主流通信原语](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/adv_api/detail/hccl/impl/platform_v310)；Matmul高阶API新增支持[MXFP4/8低比特数据类型的矩阵运算](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/impl/adv_api/detail/matmul/mx_matmul_impl.h)，实现内存占用减半、算力吞吐倍增。
-- Ascend 950PR新增及兼容支持样例共计约260个，包含SIMT样例、SIMD样例(框架类、基础API、高阶API、最佳实践等)，并按照编程模型和样例类别对[样例目录结构进行调整](https://gitcode.com/cann/asc-devkit/pull/1223)，提升样例目录结构的易读性。
+- Ascend 950PR新增及兼容支持样例共计约260个，包含SIMT样例、SIMD样例（框架类、基础API、高阶API、最佳实践等），并按照编程模型和样例类别对[样例目录结构进行调整](https://gitcode.com/cann/asc-devkit/pull/1223)，提升样例目录结构的易读性。
 - 融合编译与<<<>>>调用方式支持[CPU模式](https://gitcode.com/cann/asc-tools/pull/138)以及[SIM仿真模式](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/cmake/asc/asc_modules/CMakeASCInformation.cmake)。
 
 
 ### 运行时
 
 - 运行时Runtime支持Ascend950PR。
-- 易用性增强：1.支持AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题（[\#461](https://gitcode.com/cann/runtime/pull/461)）。
-             2.支持Aclgraph场景Event规格扩充，扩充后的Event规格仅取决于Device内存（[\#482](https://gitcode.com/cann/runtime/pull/482)）。
+- 易用性增强：
+  - 支持AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题（[\#461](https://gitcode.com/cann/runtime/pull/461)）。
+  - 支持Aclgraph场景Event规格扩充，扩充后的Event规格仅取决于Device内存（[\#482](https://gitcode.com/cann/runtime/pull/482)）。
 - 发布Runtime编程指南（[\#1030](https://gitcode.com/cann/runtime/pull/1030)）。
 - 发布Runtime Ascend950配套资料（[\#1255](https://gitcode.com/cann/runtime/pull/1255)）。
 
@@ -140,9 +141,9 @@
 
 #### 性能调优工具
 
-- msprof支持aicore-metrics选项采集自定义PMU指标能力（[\#136](https://gitcode.com/cann/oam-tools/pull/136)）
-- hccl工具支持FP64数据类型（[\#122](https://gitcode.com/cann/oam-tools/pull/122)）
-- hccl工具支持msfp8数据类型（[\#74](https://gitcode.com/cann/oam-tools/pull/74)）
+- msprof支持aicore-metrics选项采集自定义PMU指标能力（[\#136](https://gitcode.com/cann/oam-tools/pull/136)）.
+- HCCL性能测试工具支持FP64数据类型（[\#122](https://gitcode.com/cann/oam-tools/pull/122)）.
+- HCCL性能测试工具支持msfp8数据类型（[\#74](https://gitcode.com/cann/oam-tools/pull/74)）.
 
 #### AMCT模型压缩工具
 
@@ -167,21 +168,21 @@
 ### 算子编程
 
 - 新增90+ [Reg编程接口API](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/docs/api/context/Reg%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97.md)资料，Reg矢量计算API是面向RegBase架构开发的API，用户可通过该API直接对芯片中涉及Vector计算的寄存器进行操作，实现更大的灵活性和更好的性能。
-- 新增SIMT快速入门、编程模型、编译与运行、调试调优和算子实现介绍。
-- 新增SIMD与SIMT混合编程模型、算子实现、性能优化介绍。
-- 新增SMIT API。
-- 新增兼容性迁移指南（220x架构版本迁移到351x架构版本）。
-- 昇腾社区中，Ascend C算子开发新增可视化专区，通过视频呈现Cube和Vector算子的执行过程。
+- 新增SIMT[快速入门](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_map_10_0022.html)、[编程模型](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_10_10064.html)和[算子实现](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlasascendc_api_07_10293.html)介绍。
+- 新增SIMD与SIMT[混合编程模型](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_10_10052.html)、[算子实现](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_10_10039.html)、[性能优化](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_best_practices_10_10029.html)介绍。
+- 新增[SMIT API](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/API/ascendcopapi/atlasascendc_api_07_0427.html)。
+- 新增[兼容性迁移指南](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_compatibility_10_00001.html)（220x架构版本迁移到351x架构版本）。
+- 昇腾社区中，Ascend C算子开发新增[可视化专区](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_map_10_0017.html)，通过视频呈现Cube和Vector算子的执行过程。
 
 ### 图引擎
 
 - 《图引擎开发指南》手册大纲调整，原《AutoFuse自动融合用户手册》合并至该手册中。
-- 《图引擎开发指南》新增“Session到GeSession的迁移指导”章节。
+- 《图引擎开发指南》新增“[Session到GeSession的迁移指导](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/graph/graphdevg/atlasag_25_0115.html)”章节。
 
 ### 通信库
 
-- 《HCCL集合通信用户指南》的“相关参考>集群信息配置”章节下，新增“rank table配置资源信息（Ascend 950PR/Ascend 950DT）”章节。
-- 《HCCL集合通信用户指南》的“通信算子开发”章节下，新增“AIV算子开发”章节。
+- 《HCCL集合通信用户指南》的“相关参考>集群信息配置”章节下，新增“[rank table配置资源信息（Atlas 350 加速卡）](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/commlib/hcclug/hcclug_000065.html)”章节。
+- 《HCCL集合通信用户指南》的“通信算子开发”章节下，新增“[AIV算子开发](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/commlib/hcclug/hcclopdev_000021.html)”章节。
 
 ## 漏洞修补列表
 
