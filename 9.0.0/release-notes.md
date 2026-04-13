@@ -86,6 +86,11 @@
 - Sort算子在Ascend950PR上相较于Atlas A3，新增UINT16/UINT32/UINT64类型。Atlas A3支持的数据类型在Ascend950PR性能平均提升1.5+倍（[#557](https://gitcode.com/cann/ops-math/pull/557) [#632](https://gitcode.com/cann/ops-math/pull/632)）。
 - 离散类张量变换类算子性能优化，覆盖`Pad`、`Transpose`、`AsStrided` （[#569](https://gitcode.com/cann/ops-math/issues/569) [#539](https://gitcode.com/cann/ops-math/pull/539) [#495](https://gitcode.com/cann/ops-math/pull/495)）。
 - 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于 Ascend950PR 适配前置联调与回归（[!563](https://gitcode.com/cann/ops-math/pull/563) [!1215](https://gitcode.com/cann/ops-math/pull/1215)）。
+- 算子工程支持kernel并行编译（[!779](https://gitcode.com/cann/ops-math/pull/779)）。
+- 算子工程日志优化（[#192](https://gitcode.com/cann/ops-math/issues/192)）。
+- 算子CI支持算子增量UT与冒烟（[!774](https://gitcode.com/cann/ops-math/pull/774) [!817](https://gitcode.com/cann/ops-math/pull/817)）。
+- 算子构建脚本支持导出预编译文件，降低算子问题定位难度（[#536](https://gitcode.com/cann/ops-math/issues/536)）。
+- 支持Docker部署（[!547](https://gitcode.com/cann/ops-math/pull/547)）。
 
 #### opbase库
 - 基础框架库支持Ascend950PR（[#65](https://gitcode.com/cann/opbase/issues/65)）。
