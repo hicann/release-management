@@ -149,13 +149,15 @@
 
 ### 算子编程
 
-- Ascend 950PR支持SIMD编程模式，提供[200+ API 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/dav_c310)跨代兼容能力，可实现Atlas A2系列产品和Atlas A3系列产品算子平滑迁移。
-- Ascend 950PR新增基于Reg的编程方式，提供Reg数据搬运、基础算术、规约计算、同步控制等[90+ Reg编程接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/basic_api/reg_compute/dav_c310)。
-- Atlas A2系列产品、Atlas A3系列产品、Ascend 950PR支持[语言扩展层纯 C 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/c_api)，支持数组式内存分配与指针型计算接口，提供原生纯 C 编程体验。
-- Ascend 950PR支持SIMD与SIMT混合编程，提供约700个[SIMT API接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/include/simt_api)，包含warp、atomic、基本数学计算、类型转换等基础接口。
-- Ascend 950PR支持通信高阶API的CCU通信接口，提供基于CCU的[Allreduce，Allgather，Reducescatter，AlltoAll等主流通信原语](https://gitcode.com/cann/asc-devkit/tree/9.0.0-beta.2/impl/adv_api/detail/hccl/impl/platform_v310)；Matmul高阶API新增支持[MXFP4/8低比特数据类型的矩阵运算](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/impl/adv_api/detail/matmul/mx_matmul_impl.h)，实现内存占用减半、算力吞吐倍增。
+- Ascend 950PR支持SIMD编程模式，提供[200+ API 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0/impl/basic_api/dav_c310)跨代兼容能力，可实现Atlas A2系列产品和Atlas A3系列产品算子平滑迁移。
+- Ascend 950PR新增基于Reg的编程方式，提供Reg数据搬运、基础算术、规约计算、同步控制等[90+ Reg编程接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0/impl/basic_api/reg_compute/dav_c310)。
+- Atlas A2系列产品、Atlas A3系列产品、Ascend 950PR支持[语言扩展层纯 C 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0/include/c_api)，支持数组式内存分配与指针型计算接口，提供原生纯 C 编程体验。
+- Ascend 950PR支持SIMD与SIMT混合编程，提供约700个[SIMT API接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0/include/simt_api)，包含warp、atomic、基本数学计算、类型转换等基础接口。
+- Ascend 950PR支持通信高阶API的CCU通信接口，提供基于CCU的[Allreduce，Allgather，Reducescatter，AlltoAll等主流通信原语](https://gitcode.com/cann/asc-devkit/tree/9.0.0/impl/adv_api/detail/hccl/impl/platform_v310)；Matmul高阶API新增支持[MXFP4/8低比特数据类型的矩阵运算](https://gitcode.com/cann/asc-devkit/blob/9.0.0/impl/adv_api/detail/matmul/mx_matmul_impl.h)，实现内存占用减半、算力吞吐倍增。
 - Ascend 950PR新增及兼容支持样例共计约260个，包含SIMT样例、SIMD样例（框架类、基础API、高阶API、最佳实践等），并按照编程模型和样例类别对[样例目录结构进行调整](https://gitcode.com/cann/asc-devkit/pull/1223)，提升样例目录结构的易读性。
-- 融合编译与<<<>>>调用方式支持[CPU模式](https://gitcode.com/cann/asc-tools/pull/138)以及[SIM仿真模式](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/cmake/asc/asc_modules/CMakeASCInformation.cmake)。
+- 完成[Gitee样例仓](https://gitee.com/ascend/samples/tree/master/operator/ascendc)AscendC样例及[AscendC高阶API仓](https://gitee.com/ascend/ascendc-api-adv/tree/master/examples)样例到[asc-devkit仓](https://gitcode.com/cann/asc-devkit/tree/9.0.0/examples)的迁移，并统一使用<<<>>>调用方式；
+- 融合编译与<<<>>>调用方式支持[CPU模式](https://gitcode.com/cann/asc-tools/pull/138)以及[SIM仿真模式](https://gitcode.com/cann/asc-devkit/blob/9.0.0/cmake/asc/asc_modules/CMakeASCInformation.cmake)。
+- 联合毕昇编译器，优化融合编译性能。
 
 
 ### 运行时
