@@ -103,6 +103,10 @@
 
 ###  图引擎
 
+- ES构图提供多种场景的sample ([!72](https://gitcode.com/cann/ge/pull/72) 、[!123](https://gitcode.com/cann/ge/pull/123)) 。
+- ES构图 Readable Dump支持子图的友好展示。
+- 自定义pass改图能力增强，新增原图优化之后改图的能力。
+- 图模式多流场景nopadding连续内存支持内存复用。
 - ES构图支持消费历史原型生成合法的重载cxx接口（[\#643](https://gitcode.com/cann/ge/pull/643)）。
 - 支持算子级控核场景代码优化（[\#450](https://gitcode.com/cann/ge/pull/450)）。
 - 图融合删除模型输出节点时，框架支持识别更新模型输出（[\#434](https://gitcode.com/cann/ge/pull/434)）。
@@ -115,7 +119,6 @@
 - 支持TensorMove消除。
 - 在线场景支持用户使用graph级别的option指定模型输出datatype：ge.outputDatatype。
 - 去除执行路径上的单例和锁，提升调度性能。
-
 
 ### 算子编程
 
