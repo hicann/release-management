@@ -166,6 +166,27 @@
 - 易用性增强：
   - 支持AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题（[\#461](https://gitcode.com/cann/runtime/pull/461)）。
   - 支持Aclgraph场景Event规格扩充，扩充后的Event规格仅取决于Device内存（[\#482](https://gitcode.com/cann/runtime/pull/482)）。
+  - 提供包版本号查询接口，根据包名查询返回数值版本号和字符串版本号，接口如下： 	 
+    - [aclError aclsysGetVersionStr(char *pkgName, char * versionStr)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclsysGetVersionStr.md)	 
+    - [aclError aclsysGetVersionNum(char *pkgName，int32_t * versionNum)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclsysGetVersionNum.md)	 
+
+  - 支持查询指定流（Stream）的优先级，接口如下：	 
+    - [aclError aclrtStreamGetPriority(aclrtStream stream, uint32_t *priority)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtStreamGetPriority.md) 
+
+  - 支持查询创建Stream时设置的flag标志，接口如下： 
+    - [aclError aclrtStreamGetFlags(aclrtStream stream, uint32_t *flags)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtStreamGetFlags.md)   
+
+  - 支持获取Device的唯一标识UUID（Universally Unique Identifier），接口如下： 
+    - [aclError aclrtDeviceGetUuid (int32_t deviceId, aclrtUuid *uuid)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtDeviceGetUuid.md) 
+ 
+  - 支持获取待查询地址所属内存块的起始地址以及内存块大小，接口如下： 
+    - [aclError aclrtMemGetAddressRange(void *ptr, void **pbase, size_t *psize)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtMemGetAddressRange.md) 
+ 
+  - 支持设置和查询强一致性计算的参数，相关接口如下：
+    - [aclError aclrtSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtSetSysParamOpt.md) 
+    - [aclError aclrtGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtGetSysParamOpt.md) 
+    - [aclError aclrtCtxSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxSetSysParamOpt.md) 
+    - [aclError aclrtCtxGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxGetSysParamOpt.md)
 - 发布Runtime编程指南（[\#1030](https://gitcode.com/cann/runtime/pull/1030)）。
 - 发布Runtime Ascend950配套资料（[\#1255](https://gitcode.com/cann/runtime/pull/1255)）。
 
