@@ -83,16 +83,16 @@ https://www.hiascend.com/cann/download
 
 ### 通信库
 
-- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持alltoallv算子aicpu展开模式通信task缓存功能([\#269](https://gitcode.com/cann/hcomm/pull/269))。
-- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持单机多容器部署。
-- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持通信域粒度的超平面QoS配置([\#283](https://gitcode.com/cann/hcomm/pull/283))。
-- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持aicpu&host 自定义算子场景的profiling信息上报能力，提升自定义通信算子的维测能力([\#102](https://gitcode.com/cann/hccl/pull/102) [\#374](https://gitcode.com/cann/hccl/hcomm/374))。
-- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 AICPU自定义算子场景支持host和aicpu间的kernel同步([\#90](https://gitcode.com/cann/hccl/pull/90))。
-- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内HCCS场景下支持D2rH直传能力（本端device内存与远端host内存通信能力）([\#33](https://gitcode.com/cann/hixl/issues/33))。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品支持alltoallv算子aicpu展开模式通信task缓存功能（[\#269](https://gitcode.com/cann/hcomm/pull/269)）。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品支持单机多容器部署。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品支持通信域粒度的超平面QoS配置（[\#283](https://gitcode.com/cann/hcomm/pull/283)）。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品支持aicpu&host 自定义算子场景的profiling信息上报能力，提升自定义通信算子的维测能力（[\#102](https://gitcode.com/cann/hccl/pull/102) [\#374](https://gitcode.com/cann/hccl/hcomm/374)）。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品AICPU自定义算子场景支持host和aicpu间的kernel同步（[\#90](https://gitcode.com/cann/hccl/pull/90)）。
+- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品超节点内HCCS场景下支持D2rH直传能力（本端device内存与远端host内存通信能力）（[\#33](https://gitcode.com/cann/hixl/issues/33)）。
 
 ###  图引擎
-- ES构图提供多种场景的sample ([!72](https://gitcode.com/cann/ge/pull/72) 、[!123](https://gitcode.com/cann/ge/pull/123)) 。
-- ES构图 Readable Dump支持子图的友好展示。
+- ES构图提供多种场景的sample（[!72](https://gitcode.com/cann/ge/pull/72) 、[!123](https://gitcode.com/cann/ge/pull/123)）。
+- ES构图Readable Dump支持子图的友好展示。
 - 自定义pass改图能力增强，新增原图优化之后改图的能力。
 - 图模式多流场景nopadding连续内存支持内存复用。
 
@@ -131,7 +131,7 @@ https://www.hiascend.com/cann/download
 
 
 #### AMCT模型压缩工具
-- 支持HIF8/MXFPx等低比特数据格式的量化能力：新增HIF8/FP8/FP4/MXFP8/MXFP4量化数据类型，新增HIF8匹配的OFMR量化算法（[\#20](https://gitcode.com/cann/amct/pull/20)）
+- 支持HIF8/MXFPx等低比特数据格式的量化能力：新增HIF8/FP8/FP4/MXFP8/MXFP4量化数据类型，新增HIF8匹配的OFMR量化算法（[\#20](https://gitcode.com/cann/amct/pull/20)）。
 
 
 ## 删除和废弃特性

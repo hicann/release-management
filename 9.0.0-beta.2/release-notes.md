@@ -50,21 +50,21 @@
 
 #### ops-nn库
 
-- 开源算子支持Ascend950PR芯片
-  - 算子工程适配 ([!450](https://gitcode.com/cann/ops-nn/pull/450))。
-  - LogSigmoid ([!1837](https://gitcode.com/cann/ops-nn/pull/1837))。
-  - Norm类 ([!995](https://gitcode.com/cann/ops-nn/pull/995))。
-  - SoftMax类 ([!1010](https://gitcode.com/cann/ops-nn/pull/1010))。
-  - AvgPoolV2Grad ([!1183](https://gitcode.com/cann/ops-nn/pull/1183))。
-  - RmsNormQuant ([!1057](https://gitcode.com/cann/ops-nn/pull/1057))。
+- 开源算子支持Ascend950PR芯片：
+  - 算子工程适配（[!450](https://gitcode.com/cann/ops-nn/pull/450)）。
+  - LogSigmoid（[!1837](https://gitcode.com/cann/ops-nn/pull/1837)）。
+  - Norm类（[!995](https://gitcode.com/cann/ops-nn/pull/995)）。
+  - SoftMax类（[!1010](https://gitcode.com/cann/ops-nn/pull/1010)）。
+  - AvgPoolV2Grad（[!1183](https://gitcode.com/cann/ops-nn/pull/1183)）。
+  - RmsNormQuant（[!1057](https://gitcode.com/cann/ops-nn/pull/1057)）。
 - Ascend950PR芯片支持Parallel Welford和超长轴二分累加算法，提高Norm类算子的数值稳定性与计算精度，该特性主要涉及算子：
-  - [LayerNormV4](https://gitcode.com/cann/ops-nn/tree/master/norm/layer_norm_v4)
-  - [BatchNormV3](https://gitcode.com/cann/ops-nn/tree/master/norm/batch_norm_v3)
+  - [LayerNormV4](https://gitcode.com/cann/ops-nn/tree/master/norm/layer_norm_v4)。
+  - [BatchNormV3](https://gitcode.com/cann/ops-nn/tree/master/norm/batch_norm_v3)。
 - Ascend950PR芯片新增MM融合算子： 
-  - `QuantBatchMatmulInplaceAdd`([!1130](https://gitcode.com/cann/ops-nn/pull/1130))。
-  - `TransposeQuantBatchMatmul`([!1136](https://gitcode.com/cann/ops-nn/pull/1136))。
-  - `DualLevelQuantBatchMatmul`([!1141](https://gitcode.com/cann/ops-nn/pull/1141))。
-- `QuantBatchMatmul`算子基于Ascend950PR芯片支持mxfp8 weightNz特性，提升网络推理性能([!1144](https://gitcode.com/cann/ops-nn/pull/1144))。
+  - `QuantBatchMatmulInplaceAdd`（[!1130](https://gitcode.com/cann/ops-nn/pull/1130)）。
+  - `TransposeQuantBatchMatmul`（[!1136](https://gitcode.com/cann/ops-nn/pull/1136)）。
+  - `DualLevelQuantBatchMatmul`（[!1141](https://gitcode.com/cann/ops-nn/pull/1141)）。
+- `QuantBatchMatmul`算子基于Ascend950PR芯片支持mxfp8 weightNz特性，提升网络推理性能（[!1144](https://gitcode.com/cann/ops-nn/pull/1144)）。
 
 #### ops-transformer库
 
@@ -84,7 +84,7 @@
 - 数学运算、张量变换及随机数生成支持Ascend950PR，覆盖`Erfc`、`Sinh`、`Asin`、`Atanh`、`BitwiseXor`、`Asinh`、`Cosh`、`Scale`、`Tan`、`Acos`、`Acosh`等（[#599](https://gitcode.com/cann/ops-math/issues/599)）。
 - aclnnMul/aclnnMuls/aclnnAdd/aclnnAdds/aclnnSum等API支持非连续输入，使相关接口性能得到提升、内存占用有优化（[!874](https://gitcode.com/cann/ops-math/pull/874)）。
 - Sort算子在Ascend950PR上相较于Atlas A3，新增UINT16/UINT32/UINT64类型。Atlas A3支持的数据类型在Ascend950PR性能平均提升1.5+倍（[#557](https://gitcode.com/cann/ops-math/pull/557) [#632](https://gitcode.com/cann/ops-math/pull/632)）。
-- 离散类张量变换类算子性能优化，覆盖`Pad`、`Transpose`、`AsStrided` （[#569](https://gitcode.com/cann/ops-math/issues/569) [#539](https://gitcode.com/cann/ops-math/pull/539) [#495](https://gitcode.com/cann/ops-math/pull/495)）。
+- 离散类张量变换类算子性能优化，覆盖`Pad`、`Transpose`、`AsStrided`（[#569](https://gitcode.com/cann/ops-math/issues/569) [#539](https://gitcode.com/cann/ops-math/pull/539) [#495](https://gitcode.com/cann/ops-math/pull/495)）。
 - 算子的example支持在仿真（simulator）上执行，可在不依赖真实硬件的场景下进行样例编译与执行验证，便于 Ascend950PR 适配前置联调与回归（[!563](https://gitcode.com/cann/ops-math/pull/563) [!1215](https://gitcode.com/cann/ops-math/pull/1215)）。
 
 #### opbase库
@@ -92,13 +92,13 @@
 
 ### 通信库
 
-- 集合通信： 通信算子支持Ascend950PR，覆盖 `Allgather`、`AllgatherV`、`Allreduce`、`AlltoAll`、`AlltoAllV`、`Broadcast`、`Reduce`、`ReduceScatter`、`ReduceScatterV`、`Scatter`、`SendRecv` 等([\#106](https://gitcode.com/cann/hccl/pull/106))。
-- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内AICPU场景下 AlltoAll算子支持使用对称内存功能([\#575](https://gitcode.com/cann/hcomm/pull/575))。
-- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 AICPU场景下 ReduceScatter&AllReduce算子支持Batch一致性([\#483](https://gitcode.com/cann/hcomm/pull/483))。
-- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内 ReduceScatter&AllReduce&AllGather&AlltoAll算子支持多机间的superkernel([\#596](https://gitcode.com/cann/hcomm/pull/596))。
-- 集合通信： 支持离线编译，提升构建易用性([\#126](https://gitcode.com/cann/hccl/pull/126))。
-- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持自动建链模式，无需显式调用connect接口([\#106](https://gitcode.com/cann/hixl/issues/106))。
-- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持Fabric Memory全局统一编址模式，支持使用HCCS进行D2rH的KV Cache直传能力，提升传输效率([\#33](https://gitcode.com/cann/hixl/issues/33))。
+- 集合通信： 通信算子支持Ascend950PR，覆盖 `Allgather`、`AllgatherV`、`Allreduce`、`AlltoAll`、`AlltoAllV`、`Broadcast`、`Reduce`、`ReduceScatter`、`ReduceScatterV`、`Scatter`、`SendRecv` 等（[\#106](https://gitcode.com/cann/hccl/pull/106)）。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内AICPU场景下 AlltoAll算子支持使用对称内存功能（[\#575](https://gitcode.com/cann/hcomm/pull/575)）。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 AICPU场景下 ReduceScatter&AllReduce算子支持Batch一致性（[\#483](https://gitcode.com/cann/hcomm/pull/483)）。
+- 集合通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 超节点内 ReduceScatter&AllReduce&AllGather&AlltoAll算子支持多机间的superkernel（[\#596](https://gitcode.com/cann/hcomm/pull/596)）。
+- 集合通信： 支持离线编译，提升构建易用性（[\#126](https://gitcode.com/cann/hccl/pull/126)）。
+- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持自动建链模式，无需显式调用connect接口（[\#106](https://gitcode.com/cann/hixl/issues/106)）。
+- 单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持Fabric Memory全局统一编址模式，支持使用HCCS进行D2rH的KV Cache直传能力，提升传输效率（[\#33](https://gitcode.com/cann/hixl/issues/33)）。
 
 
 ###  图引擎
@@ -109,8 +109,8 @@
 - 公共子表达式消除优化（[\#622](https://gitcode.com/cann/ge/pull/622)）。
 - 支持通过dump开关使能L0和L1 exception dump（[\#398](https://gitcode.com/cann/ge/pull/398)）。
 - error msg优化整改（[\#685](https://gitcode.com/cann/ge/pull/685)）。
-- 提供端到端Sample：动态分档样例（[\#813](https://gitcode.com/cann/ge/pull/813)）（[\#685](https://gitcode.com/cann/ge/pull/685)），自定义算子入图样例（[\#867](https://gitcode.com/cann/ge/pull/867)），基于graph接口的Matmul+Add融合为GEMM自定义pass样例（[\#1106](https://gitcode.com/cann/ge/pull/1106)）。
-- 编译工程优化（[\#646](https://gitcode.com/cann/ge/pull/646)）（[\#890](https://gitcode.com/cann/ge/pull/890)）。
+- 提供端到端Sample：动态分档样例（[\#813](https://gitcode.com/cann/ge/pull/813)和[\#685](https://gitcode.com/cann/ge/pull/685)），自定义算子入图样例（[\#867](https://gitcode.com/cann/ge/pull/867)），基于graph接口的Matmul+Add融合为GEMM自定义pass样例（[\#1106](https://gitcode.com/cann/ge/pull/1106)）。
+- 编译工程优化（[\#646](https://gitcode.com/cann/ge/pull/646)和[\#890](https://gitcode.com/cann/ge/pull/890)）。
 - 支持确定性和强一致性配置：ge.deterministicLevel。
 - 支持TensorMove消除。
 - 在线场景支持用户使用graph级别的option指定模型输出datatype：ge.outputDatatype。
@@ -141,13 +141,12 @@
 
 #### 性能调优工具
 
-- msprof支持aicore-metrics选项采集自定义PMU指标能力（[\#136](https://gitcode.com/cann/oam-tools/pull/136)）.
-- HCCL性能测试工具支持FP64数据类型（[\#122](https://gitcode.com/cann/oam-tools/pull/122)）.
-- HCCL性能测试工具支持msfp8数据类型（[\#74](https://gitcode.com/cann/oam-tools/pull/74)）.
+- msprof支持aicore-metrics选项采集自定义PMU指标能力（[\#136](https://gitcode.com/cann/oam-tools/pull/136)）。
+- HCCL性能测试工具支持FP64数据类型（[\#122](https://gitcode.com/cann/oam-tools/pull/122)）。
 
 #### AMCT模型压缩工具
 
-- 支持HIF8分位量化算法（[\#54](https://gitcode.com/cann/amct/pull/54)）
+- 支持HIF8分位量化算法（[\#54](https://gitcode.com/cann/amct/pull/54)）。
 
 ## 删除和废弃特性
 
@@ -171,7 +170,7 @@
 - 新增90+ [Reg编程接口API](https://gitcode.com/cann/asc-devkit/blob/9.0.0-beta.2/docs/api/context/Reg%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97.md)资料，Reg矢量计算API是面向RegBase架构开发的API，用户可通过该API直接对芯片中涉及Vector计算的寄存器进行操作，实现更大的灵活性和更好的性能。
 - 新增SIMT[快速入门](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_map_10_0022.html)、[编程模型](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_10_10064.html)和[算子实现](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlasascendc_api_07_10293.html)介绍。
 - 新增SIMD与SIMT[混合编程模型](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_10_10052.html)、[算子实现](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_10_10039.html)、[性能优化](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_best_practices_10_10029.html)介绍。
-- 新增[SMIT API](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/API/ascendcopapi/atlasascendc_api_07_0427.html)。
+- 新增[SIMT API](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/API/ascendcopapi/atlasascendc_api_07_0427.html)。
 - 新增[兼容性迁移指南](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_compatibility_10_00001.html)（220x架构版本迁移到351x架构版本）。
 - 昇腾社区中，Ascend C算子开发新增[可视化专区](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/opdevg/Ascendcopdevg/atlas_ascendc_map_10_0017.html)，通过视频呈现Cube和Vector算子的执行过程。
 
