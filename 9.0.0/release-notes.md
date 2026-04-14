@@ -208,6 +208,7 @@
 
 #### AMCT模型压缩工具
 
+- 支持HIF8/FP8/FP4/MXFP8/MXFP4量化数据类型，支持HIF8 OFMR量化算法（[\#20](https://gitcode.com/cann/amct/pull/20)）
 - 支持HIF8分位量化算法（[\#54](https://gitcode.com/cann/amct/pull/54)）
 
 ## 删除和废弃特性
