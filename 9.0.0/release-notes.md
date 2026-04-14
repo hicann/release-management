@@ -159,6 +159,13 @@
 - 融合编译与<<<>>>调用方式支持[CPU模式](https://gitcode.com/cann/asc-tools/pull/138)以及[SIM仿真模式](https://gitcode.com/cann/asc-devkit/blob/9.0.0/cmake/asc/asc_modules/CMakeASCInformation.cmake)。
 - 联合毕昇编译器，优化融合编译性能。
 
+### 虚拟指令集
+
+- 支持[昇腾Ascend950PR芯片指令集](https://gitcode.com/cann/pto-isa/tree/master/include/pto/npu/a5)(含Element-Wise、TileScalar、固定管线、访存操作、复杂操作、卷积指令、量化指令等)及对应指令的[CPU-SIM实现](https://gitcode.com/cann/pto-isa/tree/master/include/pto/cpu)
+- 新增SDMA([#493](https://gitcode.com/cann/pto-isa/pull/493))、URMA([#715](https://gitcode.com/cann/pto-isa/pull/715))异步通信指令，多卡P2P/P2MP/信号量同步操作指令([#17]((https://gitcode.com/cann/pto-isa/pull/17)))
+- 新增[基础指令的CostModel](https://gitcode.com/cann/pto-isa/tree/master/include/pto/costmodel)性能仿真
+- 新增调试指令TPRINT，支持Vec、Mat、Acc存储中Tile数据及GM中Tensor数据打印([#31](https://gitcode.com/cann/pto-isa/pull/31), [#638](https://gitcode.com/cann/pto-isa/pull/638), [#725](https://gitcode.com/cann/pto-isa/pull/725))
+- 新增性能调优指令TPUSH/TPOP([#364](https://gitcode.com/cann/pto-isa/pull/364), [#431](https://gitcode.com/cann/pto-isa/pull/431), [#569](https://gitcode.com/cann/pto-isa/pull/569))及TPREFETCH([#73](https://gitcode.com/cann/pto-isa/pull/73), [#116](https://gitcode.com/cann/pto-isa/pull/116))
 
 ### 运行时
 
