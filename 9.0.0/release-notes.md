@@ -196,7 +196,7 @@
     - [aclError aclrtCtxSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxSetSysParamOpt.md) 
     - [aclError aclrtCtxGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxGetSysParamOpt.md)
 - 发布Runtime编程指南（[\#1030](https://gitcode.com/cann/runtime/pull/1030)）。
-- 发布Runtime Ascend950配套资料（[\#1255](https://gitcode.com/cann/runtime/pull/1255)）。
+- 发布Runtime Ascend950PR配套资料（[\#1255](https://gitcode.com/cann/runtime/pull/1255)）。
 
 ### 开发与维测工具
 
