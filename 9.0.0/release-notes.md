@@ -1,4 +1,4 @@
-# CANN 9.0.0 （开发中）
+# CANN 9.0.0版本说明
 
 ## 版本下载地址
 
@@ -50,13 +50,31 @@
 
 子包独立升级的具体操作请参考[子包独立升级](#子包独立升级)。
 
+## 关键特性
+
+### 安装易用性提升：新增apt和pip安装方式，提供一站式下载安装能力
+
+新增**apt**和**pip**安装方式。当前已支持conda、yum、apt、pip四种主流安装方式，进一步提升了不同环境下的部署灵活性。同时，新增**CANN一站式下载安装能力**，提供产品型号与软件包查询命令及自动匹配机制，简化安装流程，提升软件获取与部署效率。
+
+### DeepSeek系列加速：DSA系列算子性能优化并支持确定性计算
+
+DSA系列算子进一步提升流水并行度，其中SFAG算子性能提升至2x~6x+，模型提升至1.5x+，加速效果显著。新增支持确定性计算能力，可满足对结果一致性要求较高的场景需求，有助于提升训练与推理过程中的可复现性，并便于问题定位和稳定性验证。
+
+### 多模态场景加速：新增块稀疏Attention算子支持
+
+新增支持块稀疏Attention算子（Block-wise Sparse Attention,BSA）。在按Block划分的稀疏模式下，相比通用Flah Attention，90%稀疏率情况下，BSA计算量降低90%，执行速度提升至5x。该能力对多模态模型优化尤为关键，wan2.2和hunyuanvideo1.5在70%稀疏率时，模型分别提升至1.7x和1.5x。
+
+### 小消息高频通信场景加速：HCCL支持批量通信合并机制
+
+在Atlas A2 系列产品和Atlas A3 系列产品上，HCCL新增支持批量通信合并机制（HcclGroupStart/HcclGroupEnd接口），支持将多个通信操作合并后统一提交与执行。该机制可支持send/recv异步下发，提升小消息、高频通信场景下的执行效率。
+
 ## 新增特性
 
 ### 公共模块
 
 - CANN提升安装部署的易用性：
   - CANN新增apt-get、pip在线安装方式。
-  - CANN增加合一包：合一包由昇腾NPU驱动和Toolkit组成，支持一键式安装和通过参数可选安装。
+  - CANN增加合一包：合一包由昇腾NPU驱动和Toolkit组成，支持一键式安装和通过--whitelist参数指定安装。
 - CANN的ops算子包下新增Ascend-cann-950-ops包，支持Ascend 950PR算子功能。
 - CANN适配不同的昇腾硬件产品，新增OS兼容性支持。
   - 新增支持Atlas 350 加速卡，并适配veLinux 2.0、Alinux 3。
@@ -243,26 +261,26 @@
   - 支持AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题（[\#461](https://gitcode.com/cann/runtime/pull/461)）。
   - 支持Aclgraph场景Event规格扩充，扩充后的Event规格仅取决于Device内存（[\#482](https://gitcode.com/cann/runtime/pull/482)）。
   - 提供包版本号查询接口，根据包名查询返回数值版本号和字符串版本号，接口如下： 
-    - [aclError aclsysGetVersionStr(char *pkgName, char * versionStr)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclsysGetVersionStr.md) 
-    - [aclError aclsysGetVersionNum(char *pkgName，int32_t * versionNum)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclsysGetVersionNum.md) 
+    - [aclError aclsysGetVersionStr(char *pkgName, char * versionStr)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclsysGetVersionStr.md) 
+    - [aclError aclsysGetVersionNum(char *pkgName，int32_t * versionNum)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclsysGetVersionNum.md) 
 
   - 支持查询指定流（Stream）的优先级，接口如下： 
-    - [aclError aclrtStreamGetPriority(aclrtStream stream, uint32_t *priority)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtStreamGetPriority.md) 
+    - [aclError aclrtStreamGetPriority(aclrtStream stream, uint32_t *priority)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclrtStreamGetPriority.md) 
 
   - 支持查询创建Stream时设置的flag标志，接口如下： 
-    - [aclError aclrtStreamGetFlags(aclrtStream stream, uint32_t *flags)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtStreamGetFlags.md)   
+    - [aclError aclrtStreamGetFlags(aclrtStream stream, uint32_t *flags)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclrtStreamGetFlags.md)   
 
   - 支持获取Device的唯一标识UUID（Universally Unique Identifier），接口如下： 
-    - [aclError aclrtDeviceGetUuid (int32_t deviceId, aclrtUuid *uuid)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtDeviceGetUuid.md) 
+    - [aclError aclrtDeviceGetUuid (int32_t deviceId, aclrtUuid *uuid)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclrtDeviceGetUuid.md) 
  
   - 支持获取待查询地址所属内存块的起始地址以及内存块大小，接口如下： 
-    - [aclError aclrtMemGetAddressRange(void *ptr, void **pbase, size_t *psize)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtMemGetAddressRange.md) 
+    - [aclError aclrtMemGetAddressRange(void *ptr, void **pbase, size_t *psize)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclrtMemGetAddressRange.md) 
  
   - 支持设置和查询强一致性计算的参数，相关接口如下：
-    - [aclError aclrtSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtSetSysParamOpt.md) 
-    - [aclError aclrtGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtGetSysParamOpt.md) 
-    - [aclError aclrtCtxSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxSetSysParamOpt.md) 
-    - [aclError aclrtCtxGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/master/docs/api_docs/aclrtCtxGetSysParamOpt.md)
+    - [aclError aclrtSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclrtSetSysParamOpt.md) 
+    - [aclError aclrtGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclrtGetSysParamOpt.md) 
+    - [aclError aclrtCtxSetSysParamOpt(aclSysParamOpt opt, int64_t value)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclrtCtxSetSysParamOpt.md) 
+    - [aclError aclrtCtxGetSysParamOpt(aclSysParamOpt opt, int64_t *value)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclrtCtxGetSysParamOpt.md)
 - 发布Runtime编程指南（[\#1030](https://gitcode.com/cann/runtime/pull/1030)）。
 - 发布Runtime Ascend 950PR配套资料（[\#1255](https://gitcode.com/cann/runtime/pull/1255)）。
 
