@@ -10,15 +10,16 @@
 
 |CANN版本  |  配套Ascend HDK版本| 
 |--|--|
-| CANN 9.0.0 | [Ascend HDK 26.1.0](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.1.0)<br>[Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1) |
-| CANN 8.5.2 | >= Ascend HDK 25.5.1|
+| [CANN 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) | [Ascend HDK 26.0.RC1 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.0.RC1)<br> [Ascend HDK 25.5.2 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.2)  <br> [Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1) |
+| [CANN 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) | [Ascend HDK 26.0.RC1 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.0.RC1) <br> [Ascend HDK 25.5.2 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.2) <br> [Ascend HDK 25.5.1 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1)|
+
 
 **2、 CANN组合包版本配套关系**
 
 |ops版本  |配套toolkit版本  |  
 |--|--|
 | [ascend-cann-ops 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) | [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0)<br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
-| ascend-cann-ops 8.5.2  | >= ascend-cann-toolkit 8.5.2|
+| [ascend-cann-ops 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2)  |  [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) <br> [ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
 
 **3、 CANN独立升级子包版本配套关系**
 
@@ -58,11 +59,11 @@
 
 ### DeepSeek系列加速：DSA系列算子性能优化并支持确定性计算
 
-DSA系列算子进一步提升流水并行度，其中SFAG算子性能提升至2x~6x+，模型提升至1.5x+，加速效果显著。新增支持确定性计算能力，可满足对结果一致性要求较高的场景需求，有助于提升训练与推理过程中的可复现性，并便于问题定位和稳定性验证。
+在Atlas A2 系列产品和Atlas A3 系列产品上，DSA系列算子进一步提升流水并行度，其中SFAG算子性能提升至2x~6x+，模型提升至1.5x+，加速效果显著。新增支持确定性计算能力，可满足对结果一致性要求较高的场景需求，有助于提升训练与推理过程中的可复现性，并便于问题定位和稳定性验证。
 
 ### 多模态场景加速：新增块稀疏Attention算子支持
 
-新增支持块稀疏Attention算子（Block-wise Sparse Attention,BSA）。在按Block划分的稀疏模式下，相比通用Flah Attention，90%稀疏率情况下，BSA计算量降低90%，执行速度提升至5x。该能力对多模态模型优化尤为关键，wan2.2和hunyuanvideo1.5在70%稀疏率时，模型分别提升至1.7x和1.5x。
+在Atlas A2 系列产品和Atlas A3 系列产品上，新增支持块稀疏Attention算子（Block-wise Sparse Attention,BSA）。在按Block划分的稀疏模式下，相比通用Flah Attention，90%稀疏率情况下，BSA计算量降低90%，执行速度提升至5x。该能力对多模态模型优化尤为关键，wan2.2和hunyuanvideo1.5在70%稀疏率时，模型分别提升至1.7x和1.5x。
 
 ### 小消息高频通信场景加速：HCCL支持批量通信合并机制
 
@@ -301,7 +302,7 @@ DSA系列算子进一步提升流水并行度，其中SFAG算子性能提升至2
 
 ### 算子库
 
-transformer库以下接口在CANN 9.0.0中被标记为废弃，将在2027年3月30日之后的版本删除。
+**transformer库以下接口在CANN 9.0.0中被标记为废弃，将在2027年3月30日之后的版本删除**
 - aclnnGroupedMatMulAllReduce接口废弃，替换为：aclnnMatmulAllReduce。
 - aclnnGroupedMatmul/aclnnGroupedMatmulV2/aclnnGroupedMatmulV3/aclnnGroupedMatmulV4接口废弃，替换为：aclnnGroupedMatmulV5。
 - aclnnFusedInferAttentionScore/aclnnFusedInferAttentionScoreV2/aclnnFusedInferAttentionScoreV3接口废弃，替换为：aclnnFusedInferAttentionScoreV4。
