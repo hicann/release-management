@@ -293,7 +293,6 @@ CANN新增适配Ascend 950PR（Atlas 350加速卡）开源并新增相关重点�
 
 - msprof支持aicore-metrics选项采集自定义PMU指标能力（[\#136](https://gitcode.com/cann/oam-tools/pull/136)）.
 - HCCL性能测试工具支持FP64数据类型（[\#122](https://gitcode.com/cann/oam-tools/pull/122)）.
-- HCCL性能测试工具支持msfp8数据类型（[\#74](https://gitcode.com/cann/oam-tools/pull/74)）.
 
 #### AMCT模型压缩工具
 
