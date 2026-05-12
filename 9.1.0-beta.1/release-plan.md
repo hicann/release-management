@@ -14,3 +14,5 @@
 ## 状态说明：discussion(方案讨论，需求未接受)，developing(开发中)，Testing(测试中)，Accepted(已验收)
 |no|feature|status|sig|owner|
 |:----|:---|:---|:--|:----|
+|1|[npugraph_ex新增支持SuperKernel融合]()|Accepted|sig-ops-transformer|cc-z|
+|2|[aclgraph支持非连续静态算子执行]()|Accepted|sig-ops-transformer|cc-z|
