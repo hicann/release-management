@@ -48,146 +48,60 @@
 子包独立升级的具体操作请参考[子包独立升级](#子包独立升级)。
 
 ## 关键特性
-### DS推理Decode阶段性能：npugraph_ex新增支持SuperKernel融合
-在Atlas A3系列产品上，基于Aclgraph路径，提供了SuperKernel算子融合技术，在已编译的二进制代码基础上融合创建一个超级Kernel函数（简称SuperKernel），以调用子函数的方式调用多个其它内核函数，达到缩减调度开销、优化计算任务的目的，可大幅提升DS推理Decode阶段性能。
-### aclgraph算子性能提升：支持非连续静态算子执行
-在Atlas A2系列产品和Atlas A3系列产品上，新增支持非连续输入的静态算子执行。支持将存在非连续输入的动态算子落盘编译为静态算子后执行。该机制可以提升aclgraph整网/Superkernel算子执行效率。
+### 推理Decode阶段性能优化：npugraph_ex新增支持SuperKernel融合
+基于aclgraph路径，提供了SuperKernel算子融合技术，在已编译的二进制代码基础上融合创建一个超级Kernel函数（简称SuperKernel），以调用子函数的方式调用多个其它内核函数，达到缩减调度开销、优化计算任务的目的，可提升推理Decode阶段性能（[!346](https://gitcode.com/cann/opbase/pull/346) ）。
+### aclgraph场景下算子性能提升：支持非连续静态算子执行
+新增支持非连续输入的静态算子执行。开启开关后将存在非连续输入的动态算子落盘编译为静态算子后执行，该机制可以提升aclgraph场景下Superkernel算子执行效率（[!64](https://gitcode.com/cann/graph-autofusion/pull/64) [!99](https://gitcode.com/cann/graph-autofusion/pull/99)）。
      
 ## 新增特性
 
 ### 公共模块
 不涉及。
-
 ### 算子库
-
+不涉及。
 #### ops-nn库
-
-- lstm系列算子开源（样例）:
-  - [ThnnFusedLstmCellGrad算子]（[!793](https://gitcode.com/cann/ops-nn/pull/793)）。
-  - [SingleLayerLstmGrad算子]（[!796](https://gitcode.com/cann/ops-nn/pull/796)）。
-  - [ThnnFusedLstmCell算子]（[!1999](https://gitcode.com/cann/ops-nn/pull/1999)）。
+不涉及。
 #### ops-transformer库
-
-- transformer相关算子在Atlas A3系列产品上能力完善(样例)：
-  - [MC2 dispatch和combine算子支撑Aiv直驱Roce能力:moe_distribute_dispatch](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.1/mc2/moe_distribute_dispatch_v2/README.md)。
-  - [Rope 支持算子泛化mrope_section](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/posembedding/rope_with_sin_cos_cache/README.md)。
-  - [BlockSparseAttention算子能力增强](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/attention/block_sparse_attention/README.md)。
-  - [GroupedMatmulSwigluQuantV2算子能力增强支持A4W4动态分块优化](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/gmm/grouped_matmul_swiglu_quant_v2/README.md)。
-  - [GroupedMatmul算子能力增强A4W4支持NZ转置动态分块优化](https://gitcode.com/cann/ops-transformer/blob/9.0.0-beta.2/gmm/grouped_matmul/README.md)。
-
+不涉及。
 #### ops-cv库
 不涉及。
 #### ops-math库
-
 不涉及。
-
 #### opbase库
-不涉及。
+ - 新增支持非连续输入的静态算子执行。开启开关后将存在非连续输入的动态算子落盘编译为静态算子后执行，该机制可以提升aclgraph场景下Superkernel算子执行效率[!346](https://gitcode.com/cann/opbase/pull/346)）。
 ### 通信库
-
+不涉及。
 #### 集合通信
-
-- （样例）通信算子支持Ascend 950PR，覆盖 `Allgather`、`AllgatherV`、`Allreduce`、`AlltoAll`、`AlltoAllV`、`Broadcast`、`Reduce`、`ReduceScatter`、`ReduceScatterV`、`Scatter`、`SendRecv` 等([\#106](https://gitcode.com/cann/hccl/pull/106))。
+不涉及。
 #### 单边通信
-
-- (样例)单边通信： Atlas A3 训练系列产品/Atlas A3 推理系列产品 支持自动建链模式，无需显式调用connect接口([\#106](https://gitcode.com/cann/hixl/issues/106))。
-
+不涉及。
 ### 领域加速库
 不涉及。
 ### 图引擎
-
-- （样例）ES构图提供多种场景的sample ([!72](https://gitcode.com/cann/ge/pull/72) 、[!123](https://gitcode.com/cann/ge/pull/123)) 。
-
+- 支持aclgraph场景下开启SuperKernel功能（[!346](https://gitcode.com/cann/opbase/pull/346) ）。
 ### 算子编程
-
-- (样例)Ascend 950PR支持SIMD编程模式，提供[200+ API 接口](https://gitcode.com/cann/asc-devkit/tree/9.0.0/impl/basic_api/dav_c310)跨代兼容能力，可实现Atlas A2系列产品和Atlas A3系列产品算子平滑迁移。
-
+不涉及。
 ### 虚拟指令集
-
-- (样例)支持[昇腾Ascend 950PR指令集](https://gitcode.com/cann/pto-isa/tree/master/include/pto/npu/a5)（含Element-Wise、TileScalar、固定管线、访存操作、复杂操作、卷积指令、量化指令等）及对应指令的[CPU-SIM实现](https://gitcode.com/cann/pto-isa/tree/master/include/pto/cpu)
+不涉及。
 ### 运行时
-
-- 运行时Runtime支持Ascend 950PR。
-- 易用性增强：
-  - （样例）提供包版本号查询接口，根据包名查询返回数值版本号和字符串版本号，接口如下： 
-    - [aclError aclsysGetVersionStr(char *pkgName, char * versionStr)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclsysGetVersionStr.md) 
-    - [aclError aclsysGetVersionNum(char *pkgName，int32_t * versionNum)](https://gitcode.com/cann/runtime/blob/9.0.0/docs/api_docs/aclsysGetVersionNum.md) 
+不涉及。
 ### 开发与维测工具
-
-#### 性能调优工具
-
-- (样例)msprof支持aicore-metrics选项采集自定义PMU指标能力（[\#136](https://gitcode.com/cann/oam-tools/pull/136)）。
-
-#### AMCT模型压缩工具
-
-- （样例）支持HIF8/FP8/FP4/MXFP8/MXFP4量化数据类型，支持HIF8 OFMR量化算法（[\#20](https://gitcode.com/cann/amct/pull/20)）。
-
+不涉及。
 ## 删除和废弃特性
 
 ### 算子库
-
-**transformer库以下接口在CANN 9.0.0中被标记为废弃，将在2027年3月30日之后的版本删除**
-- （样例）aclnnGroupedMatMulAllReduce接口废弃，替换为：aclnnMatmulAllReduce。
-
+不涉及。
 ### 模型压缩工具
-
-（样例）模型压缩工具以下特性标记为废弃，废弃的特性将在cann 9.0.0之后的版本删除。
-- 非均匀量化
-- 自动混合精度
-- 近似校准
-- int4量化感知训练
-- amct_mindspore所有特性
+不涉及。
 
 ## 已知问题
-
-（样例）问题一：在通信域使用int64算子的模型中，发生断链时，快恢耗时有分钟级增加到十几分钟级，影响MTTR
-【引入版本】CANN 9.0.0
-【缺陷影响】int64算子不支持重执行流程，无法走STEP快恢，影响断联场景下任务重执行 
-【规避方案】不使用int64类型的集合通信算子，使用其他类型的算子临时替代
+不涉及。
 
 ## 已修复问题
-
-- （样例）修复了catlass算子编译报错“ld.lld: error: undefined symbol: CheckLogLevel”的问题。
+不涉及。
 
 ## 文档变更说明
-
-### 环境准备
-
-《CANN 快速开始》调整至“环境准备”节点下，并变更为《CANN 快速安装》。
-
-### 编程指南
-
-#### Ascend C算子开发
-
-- （样例）快速入门新增SIMD、SIMT简介，新增基于SIMT编程的快速入门章节。
-- 编程指南中编程模型新增“AI Core SIMT编程”、“SIMD与SIMT混合编程”章节。
-
-#### 通信算子开发
-
-- （样例）《通信算子开发》从《HCCL集合通信库》中独立出来，作为单本手册发布至“编程指南”节点下。
-
-#### 应用开发
-
-（样例）《应用开发》文档大纲调整，按功能特性调整一级目录，调整点如下：
-- 将“运行时管理”章节下的内容提升一个级别。
-
-#### 图开发
-
-- （样例）手册大纲调整：内容进行整合与重构，开发态内容移入“编程指南”章节。
-
-### API参考
-
-#### GE图引擎 API
-
-- （样例）接口参考按照语言进行分类，分为C++语言、Python语言、C语言接口，其中Python语言接口为新增接口。
-
-#### HCCL集合通信库
-
-- （样例）《HCCL集合通信库》的“相关参考>集群信息配置”章节下，新增“rank table配置资源信息（Atlas 350 加速卡）”章节。
-
-### 开发工具
-
-（样例）《msLeaks内存泄漏检测工具》命名变更为《内存分析工具》。
+不涉及。
 
 ## 漏洞修补列表
 
