@@ -57,19 +57,19 @@ CANN新增适配Ascend 950PR（Atlas 350加速卡）开源并新增相关重点�
 
 ### 安装易用性提升：新增apt和pip安装方式，提供一站式下载安装能力
 
-新增**apt**和**pip**安装方式。当前已支持conda、yum、apt、pip四种主流安装方式，进一步提升了不同环境下的部署灵活性。同时，新增**CANN一站式下载安装能力**，提供产品型号与软件包查询命令及自动匹配机制，简化安装流程，提升软件获取与部署效率。
+新增**apt**和**pip**安装方式。当前已支持conda、yum、apt、pip四种主流安装方式。同时，新增**CANN一站式下载安装能力**，软件获取与部署时长从2h缩短至45min。[特性链接](https://www.hiascend.com/cann/download)
 
 ### DeepSeek系列加速：DSA系列算子性能优化并支持确定性计算
 
-在Atlas A2 系列产品和Atlas A3 系列产品上，DSA系列算子进一步提升流水并行度，其中SFAG算子性能提升至2x~6x+，模型提升至1.5x+，加速效果显著。新增支持确定性计算能力，可满足对结果一致性要求较高的场景需求，有助于提升训练与推理过程中的可复现性，并便于问题定位和稳定性验证。
+在Atlas A2 系列产品和Atlas A3 系列产品上，DSA系列算子进一步提升流水并行度，其中SFAG算子性能提升至2x~6x+，模型提升至1.5x+。新增支持确定性计算能力，可满足对结果一致性要求较高的场景需求。[特性链接](https://gitcode.com/cann/ops-transformer/blob/9.0.0/attention/sparse_flash_attention_grad/docs/aclnnSparseFlashAttentionGrad.md)
 
 ### 多模态场景加速：新增块稀疏Attention算子支持
 
-在Atlas A2 系列产品和Atlas A3 系列产品上，新增支持块稀疏Attention算子（Block-wise Sparse Attention,BSA）。在按Block划分的稀疏模式下，相比通用Flah Attention，90%稀疏率情况下，BSA计算量降低90%，执行速度提升至5x。该能力对多模态模型优化尤为关键，wan2.2和hunyuanvideo1.5在70%稀疏率时，模型分别提升至1.7x和1.5x。
+在Atlas A2 系列产品和Atlas A3 系列产品上，新增支持块稀疏Attention算子（Block-wise Sparse Attention,BSA），相比通用Flah Attention，90%稀疏率情况下，BSA计算量降低90%，执行速度提升至5x。wan2.2和hunyuanvideo1.5在70%稀疏率时，模型分别提升至1.7x和1.5x。[特性链接](https://gitcode.com/cann/ops-transformer/blob/9.0.0/attention/block_sparse_attention/README.md)
 
 ### 小消息高频通信场景加速：HCCL支持批量通信合并机制
 
-在Atlas A2 系列产品和Atlas A3 系列产品上，HCCL新增支持批量通信合并机制（HcclGroupStart/HcclGroupEnd接口），支持将多个通信操作合并后统一提交与执行。该机制可支持send/recv异步下发，提升小消息、高频通信场景下的执行效率。
+在Atlas A2 系列产品和Atlas A3 系列产品上，HCCL新增支持批量通信合并机制（HcclGroupStart/HcclGroupEnd接口），支持将多个通信操作合并后统一提交与执行，提升小消息、高频通信场景下的执行效率。([HcclGroupStart](https://www.hiascend.com/document/detail/zh/canncommercial/900/API/hcclug/hcclcpp_07_0063.html),[HcclGroupEnd](https://www.hiascend.com/document/detail/zh/canncommercial/900/API/hcclug/hcclcpp_07_0064.html))
 
 ## 新增特性
 
@@ -409,7 +409,7 @@ CANN新增适配Ascend 950PR（Atlas 350加速卡）开源并新增相关重点�
 
 ## 漏洞修补列表
 
-版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/850/releasenote/releasenote_0025.html)。
+版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900/maintenref/refdoc/refer002.html)。
 
 ## 子包独立升级
 
