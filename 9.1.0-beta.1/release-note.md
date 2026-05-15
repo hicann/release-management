@@ -1,4 +1,4 @@
-# CANN 9.1.0版本说明(开发中)
+# CANN 9.1.0-beta.1版本说明
 
 ## 版本下载地址
 
@@ -10,7 +10,7 @@
 
 |CANN版本  |  配套Ascend HDK版本| 
 |--|--|
-| [CANN 9.1.0-beta.1](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0-beta.1) | [Ascend HDK 26.0.RC1 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.0.RC1)<br> [Ascend HDK 25.5.2 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.2)  <br> [Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1) |
+| [CANN 9.1.0-beta.1](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0-beta.1) | [Ascend HDK 26.0.RC1 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.0.RC1)<br> [Ascend HDK 25.5.2 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.2) <br> [Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1) |
 
 **2、 CANN组合包版本配套关系**
 
@@ -48,50 +48,24 @@
 子包独立升级的具体操作请参考[子包独立升级](#子包独立升级)。
 
 ## 关键特性
+
 ### 推理Decode阶段性能优化：npugraph_ex新增支持SuperKernel融合
 基于aclgraph路径，提供了SuperKernel算子融合技术，在已编译的二进制代码基础上融合创建一个超级Kernel函数（简称SuperKernel），以调用子函数的方式调用多个其它内核函数，达到缩减调度开销、优化计算任务的目的，可提升推理Decode阶段性能（[!346](https://gitcode.com/cann/opbase/pull/346) ）。
+
 ### aclgraph场景下算子性能提升：支持非连续静态算子执行
 新增支持非连续输入的静态算子执行。开启开关后将存在非连续输入的动态算子落盘编译为静态算子后执行，该机制可以提升aclgraph场景下Superkernel算子执行效率（[!64](https://gitcode.com/cann/graph-autofusion/pull/64) [!99](https://gitcode.com/cann/graph-autofusion/pull/99)）。
      
 ## 新增特性
 
-### 公共模块
-不涉及。
 ### 算子库
-不涉及。
-#### ops-nn库
-不涉及。
-#### ops-transformer库
-不涉及。
-#### ops-cv库
-不涉及。
-#### ops-math库
-不涉及。
+
 #### opbase库
  - 新增支持非连续输入的静态算子执行。开启开关后将存在非连续输入的动态算子落盘编译为静态算子后执行，该机制可以提升aclgraph场景下Superkernel算子执行效率[!346](https://gitcode.com/cann/opbase/pull/346)）。
-### 通信库
-不涉及。
-#### 集合通信
-不涉及。
-#### 单边通信
-不涉及。
-### 领域加速库
-不涉及。
+
 ### 图引擎
 - 支持aclgraph场景下开启SuperKernel功能（[!346](https://gitcode.com/cann/opbase/pull/346) ）。
-### 算子编程
-不涉及。
-### 虚拟指令集
-不涉及。
-### 运行时
-不涉及。
-### 开发与维测工具
-不涉及。
-## 删除和废弃特性
 
-### 算子库
-不涉及。
-### 模型压缩工具
+## 删除和废弃特性
 不涉及。
 
 ## 已知问题
@@ -100,12 +74,9 @@
 ## 已修复问题
 不涉及。
 
-## 文档变更说明
-不涉及。
-
 ## 漏洞修补列表
 
-版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/850/releasenote/releasenote_0025.html)。
+版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900/maintenref/refdoc/refer002.html)。
 
 ## 子包独立升级
 
