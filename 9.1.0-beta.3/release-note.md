@@ -54,13 +54,20 @@
 
 ### aclgraph场景下算子性能提升：支持非连续静态算子执行
 新增支持非连续输入的静态算子执行。开启开关后将存在非连续输入的动态算子落盘编译为静态算子后执行，该机制可以提升aclgraph场景下Superkernel算子执行效率（[!64](https://gitcode.com/cann/graph-autofusion/pull/64) [!99](https://gitcode.com/cann/graph-autofusion/pull/99)）。
-     
+
+### PageAttentionOperation、SelfAttentionOperation：长序列输入推理支持
+新增MASK_TYPE_NORM_COMPRESS场景。该特性影响长序列特性，若未开启压缩mask, 推理阶段会消耗约大量显存（如128K输入），使得部分模型在310p硬件中将无法运行。该机制可以使得模型支持长序列输入，提升模型可用性（[!2114](https://gitcode.com/cann/ascend-transformer-boost/pull/2114) [!2116](https://gitcode.com/cann/ascend-transformer-boost/pull/2116)）。
+
 ## 新增特性
 
 ### 算子库
 
 #### opbase库
  - 新增支持非连续输入的静态算子执行。开启开关后将存在非连续输入的动态算子落盘编译为静态算子后执行，该机制可以提升aclgraph场景下Superkernel算子执行效率[!346](https://gitcode.com/cann/opbase/pull/346)）。
+
+#### ascend-transformer-boost库
+ - PageAttentionOperation中，mask_type支持MASK_TYPE_NORM_COMPRESS。开启后在310p场景中支持长序列特性[!2114](https://gitcode.com/cann/ascend-transformer-boost/pull/2114)）。
+ - SelfAttentionOperation中，mask_type支持MASK_TYPE_NORM_COMPRESS。开启后在310p场景中支持长序列特性[!2116](https://gitcode.com/cann/ascend-transformer-boost/pull/2116)）。
 
 ### 图引擎
 - 支持aclgraph场景下开启SuperKernel功能（[!346](https://gitcode.com/cann/opbase/pull/346) ）。
