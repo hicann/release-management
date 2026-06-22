@@ -1,18 +1,16 @@
 # Release plan
 |Stange name|Begin time|End time|
 |:----------|:---------|:-------|
-|Collect feature|2026/03/01|2026/03/30|
-|Develop|2026/04/01|2026/04/22|
-|Build|2026/04/23|2026/04/23|
-|Test round 1|2026/04/23|2026/04/30|
-|Test round 2|2026/05/01|2026/05/06|
-|Test round 3|2026/05/07|2026/05/08|
-|QA report|2026/05/09|2026/05/09|
-|Release|2026/05/10|2026/05/10|
+|Collect feature|2026/04/01|2026/04/30|
+|Develop|2026/05/06|2026/05/22|
+|Build|2026/05/23|2026/05/23|
+|Test round 1|2026/05/24|2026/05/31|
+|Test round 2|2026/06/01|2026/06/07|
+|Test round 3|2026/06/08|2026/06/14|
+|QA report|2026/06/23|2026/06/23|
+|Release|2026/06/24|2026/06/24|
 
 # Feture list
 ## 状态说明：discussion(方案讨论，需求未接受)，developing(开发中)，Testing(测试中)，Accepted(已验收)
 |no|feature|status|sig|owner|
 |:----|:---|:---|:--|:----|
-|1|[npugraph_ex新增支持SuperKernel融合]()|Accepted|sig-ops-transformer|cc-z|
-|2|[aclgraph支持非连续静态算子执行]()|Accepted|sig-ops-transformer|cc-z|

@@ -47,26 +47,38 @@
 
 子包独立升级的具体操作请参考[子包独立升级](#子包独立升级)。
 
-## 关键特性
-
-- 待补充
 ## 新增特性
 
 ### 算子库
 
 #### opbase库
-- 待补充
+不涉及。
 #### ops-math库
-- 待补充
+不涉及。
 #### ops-nn库
-- 待补充
+- 卷积算子功能性能优化，优化多模态网络性能，内存占用不理恶化([!735](https://gitcode.com/cann/ops-nn/pull/735))。
+1、dX支持超大W输入场景对W切分；
+2、dW支持确定性场景下开启性能优化特性；
+3、dX支持stride=kernel和fmap=kernel场景转MM，优化性能。
 #### ops-cv库
-- 待补充
+不涉及。
 #### ops-transformer库
-- 待补充
+不涉及。
+
+### 通信库
+- 集合通信：PDCCL支持显存资源预留功能，显存资源预留相关需求功能CANN领域内部涉及组件统一由集合通信进行分解(NPU Driver/CANN/HCCL)，包含以下功能([!1593](https://gitcode.com/cann/hcomm/pull/1593))：
+	1）集合通信支持根据HDK的npu-smi或HCCN_TOOL工具提供显存资源预留配置预留显存资源；
+	2）集合通信支持提供预留显存资源的预留、分配等管理功能；
+	3）集合通信支持识别PDCCL进程，并向内核态申请预留显存资源；
+	
+- 集合通信：AIV模式下搬运类算子支持int64/uint64，RL下某些场景可能数值超过int32，因此需要使用int64/uint64([!1973](https://gitcode.com/cann/hcomm/pull/1973))：
+	A2: Broadcast/AlltoAll/AlltoAllV/AlltoAllVC/AllGather/AllGatherV算子支持int64/uint64；
+
+- 集合通信：单卡支持创建SIO和HCCS并发channel：支持卡内2Die之间多条可用的通信链路，可以提升通信效率和性能([!2100](https://gitcode.com/cann/hcomm/pull/2100))：
+	A3 NPU卡内2Die之间支持SIO和HCCS链路并行传输方案：HCCL（HcclChannelAcquire接口）根据指定的链路类型创建channel
 
 ### 图引擎
-- 待补充
+不涉及。
 
 ## 删除和废弃特性
 不涉及。

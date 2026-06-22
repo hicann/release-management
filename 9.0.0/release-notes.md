@@ -340,6 +340,7 @@ CANN新增适配Ascend 950PR（Atlas 350加速卡）开源并新增相关重点�
 
 ## 已修复问题
 
+以下问题在9.0.0版本修复：
 - 修复了catlass算子编译报错“ld.lld: error: undefined symbol: CheckLogLevel”的问题。
 - 修复了在Atlas 900 A2硬件上，PadV3Grad 算子因不支持[16,16,16,16] 规格的 padding 输入，执行过程上报“EZ9999”错误码的问题。
 - 修复了MutMul算子在矩阵乘(32162, 4096)@(32162,32768)运算时，计算结果出现NAN的问题。
@@ -347,6 +348,18 @@ CANN新增适配Ascend 950PR（Atlas 350加速卡）开源并新增相关重点�
 - 修复了aclnnQuantMatmul算子，当输入参数为切片参数时，报错shape不一致的问题。
 - 修复了FAG算子在(1,32,641,128) no mask场景下，因数据切块丢失尾部数据，导致模型调用超时的问题。
 - 修复了一个集群任务中环境同时存在两个驱动版本，使用reduce通信算子时，出现HCCL通信卡死导致任务运行失败的问题。
+
+以下问题在9.0.1版本修复：
+- 修复了A2大EP场景D节点注入HBM多bit故障，D节点无法正常进入快恢流程的问题。
+- 修复了4k卡训练任务在500+step后随机step位置发生通信超时的极低概率问题。
+- 修复了PD分离场景，decode频繁挂掉重启以后，prefill积压的问题。
+- 修复了开源仓客户自定义算子和内置算子IR原型重名不生效的问题。
+- 修复了aclnnAddmv算子压测偶现coredump的问题。
+- 修复了万卡任务拉起报错为"The comm domain have not exist"的问题。
+- 修复了aclgraph场景特定shape下MatMulV3较MatMulV2性能较差的问题。
+- 修复了fused_quant_mat_mul场景存在的精度问题。
+- 修复了BatchMatmulV2 在特定bias场景下存在精度问题。
+- 修复了FAG算子短序列GQA、NoMask场景存在精度问题。
 
 ## 文档变更说明
 
