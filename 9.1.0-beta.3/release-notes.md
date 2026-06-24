@@ -1,4 +1,4 @@
-# CANN 9.1.0-beta.3版本说明（开发中）
+# CANN 9.1.0-beta.3版本说明
 
 ## 版本下载地址
 
@@ -51,19 +51,11 @@
 
 ### 算子库
 
-#### opbase库
-不涉及。
-#### ops-math库
-不涉及。
 #### ops-nn库
 - 卷积算子功能性能优化，优化多模态网络性能，内存占用不理恶化([!735](https://gitcode.com/cann/ops-nn/pull/735))。
 1、dX支持超大W输入场景对W切分；
 2、dW支持确定性场景下开启性能优化特性；
 3、dX支持stride=kernel和fmap=kernel场景转MM，优化性能。
-#### ops-cv库
-不涉及。
-#### ops-transformer库
-不涉及。
 
 ### 通信库
 - 集合通信：PDCCL支持显存资源预留功能，显存资源预留相关需求功能CANN领域内部涉及组件统一由集合通信进行分解(NPU Driver/CANN/HCCL)，包含以下功能([!1593](https://gitcode.com/cann/hcomm/pull/1593))：
@@ -76,15 +68,6 @@
 
 - 集合通信：单卡支持创建SIO和HCCS并发channel：支持卡内2Die之间多条可用的通信链路，可以提升通信效率和性能([!2100](https://gitcode.com/cann/hcomm/pull/2100))：
 	A3 NPU卡内2Die之间支持SIO和HCCS链路并行传输方案：HCCL（HcclChannelAcquire接口）根据指定的链路类型创建channel
-
-### 图引擎
-不涉及。
-
-## 删除和废弃特性
-不涉及。
-
-## 已知问题
-不涉及。
 
 ## 已修复问题
 - ops-nn: 修复了QuantBatchMatmulV3算子在Atlas推理系列产品硬件上，编译时指定ATUO_SYNC=false导致算子读写冲突的问题。
