@@ -64,6 +64,8 @@
     1）Ascend950支持静态库([!3623](https://gitcode.com/cann/ops-nn/pull/3623))<br>
     2）kernel配置脚本优化([!3330](https://gitcode.com/cann/ops-nn/pull/3330))
 ### 通信库
+
+#### 集合通信
 - 集合通信：PDCCL支持显存资源预留功能，显存资源预留相关需求功能CANN领域内部涉及组件统一由集合通信进行分解(NPU Driver/CANN/HCCL)，包含以下功能([!1593](https://gitcode.com/cann/hcomm/pull/1593))：
 	1）集合通信支持根据HDK的npu-smi或HCCN_TOOL工具提供显存资源预留配置预留显存资源；
 	2）集合通信支持提供预留显存资源的预留、分配等管理功能；
@@ -80,6 +82,13 @@
 - HIXL 智能链路管理升级：实现通信资源自动获取及智能路由选择（[#181](https://gitcode.com/cann/hixl/issues/181)），支持按需建链（[#245](https://gitcode.com/cann/hixl/issues/245)），简化使用流程，提升易用性
 - HIXL 编程 API 能力增强：扩展异步链路管理（[#207](https://gitcode.com/cann/hixl/issues/207)）、传输状态批量查询（[#208](https://gitcode.com/cann/hixl/issues/208)）两类接口，丰富异步编程范式，提升上层业务开发效率
 
+
+- Ascend 950PR 支持CCU场景的allGatherV/reduceScatterV算子([\#303](https://gitcode.com/cann/hccl/pull/303) [\#207](https://gitcode.com/cann/hccl/pull/207))
+- Ascend 950PR 支持GE图模式&aclGraph模式下的通信算子入图([\#183](https://gitcode.com/cann/hccl/pull/183) [\#164](https://gitcode.com/cann/hccl/pull/164) [\#296](https://gitcode.com/cann/hccl/pull/296))
+- Ascend 950PR 支持N秒快恢能力，提升集合通信运行可靠性([\#1126](https://gitcode.com/cann/hcomm/pull/1126) [\#1609](https://gitcode.com/cann/hcomm/pull/1609) [\#421](https://gitcode.com/cann/hccl/pull/421))
+- Ascend 950PR 支持taskexception&profiling等维测能力，提升问题定位易用性([\#937](https://gitcode.com/cann/hcomm/pull/937) [\#1472](https://gitcode.com/cann/hcomm/pull/1472) [\#267](https://gitcode.com/cann/hccl/pull/267) [\#332](https://gitcode.com/cann/hccl/pull/332))
+- Ascend 950PR HcclChannelAcquire接口支持AIV直驱RoCE和URMA能力，支撑通算融合算子的自定义开发([\#2032](https://gitcode.com/cann/hcomm/pull/2032))
+- Atlas A3 的allreduce&reducescatter算子在AIV展开模式下支持batch一致性([\#1029](https://gitcode.com/cann/hcomm/pull/1029) [\#1032](https://gitcode.com/cann/hccl/pull/1032))
 
 ## 已修复问题
 - ops-nn: 修复了QuantBatchMatmulV3算子在Atlas推理系列产品硬件上，编译时指定ATUO_SYNC=false导致算子读写冲突的问题。
