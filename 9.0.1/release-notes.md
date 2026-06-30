@@ -82,16 +82,16 @@
 
 ## 已修复问题
 
-- 修复了A2大EP场景D节点注入HBM多bit故障，D节点无法正常进入快恢流程的问题。
-- 修复了4k卡训练任务在500+step后随机step位置发生通信超时的极低概率问题。
-- 修复了PD分离场景，decode频繁挂掉重启以后，prefill积压的问题。
+- 修复了Atlas A2系列产品的大EP场景下，D节点注入片上内存多bit故障，无法进入快速恢复流程的问题。
+- 修复了4k卡训练任务在500+step后随机step位置概率性出现的通信超时问题。
+- 修复了PD分离场景，decode频繁挂掉重启导致的refill积压问题。
 - 修复了开源仓客户自定义算子和内置算子IR原型重名不生效的问题。
 - 修复了aclnnAddmv算子压测偶现coredump的问题。
-- 修复了万卡任务拉起报错为"The comm domain have not exist"的问题。
-- 修复了aclgraph场景特定shape下MatMulV3较MatMulV2性能较差的问题。
+- 修复了万卡任务拉起报错的问题。
+- 修复了aclgraph场景特定shape下MatMulV3性能比MatMulV2差的问题。
 - 修复了fused_quant_mat_mul场景存在的精度问题。
-- 修复了BatchMatmulV2 在特定bias场景下存在精度问题。
-- 修复了FAG算子短序列GQA、NoMask场景存在精度问题。
+- 修复了BatchMatmulV2在特定bias场景下存在的精度问题。
+- 修复了FAG算子短序列GQA、NoMask场景存在的精度问题。
 
 ## 漏洞修补列表
 
