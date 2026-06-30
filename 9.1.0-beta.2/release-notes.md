@@ -52,11 +52,17 @@
 ### 算子库
 
 #### ops-nn库
-- 卷积算子功能性能优化，优化多模态网络性能，内存占用不理恶化([!735](https://gitcode.com/cann/ops-nn/pull/735))。
-1、dX支持超大W输入场景对W切分；
-2、dW支持确定性场景下开启性能优化特性；
-3、dX支持stride=kernel和fmap=kernel场景转MM，优化性能。
-
+- 卷积算子功能性能优化，优化多模态网络性能，内存占用不理恶化([!735](https://gitcode.com/cann/ops-nn/pull/735))。<br>
+    1）dX支持超大W输入场景对W切分；<br>
+    2）dW支持确定性场景下开启性能优化特性；<br>
+    3）dX支持stride=kernel和fmap=kernel场景转MM，优化性能。<br>
+- Ascend950新场景支持支持：<br>
+    1）引入ops-tensor，基于分层结构优化Cube类算子，减少偏移量计算和代码重复率([!5036](https://gitcode.com/cann/ops-nn/pull/5036))<br>
+    2）完善低bit类算子，支持精度补偿，优化整网精度RmsNormDynamicMxQuant([!2894](https://gitcode.com/cann/ops-nn/pull/2894))，DynamicBlockMxQuant([!1824](https://gitcode.com/cann/ops-nn/pull/1824))，DualLevelQuantBatchMatmul([!1141](https://gitcode.com/cann/ops-nn/pull/1141))<br>
+    3）HardswishBackwardV2([!4817](https://gitcode.com/cann/ops-nn/pull/4817))、SyncBatchNormGatherStatsWithCounts([!5973](https://gitcode.com/cann/ops-nn/pull/5973))
+- nn仓工程优化：<br>
+    1）Ascend950支持静态库([!3623](https://gitcode.com/cann/ops-nn/pull/3623))<br>
+    2）kernel配置脚本优化([!3330](https://gitcode.com/cann/ops-nn/pull/3330))
 ### 通信库
 - 集合通信：PDCCL支持显存资源预留功能，显存资源预留相关需求功能CANN领域内部涉及组件统一由集合通信进行分解(NPU Driver/CANN/HCCL)，包含以下功能([!1593](https://gitcode.com/cann/hcomm/pull/1593))：
 	1）集合通信支持根据HDK的npu-smi或HCCN_TOOL工具提供显存资源预留配置预留显存资源；
