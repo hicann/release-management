@@ -90,6 +90,9 @@
 - Ascend 950PR HcclChannelAcquire接口支持AIV直驱RoCE和URMA能力，支撑通算融合算子的自定义开发([\#2032](https://gitcode.com/cann/hcomm/pull/2032))
 - Atlas A3 的allreduce&reducescatter算子在AIV展开模式下支持batch一致性([\#1029](https://gitcode.com/cann/hcomm/pull/1029) [\#1032](https://gitcode.com/cann/hccl/pull/1032))
 
+### 图框架
+- 支持950DT形态图框架能力恢复
+
 ## 已修复问题
 - ops-nn: 修复了QuantBatchMatmulV3算子在Atlas推理系列产品硬件上，编译时指定ATUO_SYNC=false导致算子读写冲突的问题。
 - ops-transformer: 修复了MatmulReduceScatterV2算子在小M场景下，flag位清零过快导致其他卡check不到的问题。
