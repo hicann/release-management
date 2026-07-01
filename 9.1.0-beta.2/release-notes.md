@@ -8,13 +8,13 @@
 
 **1、CANN与Ascend HDK版本配套关系**
 
-|CANN版本  |  配套Ascend HDK版本| 
+|CANN版本  |  配套Ascend HDK版本|
 |--|--|
 | [CANN 9.1.0-beta.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0-beta.3) | [Ascend HDK 26.0.RC1 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.0.RC1)<br> [Ascend HDK 25.5.2 ](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.2) <br> [Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1) |
 
 **2、 CANN组合包版本配套关系**
 
-|ops版本  |配套toolkit版本  |  
+|ops版本  |配套toolkit版本  |
 |--|--|
 |[ascend-cann-ops 9.1.0-beta.2](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.1.0-beta.3/) | [ascend-cann-toolkit 9.1.0-beta.3](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.1.0-beta.3/)|
 
@@ -94,13 +94,13 @@
 	1）集合通信支持根据HDK的npu-smi或HCCN_TOOL工具提供显存资源预留配置预留显存资源；
 	2）集合通信支持提供预留显存资源的预留、分配等管理功能；
 	3）集合通信支持识别PDCCL进程，并向内核态申请预留显存资源；
-	
+
 - 集合通信：AIV模式下搬运类算子支持int64/uint64，RL下某些场景可能数值超过int32，因此需要使用int64/uint64([!1973](https://gitcode.com/cann/hcomm/pull/1973))：
 	A2: Broadcast/AlltoAll/AlltoAllV/AlltoAllVC/AllGather/AllGatherV算子支持int64/uint64；
 
 - 集合通信：单卡支持创建SIO和HCCS并发channel：支持卡内2Die之间多条可用的通信链路，可以提升通信效率和性能([!2100](https://gitcode.com/cann/hcomm/pull/2100))：
 	A3 NPU卡内2Die之间支持SIO和HCCS链路并行传输方案：HCCL（HcclChannelAcquire接口）根据指定的链路类型创建channel
-    
+
 - HIXL 底层通信接口开放：构建 Client-Server 模式单边通信能力，全面提升建链规格与建链性能。针对批量小 Buffer 传输场景深度优化，有效降低 HBM 占用与通信资源开销（[#138](https://gitcode.com/cann/hixl/issues/138)）
 - HIXL 网络传输协议扩展：单边通信新增 UBC、UBoE、Host RoCE 协议支持，完整覆盖 D2D、D2rH、rH2D、H2H 全场景数据传输（[#37](https://gitcode.com/cann/hixl/issues/37)），不同产品形态的协议支持清单可查阅 [HIXL](https://gitcode.com/cann/hixl) 社区
 - HIXL 智能链路管理升级：实现通信资源自动获取及智能路由选择（[#181](https://gitcode.com/cann/hixl/issues/181)），支持按需建链（[#245](https://gitcode.com/cann/hixl/issues/245)），简化使用流程，提升易用性
@@ -119,6 +119,38 @@
 
 ### 运行时
 - 支持950DT AclGraph场景stream规格扩充至64K，解决大模型资源不足等问题([\#32976](https://gitcode.com/cann/runtime/pull/2976))
+
+###  算子编程
+
+#### 关键特性
+- 维测能力：
+  - AscendC框架基础API支持NPU Check（[PR#1557](https://gitcode.com/cann/asc-devkit/pull/1557) [PR#1467](https://gitcode.com/cann/asc-devkit/pull/1467)），增强算子运行时校验能力。
+  - SIMD VF内支持printf和reg dump打印（[PR#1605](https://gitcode.com/cann/asc-devkit/pull/1605)），提供调试打印和寄存器数据dump能力。
+  - Ascend 950PR/DT支持L1 Tensor数据的DumpTensor（[PR#2175](https://gitcode.com/cann/asc-devkit/pull/2175)），扩展L1层数据调试支持。
+  - 新增optype_collector工具，支持检查optype重名（[PR#285](https://gitcode.com/cann/asc-tools/pull/285)）。
+- 编译工程
+  - 编译工程CMakeModule支持CMAKE_\<LANG\>编译选项（[PR#2055](https://gitcode.com/cann/asc-devkit/pull/2055)）；
+- 基础API
+  - 支持设置ctrl寄存器的饱和溢出管理（[PR#2077](https://gitcode.com/cann/asc-devkit/pull/2077)）。
+- SIMT编程
+  - 新增ld/st接口（[PR#2058](https://gitcode.com/cann/asc-devkit/pull/2058)）和AddrSpace类接口（[PR#1597](https://gitcode.com/cann/asc-devkit/pull/1597)），丰富SIMT内存访问编程能力。
+
+#### 样例更新
+- SIMD样例：
+  - 新增最佳实践样例：matmul+gelu融合、datacopy优化、bank冲突优化、group_matmul量化组矩阵乘、simt&simd高性能编程（[PR#1814](https://gitcode.com/cann/asc-devkit/pull/1814) [PR#2137](https://gitcode.com/cann/asc-devkit/pull/2137) [PR#2141](https://gitcode.com/cann/asc-devkit/pull/2141) [PR#2166](https://gitcode.com/cann/asc-devkit/pull/2166) [PR#2363](https://gitcode.com/cann/asc-devkit/pull/2363)）。
+  - 新增Ascend 950新特性样例及兼容性样例整改：loopmode数据搬运、interleave矢量计算、datacopy_gm2l1、loadmx（Load2DMX）、mmad_mx、data_copy_pad等（[PR#2336](https://gitcode.com/cann/asc-devkit/pull/2336) [PR#1899](https://gitcode.com/cann/asc-devkit/pull/1899) [PR#2124](https://gitcode.com/cann/asc-devkit/pull/2124)）。
+  - 新增RegBase基础样例：基础算术、数据类型转换、归约、比较、索引等样例（[PR#1459](https://gitcode.com/cann/asc-devkit/pull/1459) [PR#1575](https://gitcode.com/cann/asc-devkit/pull/1575) [PR#2024](https://gitcode.com/cann/asc-devkit/pull/2024)）。
+  - 新增SIMD VF print样例和dump样例（[PR#2558](https://gitcode.com/cann/asc-devkit/pull/2558)）。
+  - 新增Tensor API入门及最佳实践样例：Matmul入门、数据搬入搬出、搬出随路量化、MX FP4最佳实践（[PR#2553](https://gitcode.com/cann/asc-devkit/pull/2553)）。
+- SIMT样例：
+  - 新增SIMT优化特性样例：DCache访问优化样例（[PR#2453](https://gitcode.com/cann/asc-devkit/pull/2453)）、基于transpose的仿存合并和bank冲突样例（[PR#1753](https://gitcode.com/cann/asc-devkit/pull/1753)）、最佳实践样例：通过类型对齐提升搬运效率（[PR#2297](https://gitcode.com/cann/asc-devkit/pull/2297)）。
+  - 新增SIMT功能特性样例：pytorch注册自定义算子（[PR#2769](https://gitcode.com/cann/asc-devkit/pull/2769)）、编译相关样例（动态、静态、分离编译等）（[PR#2356](https://gitcode.com/cann/asc-devkit/pull/2356)）、profiling样例（[PR#1989](https://gitcode.com/cann/asc-devkit/pull/1989)）、内存屏障特性样例（[PR#1923](https://gitcode.com/cann/asc-devkit/pull/1923)）、Warp类特性样例（[PR#2876](https://gitcode.com/cann/asc-devkit/pull/2876)）、simulator样例（[PR#2692](https://gitcode.com/cann/asc-devkit/pull/2692)）、kernel log样例（[PR#2131](https://gitcode.com/cann/asc-devkit/pull/2131)）。
+
+#### 资料文档
+- 新增矩阵计算概述和计算分形介绍的文档（[PR#2533](https://gitcode.com/cann/asc-devkit/pull/2533)）。
+- 优化矢量计算API文档，补充指令约束等（[PR#2676](https://gitcode.com/cann/asc-devkit/pull/2676)）。
+- 增加SIMD与SIMT混合编程性能优化概述（[PR#2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
+- 搭建VitePress文档站点，提供AscendC资料预览功能（[PR#2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
 
 ## 已修复问题
 - ops-nn: 修复了QuantBatchMatmulV3算子在Atlas推理系列产品硬件上，编译时指定ATUO_SYNC=false导致算子读写冲突的问题。
@@ -146,7 +178,7 @@
 **组合包**Ascend-cann-toolkit和Ascend-cann-ops**安装在默认路径下**（即安装时未使用“--install-path”参数）
 
 ```bash
-chmod +x cann-hixl_x.y.z_linux-aarch64.run 
+chmod +x cann-hixl_x.y.z_linux-aarch64.run
 ./cann-hixl_x.y.z_linux-aarch64.run --upgrade
 ```
 
