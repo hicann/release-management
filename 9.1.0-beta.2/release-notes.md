@@ -51,6 +51,55 @@
 
 ### 算子库
 
+#### ops-math库
+- Ascend950适配与场景支持：<br>
+    1）Diag算子适配([!2185](https://gitcode.com/cann/ops-math/pull/2185))；<br>
+    2）Asin算子适配([!2216](https://gitcode.com/cann/ops-math/pull/2216))；<br>
+    3）PadV2算子适配([!1562](https://gitcode.com/cann/ops-math/pull/1562))；<br>
+    4）BitwiseOr/BitwiseXor整型数据类型支持([!2384](https://gitcode.com/cann/ops-math/pull/2384))；<br>
+    5）Cross算子适配([!2232](https://gitcode.com/cann/ops-math/pull/2232))；<br>
+    6）AngleV2算子适配([!2674](https://gitcode.com/cann/ops-math/pull/2674))。<br>
+- 性能优化：<br>
+    1）Sort算子小轴场景排序性能优化([!2985](https://gitcode.com/cann/ops-math/pull/2985))；<br>
+    2）随机数算子生成性能优化([!3590](https://gitcode.com/cann/ops-math/pull/3590))；<br>
+    3）TopkV2算子性能优化，提升int64索引场景计算效率([!2564](https://gitcode.com/cann/ops-math/pull/2564))；<br>
+    4）AICPU算子性能优化，覆盖ClipByValueV2([!2460](https://gitcode.com/cann/ops-math/pull/2460))、ConcatV2([!2395](https://gitcode.com/cann/ops-math/pull/2395))、CumSum([!2262](https://gitcode.com/cann/ops-math/pull/2262))。<br>
+- 工程优化：<br>
+    1）并行解压编译加速([!2332](https://gitcode.com/cann/ops-math/pull/2332))；<br>
+    2）统一引用CANN公共仓构建API，精简冗余构建脚本([!2372](https://gitcode.com/cann/ops-math/pull/2372))；<br>
+    3）去除gawk外部依赖，采用纯bash实现时间戳格式化([!2407](https://gitcode.com/cann/ops-math/pull/2407))。<br>
+
+#### ops-cv库
+- Ascend950适配与场景支持：<br>
+    1）NMSWithMask算子适配([!560](https://gitcode.com/cann/ops-cv/pull/560))；<br>
+    2）GridSampler2DGrad算子适配Bicubic模式([!847](https://gitcode.com/cann/ops-cv/pull/847))；<br>
+    3）UpsampleNearestExact2d/3d算子适配([!851](https://gitcode.com/cann/ops-cv/pull/851))；<br>
+    4）UpsampleNearestExact1d算子适配([!830](https://gitcode.com/cann/ops-cv/pull/830))；<br>
+    5）UpsampleNearestExactGrad算子适配([!798](https://gitcode.com/cann/ops-cv/pull/798))；<br>
+    6）UpsampleTrilinear3d算子适配([!927](https://gitcode.com/cann/ops-cv/pull/927))；<br>
+    7）CIoU算子适配([!833](https://gitcode.com/cann/ops-cv/pull/833))；<br>
+    8）BlendFaceBgPartTwo算子适配([!825](https://gitcode.com/cann/ops-cv/pull/825))。<br>
+- 性能优化：<br>
+    1）ResizeNearestNeighborV2算子NCHW格式性能优化([!822](https://gitcode.com/cann/ops-cv/pull/822))；<br>
+    2）GridSamplerGrad算子性能优化([!946](https://gitcode.com/cann/ops-cv/pull/946))。<br>
+- 工程优化：<br>
+    1）统一引用CANN公共仓构建API，精简冗余构建脚本([!820](https://gitcode.com/cann/ops-cv/pull/820))；<br>
+    2）统一使用CANN公共仓接口管理第三方依赖([!867](https://gitcode.com/cann/ops-cv/pull/867))；<br>
+    3）ops-cv安装优化改造，解压即安装。<br>
+
+#### opbase仓
+- 新增特性：<br>
+    1）支持float8/float6/float4数据类型及资料([!298](https://gitcode.com/cann/opbase/pull/298)、[!479](https://gitcode.com/cann/opbase/pull/479)、[!486](https://gitcode.com/cann/opbase/pull/486))；<br>
+    2）reduce模板混合精度支持([!255](https://gitcode.com/cann/opbase/pull/255))；<br>
+    3）新增非连续输入算子静态支持([!346](https://gitcode.com/cann/opbase/pull/346)、[!353](https://gitcode.com/cann/opbase/pull/353))；<br>
+    4）日志接口DFX增强([!350](https://gitcode.com/cann/opbase/pull/350)、[!448](https://gitcode.com/cann/opbase/pull/448)、[!513](https://gitcode.com/cann/opbase/pull/513)、[!299](https://gitcode.com/cann/opbase/pull/299))。<br>
+- 性能优化：<br>
+    1）broadcast非连续tensor性能优化([!317](https://gitcode.com/cann/opbase/pull/317))；<br>
+    2）优化build.sh增量编译性能，复用CMake缓存避免重复配置([!391](https://gitcode.com/cann/opbase/pull/391))。<br>
+- 工程优化：<br>
+    1）切换工程构建打包依赖至CANN公共仓([!361](https://gitcode.com/cann/opbase/pull/361))；<br>
+    2）安装优化改造，解压即安装([!308](https://gitcode.com/cann/opbase/pull/308))。<br>
+
 #### ops-nn库
 - 卷积算子功能性能优化，优化多模态网络性能，内存占用不理恶化([!735](https://gitcode.com/cann/ops-nn/pull/735))。<br>
     1）dX支持超大W输入场景对W切分；<br>
