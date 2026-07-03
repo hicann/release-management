@@ -167,7 +167,7 @@
 - 支持950DT形态图框架能力恢复
 
 ### 运行时
-- 支持950DT AclGraph场景stream规格扩充至64K，解决大模型资源不足等问题([\#32976](https://gitcode.com/cann/runtime/pull/2976))
+- 支持Ascend 950DT AclGraph场景stream规格扩充至64K，解决大模型资源不足等问题([\#32976](https://gitcode.com/cann/runtime/pull/2976))
 
 ###  算子编程
 
