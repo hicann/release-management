@@ -164,7 +164,7 @@
 - Atlas A3 的allreduce&reducescatter算子在AIV展开模式下支持batch一致性([\#1029](https://gitcode.com/cann/hcomm/pull/1029) [\#1032](https://gitcode.com/cann/hccl/pull/1032))
 
 ### 图框架
-- 支持950DT形态图框架能力恢复
+- 支持Ascend 950DT形态图框架能力恢复.
 
 ### 运行时
 - 支持Ascend 950DT AclGraph场景stream规格扩充至64K，解决大模型资源不足等问题([\#32976](https://gitcode.com/cann/runtime/pull/2976))
