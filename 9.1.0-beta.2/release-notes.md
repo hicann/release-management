@@ -52,7 +52,7 @@
 ### 算子库
 
 #### ops-math库
-- Ascend950适配与场景支持：<br>
+- Ascend 950PR/Ascend 950DT适配与场景支持：<br>
     1）Diag算子适配([!2185](https://gitcode.com/cann/ops-math/pull/2185))；<br>
     2）Asin算子适配([!2216](https://gitcode.com/cann/ops-math/pull/2216))；<br>
     3）PadV2算子适配([!1562](https://gitcode.com/cann/ops-math/pull/1562))；<br>
@@ -70,7 +70,7 @@
     3）去除gawk外部依赖，采用纯bash实现时间戳格式化([!2407](https://gitcode.com/cann/ops-math/pull/2407))。<br>
 
 #### ops-cv库
-- Ascend950适配与场景支持：<br>
+- Ascend 950PR/Ascend 950DT适配与场景支持：<br>
     1）NMSWithMask算子适配([!560](https://gitcode.com/cann/ops-cv/pull/560))；<br>
     2）GridSampler2DGrad算子适配Bicubic模式([!847](https://gitcode.com/cann/ops-cv/pull/847))；<br>
     3）UpsampleNearestExact2d/3d算子适配([!851](https://gitcode.com/cann/ops-cv/pull/851))；<br>
