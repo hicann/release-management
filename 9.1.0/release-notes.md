@@ -47,7 +47,37 @@
 
 子包独立升级的具体操作请参考[子包独立升级](#子包独立升级)。
 
+## 关键特性
+
+**DeepSeekV4加速：新增SMLA系列/mHC系列算子支持**
+
+在Atlas A2 系列产品和Atlas A3 系列产品上，新增支持SMLA正反向/mHC正反向算子，模型提升至1.3+([SMLA](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_flash_mla/docs/aclnnSparseFlashMla.md),[SMLAG](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_flash_mla_grad/docs/aclnnSparseFlashMlaGrad.md),[LI](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/lightning_indexer_v2/docs/aclnnLightningIndexerV2.md),[SLIG](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_lightning_indexer_kl_loss_grad/docs/aclnnSparseLightningIndexerKLLossGrad.md),[mhc](https://gitcode.com/cann/ops-transformer/tree/9.1.0/mhc))。
+
+**MOE结构加速：新增MegaMoe通算融合算子支持**
+
+在Atlas A2 系列产品和Atlas A3 系列产品上，支持[MegaMoe](https://gitcode.com/cann/ops-transformer/blob/9.1.0/mc2/mega_moe/README.md)通算算子，在Deepseek/Qwen/GLM系列模型提升至1.2+。
+
+**发布Host CPU 亲和性绑核工具：**  
+在Atlas A3/A5系列产品支持Host CPU性能调优，支持Host CPU 亲和性绑核与资源隔离([msboost](https://gitcode.com/Ascend/msboost))。
+
+**提供AICore直驱的通信编程接口：**
+
+在Ascend 950产品，SHMEM 首发支持 AICore 直驱 MTE/UDMA/RDMA，使能UB和RoCE通信，提供相应编程接口。
+
 ## 新增特性
+
+### 公共模块
+
+- cpu性能调优：  
+  - Toolkit 新增 mindstudio-boost 子包，面向 HostBound 业务场景，支持对关键线程自动化绑核与资源隔离，实现性能调优([!1](https://gitcode.com/Ascend/msboost/pull/1))。
+
+- cann适配不同昇腾硬件产品，新增os兼容性支持。  
+  - Atlas 350 适配tlinux 3.3、tlinux 4.4、anolis os 8.9。  
+  - Atlas 800i a2、Atlas 800i a3、Atlas 850/850e 适配hce 3.0 。  
+  - Atlas 800i a3 适配euler 2.15。  
+  - Atlas 950 superpod、Atlas 850/850e 适配 openeuler 24.03 lts sp4
+
+- cann支持python 3.14.*版本，支持cann在高版本python下运行
 
 ### 算子库
 
@@ -58,7 +88,21 @@
     3）PadV2算子适配([!1562](https://gitcode.com/cann/ops-math/pull/1562))；<br>
     4）BitwiseOr/BitwiseXor整型数据类型支持([!2384](https://gitcode.com/cann/ops-math/pull/2384))；<br>
     5）Cross算子适配([!2232](https://gitcode.com/cann/ops-math/pull/2232))；<br>
-    6）AngleV2算子适配([!2674](https://gitcode.com/cann/ops-math/pull/2674))。<br>
+    6）AngleV2算子适配([!2674](https://gitcode.com/cann/ops-math/pull/2674));<br>
+    7）CdistGrad（[!2981](https://gitcode.com/cann/ops-math/pull/2981)；<br>
+    8）ReduceLogSum（[!2628](https://gitcode.com/cann/ops-math/pull/2628)）；<br>
+    9）Complex（[!3742](https://gitcode.com/cann/ops-math/pull/3742)）；<br>
+    10）AmpUpdataScale（[!3224](https://gitcode.com/cann/ops-math/pull/3224)）；<br>
+    11）ReduceNansum（[!3153](https://gitcode.com/cann/ops-math/pull/3153)）；<br>
+    12）Polar（[!2827](https://gitcode.com/cann/ops-math/pull/2827)）；<br>
+    13）AngleV2（[!2674](https://gitcode.com/cann/ops-math/pull/2674)）；<br>
+    14）Atan2（[!2315](https://gitcode.com/cann/ops-math/pull/2315)）；<br>
+    15）LogAddExp（[!3150](https://gitcode.com/cann/ops-math/pull/3150)；<br>
+    16）TopK算子NPU内存占用优化，模型场景shape(n, s), s > 100000000,  s/200 > topk > s/50，额外申请内存相比输入+输出不超过100%，其余场景不劣化（[!3183](https://gitcode.com/cann/ops-math/pull/3183)）；<br>
+    17）AddN算子新增aclnn接口支持（[!2720](https://gitcode.com/cann/ops-math/pull/2720) [!3587](https://gitcode.com/cann/ops-math/pull/3587)）；<br>
+    18）cholesky算子支持大尾轴场景输入（[!2255](https://gitcode.com/cann/ops-math/pull/2255)）；<br>
+    19）ReduceSum算子支持bool输入（[!3014](https://gitcode.com/cann/ops-math/pull/3014)）
+
 - 性能优化：<br>
     1）Sort算子小轴场景排序性能优化([!2985](https://gitcode.com/cann/ops-math/pull/2985))；<br>
     2）随机数算子生成性能优化([!3590](https://gitcode.com/cann/ops-math/pull/3590))；<br>
@@ -78,7 +122,18 @@
     5）UpsampleNearestExactGrad算子适配([!798](https://gitcode.com/cann/ops-cv/pull/798))；<br>
     6）UpsampleTrilinear3d算子适配([!927](https://gitcode.com/cann/ops-cv/pull/927))；<br>
     7）CIoU算子适配([!833](https://gitcode.com/cann/ops-cv/pull/833))；<br>
-    8）BlendFaceBgPartTwo算子适配([!825](https://gitcode.com/cann/ops-cv/pull/825))。<br>
+    8）BlendFaceBgPartTwo算子适配([!825](https://gitcode.com/cann/ops-cv/pull/825))；<br>
+    9）新增SpatialTransformer算子，根据仿射变换参数对输入特征图进行空间扭曲变换，常用于图像配准和生成任务[!698](https://gitcode.com/cann/ops-cv/pull/698)）；<br>
+    10）新增adjust_saturation算子，支持对图像饱和度进行自适应调整（[!696](https://gitcode.com/cann/ops-cv/pull/696)）；<br>
+    11）新增scaleandtranslate算子，支持指定缩放因子和平移量对图像进行仿射变换（[!693](https://gitcode.com/cann/ops-cv/pull/693)）；<br>
+    12）新增BoundingBoxEncode算子，计算锚框与真实边界框之间的编码偏移量，生成目标检测回归目标（[!1049](https://gitcode.com/cann/ops-cv/pull/1049)）；<br>
+    13）新增NMSWithMask算子，支持带掩码的非极大值抑制，用于目标检测后处理（[!560](https://gitcode.com/cann/ops-cv/pull/560)）；<br>
+    14）ExtractGlimpseV2、UpsampleBicubic2d新增Ascend950 SIMT实现。ExtractGlimpseV2从特征图中根据中心点和窗口大小截取局部区域，UpsampleBicubic2d实现双三次插值上采样（[!1039](https://gitcode.com/cann/ops-cv/pull/1039)）；<br>
+    15）UpsampleNearestExact1d及系列反向算子新增Ascend950支持（[!830](https://gitcode.com/cann/ops-cv/pull/830) [!798](https://gitcode.com/cann/ops-cv/pull/798)）；<br>
+    16）AIPP新增CSC色域转换能力，支持YUV420SP/U8、RGB888/U8、BGR888/U8、XRGB8888/U8等多种格式之间的色域转换（[!765](https://gitcode.com/cann/ops-cv/pull/765)），并新增动态AIPP通路支持（[!802](https://gitcode.com/cann/ops-cv/pull/802)）；<br>
+    17）GridSample2D算子新增BF16数据类型支持（[!715](https://gitcode.com/cann/ops-cv/pull/715) [!751](https://gitcode.com/cann/ops-cv/pull/751)）；<br>
+    18）新增cv常量折叠算子流程，支持CropAndResize等算子在编译期进行常量折叠优化（[!690](https://gitcode.com/cann/ops-cv/pull/690)）；<br>
+    19）新增算子多平台迁移指南文档，指导开发者将算子从Ascend 910B平台迁移至Ascend 950平台（[!639](https://gitcode.com/cann/ops-cv/pull/639)）。<br>
 - 性能优化：<br>
     1）ResizeNearestNeighborV2算子NCHW格式性能优化([!822](https://gitcode.com/cann/ops-cv/pull/822))；<br>
     2）GridSamplerGrad算子性能优化([!946](https://gitcode.com/cann/ops-cv/pull/946))。<br>
@@ -113,6 +168,13 @@
     1）Ascend950支持静态库([!3623](https://gitcode.com/cann/ops-nn/pull/3623))<br>
     2）kernel配置脚本优化([!3330](https://gitcode.com/cann/ops-nn/pull/3330))
 
+- A2A3 Cube类算子能力增强，优化网络性能并减少部分场景的内存占用：
+    1）aclnnMatmulWeightNz性能优化([!5444](https://gitcode.com/cann/ops-nn/pull/5444))([!5105](https://gitcode.com/cann/ops-nn/pull/5105))
+    2）aclnnTransposeBatchMatmul放开B*K < 65536的限制([!4240](https://gitcode.com/cann/ops-nn/pull/4240))
+    3）aclnnBatchMatmul FP32数据类型下大Batch小MKN场景性能优化([!6103](https://gitcode.com/cann/ops-nn/pull/6103))([!7264](https://gitcode.com/cann/ops-nn/pull/7264))
+    4）Cube类算子支持配置out_dtype([!4823](https://gitcode.com/cann/ops-nn/pull/4823))([!5481](https://gitcode.com/cann/ops-nn/pull/5481))([!5602](https://gitcode.com/cann/ops-nn/pull/5602))
+    5）Cube类算子内存占用优化([!5356](https://gitcode.com/cann/ops-nn/pull/5356))([!5864](https://gitcode.com/cann/ops-nn/pull/5864))
+
 #### ops-transformer库
 
 **注意力（Attention/MLA）类**
@@ -130,11 +192,18 @@
 **GMM（GroupedMatmul）量化类**
 - GroupedMatmulFinalizeRouting在A5上新增W8A8场景的确定性支持([!6289](https://gitcode.com/cann/ops-transformer/pull/6289))。
 - GroupedMatmulSwigluQuantV2新增WeightNz MxA8W4数据流及MXFP4权重NZ格式支持([!5267](https://gitcode.com/cann/ops-transformer/pull/5267)、[!5419](https://gitcode.com/cann/ops-transformer/pull/5419)、[!5272](https://gitcode.com/cann/ops-transformer/pull/5272))。
+- GMM和GMMAdd GlistType规格增强([!4844](https://gitcode.com/cann/ops-transformer/pull/4844)、[!3725](https://gitcode.com/cann/ops-transformer/pull/3725))。
 
 **MC2（通信-计算融合）类**
 - 新增AllToAllMatmulV2算子([!6062](https://gitcode.com/cann/ops-transformer/pull/6062))。
 - AllGatherMatmulV2、AllToAllVGroupedMatmul/GroupedMatmulAllToAllV增加comm_mode通信引擎参数，支持选择通信引擎([!5340](https://gitcode.com/cann/ops-transformer/pull/5340)、[!6103](https://gitcode.com/cann/ops-transformer/pull/6103))。
 - MatmulReduceScatterV2适配AICPU通信([!5515](https://gitcode.com/cann/ops-transformer/pull/5515))。
+
+**Mhc类**
+- 【A2/A3】支持MhcPost算子([!3670](https://gitcode.com/cann/ops-transformer/pull/3670))。
+- 【A2/A3】支持MhcPostBackward算子([!4377](https://gitcode.com/cann/ops-transformer/pull/4377))。
+- 【A2/A3】支持MhcPreSinkhorn算子([!5033](https://gitcode.com/cann/ops-transformer/pull/5033))。
+- 【A2/A3】支持MhcPreSinkhornBackward算子([!4760](https://gitcode.com/cann/ops-transformer/pull/4760))。
 
 ### 通信库
 
@@ -155,9 +224,38 @@
 - Ascend 950PR 支持N秒快恢能力，提升集合通信运行可靠性([\#1126](https://gitcode.com/cann/hcomm/pull/1126) [\#1609](https://gitcode.com/cann/hcomm/pull/1609) [\#421](https://gitcode.com/cann/hccl/pull/421))
 - Ascend 950PR 支持taskexception&profiling等维测能力，提升问题定位易用性([\#937](https://gitcode.com/cann/hcomm/pull/937) [\#1472](https://gitcode.com/cann/hcomm/pull/1472) [\#267](https://gitcode.com/cann/hccl/pull/267) [\#332](https://gitcode.com/cann/hccl/pull/332))
 - Ascend 950PR HcclChannelAcquire接口支持AIV直驱RoCE和URMA能力，支撑通算融合算子的自定义开发([\#2032](https://gitcode.com/cann/hcomm/pull/2032))
+- [A2/A3]单卡多进程能力新增支持MC2场景([!1880](https://gitcode.com/cann/hcomm/pull/1880))
+- [A2/A3]aclGraph场景下资源管理优化，支撑通信资源增量刷新([!2405](https://gitcode.com/cann/hcomm/pull/2405) [!2502](https://gitcode.com/cann/hcomm/pull/2502))
+- [A3]跨超节点场景性能优化，ReduceScatter/AllGather算子支持跨超pipeline算法([!2071](https://gitcode.com/cann/hcomm/pull/2071) [!1931](https://gitcode.com/cann/hcomm/pull/1931))
+- [A3]新增支持双机背靠背RoCE直连机型通信([!2642](https://gitcode.com/cann/hcomm/pull/2642) [!3433](https://gitcode.com/cann/hcomm/pull/3433))
+- [A5]标卡支持跨PCIE SW进行通信([!1997](https://gitcode.com/cann/hcomm/pull/1799) [!707](https://gitcode.com/cann/hccl/pull/707))
+    AllReduce、ReduceScatter、AllGather、Reduce、Scatter、Alltoall、Alltoallv、Send、Recv等算子支持通信
 
 ### 图框架
 - 支持Ascend 950DT形态图框架能力恢复.
+
+### 领域加速库
+
+#### Ascend Transformer Boost加速库
+
+- **Ascend 950 核心算子接入**  
+批量落地 GELU、LayerNorm、MatmulEinSum、RmsNormQuant、SwiGluQuant（ACLNN V2）、Linear 反量化，以及 AllGather / AllReduce / ReduceScatter 等通信算子 A5 支持（[!1994](https://gitcode.com/cann/ascend-transformer-boost/pull/1994) [!2089](https://gitcode.com/cann/ascend-transformer-boost/pull/2089) [!2090](https://gitcode.com/cann/ascend-transformer-boost/pull/2090) [!2060](https://gitcode.com/cann/ascend-transformer-boost/pull/2060) [!2097](https://gitcode.com/cann/ascend-transformer-boost/pull/2097) [!2103](https://gitcode.com/cann/ascend-transformer-boost/pull/2103) [!2091](https://gitcode.com/cann/ascend-transformer-boost/pull/2091)）。
+
+- **Attention / KV Cache 推理增强**  
+Paged Attention 950 升级 ACLNN FIA v5；Paged Attention / Flash Attention 新增 NORM_COMPRESS 掩码；MLA decode 支持 SWA 滑动窗口；950 ReshapeAndCache 单入单出能力落地（[!2069](https://gitcode.com/cann/ascend-transformer-boost/pull/2069) [!2114](https://gitcode.com/cann/ascend-transformer-boost/pull/2114) [!2116](https://gitcode.com/cann/ascend-transformer-boost/pull/2116) [!2078](https://gitcode.com/cann/ascend-transformer-boost/pull/2078) [!2065](https://gitcode.com/cann/ascend-transformer-boost/pull/2065)）。
+
+- **torch_atb 独立编译与 ABI 体系**  
+torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel 命名规范、安装脚本自动检测/安装 torch，安装部署链路打通（[!2021](https://gitcode.com/cann/ascend-transformer-boost/pull/2021) [!2086](https://gitcode.com/cann/ascend-transformer-boost/pull/2086) [!2118](https://gitcode.com/cann/ascend-transformer-boost/pull/2118)）。
+
+- **开发者文档与测试框架**  
+新增测试框架指南，补齐 cxx_abi 判断、CANN 9.1 / PyTorch 26.0.0 版本配套说明（[!2120](https://gitcode.com/cann/ascend-transformer-boost/pull/2120) [!2121](https://gitcode.com/cann/ascend-transformer-boost/pull/2121) [!2126](https://gitcode.com/cann/ascend-transformer-boost/pull/2126) [!2136](https://gitcode.com/cann/ascend-transformer-boost/pull/2136)）。
+
+#### Ascend Signal Processing Boost加速库
+
+- FFT 1D C2C算子支持Ascend 950芯片（[!69](https://gitcode.com/cann/sip/pull/69)）。
+- FFT 1D C2R算子支持Ascend 950芯片（[!73](https://gitcode.com/cann/sip/pull/73)）。
+- FFT 1D R2C算子支持Ascend 950芯片（[!73](https://gitcode.com/cann/sip/pull/73)）。
+- Hadamard算子支持Ascend 950芯片（[!76](https://gitcode.com/cann/sip/pull/76)）。
 
 ### 运行时
 - 支持Ascend 950DT AclGraph场景stream规格扩充至64K，解决大模型资源不足等问题([\#2976](https://gitcode.com/cann/runtime/pull/2976))
@@ -194,38 +292,46 @@
 - 增加SIMD与SIMT混合编程性能优化概述（[PR#2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
 - 搭建VitePress文档站点，提供AscendC资料预览功能（[PR#2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
 
+## 删除和废弃特性】
+
+### 算子库
+
+**transformer库以下接口在CANN 9.0.0中被标记为废弃，将在2027年3月30日之后的版本删除**
+
+- aclnnGroupedMatMulAllReduce接口废弃，替换为：aclnnMatmulAllReduce。
+- aclnnGroupedMatmul/aclnnGroupedMatmulV2/aclnnGroupedMatmulV3/aclnnGroupedMatmulV4接口废弃，替换为：aclnnGroupedMatmulV5。
+- aclnnFusedInferAttentionScore/aclnnFusedInferAttentionScoreV2/aclnnFusedInferAttentionScoreV3接口废弃，替换为：aclnnFusedInferAttentionScoreV4。
+- aclnnIncreFlashAttention/aclnnIncreFlashAttentionV2/aclnnIncreFlashAttentionV3接口废弃，替换为：aclnnIncreFlashAttentionV4。
+- aclnnPromptFlashAttention/aclnnPromptFlashAttentionV2接口废弃，替换为：aclnnPromptFlashAttentionV3。
+- aclnnMlaProlog/aclnnMlaPrologV2WeightNz接口废弃，替换为：aclnnMlaPrologV3WeightNz。
+- aclnnMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnMatmulAllReduce和aclnnAddRmsNorm。
+- aclnnQuantMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnQuantMatmulAllReduceV2和aclnnAddRmsNorm。
+- aclnnWeightQuantMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnWeightQuantMatmulAllReduce和aclnnAddRmsNorm。
+- aclnnInplaceQuantMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnQuantMatmulAllReduceV2和aclnnAddRmsNorm。
+- aclnnInplaceMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnMatmulAllReduce和aclnnAddRmsNorm。
+- aclnnInplaceWeightQuantMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnWeightQuantMatmulAllReduce和aclnnAddRmsNorm。
+
+### 模型压缩工具
+
+模型压缩工具以下特性标记为废弃，废弃的特性将在cann 9.0.0之后的版本删除。
+- 非均匀量化。
+- 自动混合精度。
+- 近似校准。
+- int4量化感知训练。
+- amct_mindspore所有特性。
+
+## 已知问题
+
+问题一：算子aclnnMatmulCompressDequant的输入参数deqScale的值为inf/-inf时，其精度详情中显示有inf或nan  
+【引入版本】CANN 8.5.0
+【缺陷影响】测试特殊构造用例触发，非新算子引入，且实际量化场景下不会有descale为-inf和inf场景，当前版本影响可控  
+【规避方案】实际量化场景下不会有descale为-inf和inf场景
+
+## 已修复问题
+
+以下问题在9.1.0版本修复：  
+待补充
+
 ## 漏洞修补列表
 
 版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900/maintenref/refdoc/refer002.html)。
-
-## 子包独立升级
-
-### 使用场景
-
-子包独立升级提供了灵活的按需升级功能。
-
-使用场景举例：某用户已安装了a.b.c版本的组合包Ascend-cann-toolkit和Ascend-cann-ops，由于业务需要，要求将单边通信库能力更新至x.y.z版本，此时，可通过独立升级子包cann-hixl来实现。其中a.b.c和x.y.z请替换为实际版本号。
-
-### 操作步骤
-
-升级子包前，请确保已安装配套版本的组合包Ascend-cann-toolkit和Ascend-cann-ops。如未安装，请参考《[CANN 软件安装](https://hiascend.com/document/redirect/CannCommunityInstSoftware)》进行安装。
-
-子包的升级路径应与组合包的安装路径保持一致。所有子包的升级操作相同，以下以升级 cann-hixl\_x.y.z\_linux-aarch64.run 为例进行说明。
-
-**升级场景一：**
-
-**组合包**Ascend-cann-toolkit和Ascend-cann-ops**安装在默认路径下**（即安装时未使用“--install-path”参数）
-
-```bash
-chmod +x cann-hixl_x.y.z_linux-aarch64.run
-./cann-hixl_x.y.z_linux-aarch64.run --upgrade
-```
-
-**升级场景二：**
-
-**组合包**Ascend-cann-toolkit和Ascend-cann-ops**安装在指定路径**“/home/custom\_path”（即安装时指定“--install-path=/home/custom\_path”）
-
-```bash
-chmod +x cann-hixl_x.y.z_linux-aarch64.run
-./cann-hixl_x.y.z_linux-aarch64.run --upgrade --install-path=/home/custom_path
-```
