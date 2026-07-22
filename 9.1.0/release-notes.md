@@ -235,7 +235,10 @@
     AllReduce、ReduceScatter、AllGather、Reduce、Scatter、Alltoall、Alltoallv、Send、Recv等算子支持通信
 
 ### 图框架
-- 支持Ascend 950DT形态图框架能力恢复.
+- 支持Ascend 950DT形态图框架能力恢复。
+- ge.autoMultistreamParallelMode新增MainStream和LoadBalance选项，基于最小路径覆盖算法将静态Shape模型的计算节点自动划分至最少逻辑流，实现多流并行加速。
+- 新增PortableOp算子类型，面向离线推理场景提供自定义算子的序列化与反序列化能力。
+- ATC和aclgrph接口支持集群配置文件路径设置，用于生成含有HCCL通信任务的离线OM模型，满足多卡离线推理场景下的通信域配置需求。
 
 ### 领域加速库
 
@@ -295,7 +298,10 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 - 增加SIMD与SIMT混合编程性能优化概述（[PR#2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
 - 搭建VitePress文档站点，提供AscendC资料预览功能（[PR#2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
 
-## 删除和废弃特性】
+## 删除和废弃特性
+
+### aclblas与aclop接口编程
+- 自Ascend 950产品开始，aclblas和aclop接口不推荐使用，后续版本将逐步废弃，建议迁移至对应的aclnn算子接口。
 
 ### 算子库
 
