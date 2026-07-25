@@ -4,23 +4,263 @@
 
 <https://www.hiascend.com/cann/download>
 
-## 版本配套
+## 版本配套说明
 
-**1、CANN与Ascend HDK版本配套关系**
-| CANN版本                                                     | 配套Ascend HDK版本                                           |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [CANN 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0) | [Ascend HDK 26.1.0](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.1.0)<br>[Ascend HDK 26.0.RC1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.0.RC1)<br>[Ascend HDK 25.5.2](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.2) <br>[Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1) |
-| [CANN 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) | [Ascend HDK 26.1.0](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.1.0)<br>[Ascend HDK 26.0.RC1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.0.RC1)<br>[Ascend HDK 25.5.2](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.2) <br>[Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1) |
-| [CANN 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) | [Ascend HDK 26.1.0](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.1.0)<br>[Ascend HDK 26.0.RC1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+26.0.RC1)<br>[Ascend HDK 25.5.2](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.2) <br>[Ascend HDK 25.5.1](https://www.hiascend.com/hardware/firmware-drivers/community?product=4&model=32&cann=All&driver=Ascend+HDK+25.5.1) |
+CANN软件版本配套表
+<table style="margin: 0 auto; text-align:center;">
+  <tr>
+    <th>CANN</th>
+    <th>驱动版本（Ascend HDK）</th>
+  </tr>
+  <tr>
+    <td>9.1.0</td>
+    <td>26.1.0</td>
+  </tr>
+</table>
 
-**2、 CANN组合包版本配套关系**
-| ops版本                                                      | 配套toolkit版本                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [ascend-cann-ops 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0) <br>[ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) <br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
-| [ascend-cann-ops 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0) <br>[ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) <br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
-| [ascend-cann-ops 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0) <br>[ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) <br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
+## 版本兼容性说明
 
-**3、 CANN独立升级子包版本配套关系**
+CANN与Ascend HDK版本兼容
+<table style="table-layout: fixed; width: 750px; text-align:center;">
+  <colgroup>
+    <col style="width: 150px">
+    <col style="width: 150px">
+    <col style="width: 150px">
+    <col style="width: 150px">
+    <col style="width: 150px">
+  </colgroup>
+  <thead>
+    <tr>
+      <th rowspan="2">CANN</th>
+      <th colspan="3">驱动版本（Ascend HDK）</th>
+    </tr>
+    <tr>
+      <th>25.5.X</th>
+      <th>26.0.RC1/25.7.RC1</th>
+      <th>26.1.0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>8.5.2</td>
+      <td>Y</td>
+      <td>Y</td>
+      <td>Y</td>
+    </tr>
+    <tr>
+      <td>9.0.0</td>
+      <td>Y</td>
+      <td>Y</td>
+      <td>Y</td>
+    </tr>
+    <tr>
+      <td>9.1.0</td>
+      <td>Y</td>
+      <td>Y</td>
+      <td>Y</td>
+    </tr>
+  </tbody>
+</table>
+
+## CANN软件包内部配套关系
+
+### CANN组合配套关系
+
+CANN 9.1.0包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合包，CANN组合包与子包的配套关系如下。其中6个子包支持独立升级，用户可根据需求灵活安装。
+
+<table>
+  <thead>
+    <tr>
+      <th>CANN组合包</th>
+      <th>子包名称</th>
+      <th>子包版本号</th>
+      <th>架构</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="22">Toolkit</td>
+      <td>ascendnpu-ir</td>
+      <td>1.2.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-acl-extend</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-aoe</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-asc-devkit</td>
+      <td><a href="https://gitcode.com/cann/asc-devkit/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-asc-tools</td>
+      <td><a href="https://gitcode.com/cann/asc-tools/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-bisheng-compiler</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-dflow-executor</td>
+      <td><a href="https://gitcode.com/cann/ge/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-ge-compiler</td>
+      <td><a href="https://gitcode.com/cann/ge/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-ge-executor</td>
+      <td><a href="https://gitcode.com/cann/ge/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-graph-autofusion</td>
+      <td><a href="https://gitcode.com/cann/graph-autofusion/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-hcomm</td>
+      <td><a href="https://gitcode.com/cann/hcomm/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-metadef</td>
+      <td><a href="https://gitcode.com/cann/metadef/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-ncs</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-npu-runtime</td>
+      <td><a href="https://gitcode.com/cann/runtime/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-oam-tools</td>
+      <td><a href="https://gitcode.com/cann/oam-tools/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-opbase</td>
+      <td><a href="https://gitcode.com/cann/opbase/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-tbe-tik</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-simulator</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-pto-isa</td>
+      <td><a href="https://gitcode.com/cann/pto-isa/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>mindstudio-toolkit</td>
+      <td>26.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>pyACL</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>test-ops</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td rowspan="9">算子包（ops）</td>
+      <td>cann-dvpp</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-opbase</td>
+      <td><a href="https://gitcode.com/cann/opbase/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>ops-legacy</td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-hccl</td>
+      <td><a href="https://gitcode.com/cann/hccl/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>cann-hixl</td>
+      <td><a href="https://gitcode.com/cann/hixl/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>ops-cv</td>
+      <td><a href="https://gitcode.com/cann/ops-cv/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>ops-math</td>
+      <td><a href="https://gitcode.com/cann/ops-math/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>ops-nn</td>
+      <td><a href="https://gitcode.com/cann/ops-nn/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td>ops-transformer</td>
+      <td><a href="https://gitcode.com/cann/ops-transformer/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td rowspan="2">加速库（NNAL）</td>
+      <td><a href="https://gitcode.com/cann/ascend-transformer-boost">atb</a></td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+    <tr>
+      <td><a href="https://gitcode.com/cann/sip">sip</a></td>
+      <td>9.1.0</td>
+      <td>arm/x86</td>
+    </tr>
+  </tbody>
+</table>
+
+### CANN ops与Toolkit配套关系
+CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需求灵活安装。
+
+|ops版本  |配套toolkit版本  |  
+|--|--|
+| [ascend-cann-ops 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0)<br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
+| [ascend-cann-ops 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0)<br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
+| [ascend-cann-ops 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) <br> [ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
+
+
+### CANN ops子包内可独立升级子包配套关系
+
 | CANN子包版本                                                 | 版本源码标签                                                 | 配套CANN版本                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------- |
 | [cann-ops-math 9.1.0](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.1.0/) | [v9.1.0](https://gitcode.com/cann/ops-math/tags/v9.1.0)      | CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
@@ -30,25 +270,8 @@
 | [cann-hccl 9.1.0](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.1.0/) | [v9.1.0](https://gitcode.com/cann/hccl/tags/v9.1.0)          | CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
 | [cann-hixl 9.1.0](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.1.0/) | [v9.1.0](https://gitcode.com/cann/hixl/tags/v9.1.0)          | CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
 
-**4、CANN开源子包版本配套关系**
-| CANN子包版本                | 版本源码标签                                                 | 配套CANN版本 |
-| --------------------------- | ------------------------------------------------------------ | ------------ |
-| cann-opbase 9.1.0           | [v9.1.0](https://gitcode.com/cann/opbase/tags/v9.1.0)        | CANN 9.1.0   |
-| cann-oam-tools 9.1.0        | [v9.1.0](https://gitcode.com/cann/oam-tools/tags/v9.1.0)     | CANN 9.1.0   |
-| cann-asc-tools 9.1.0        | [v9.1.0](https://gitcode.com/cann/asc-tools/tags/v9.1.0)     | CANN 9.1.0   |
-| cann-asc-devkit 9.1.0       | [v9.1.0](https://gitcode.com/cann/asc-devkit/tags/v9.1.0)    | CANN 9.1.0   |
-| cann-pypto                  | [v9.1.0](https://gitcode.com/cann/pypto/tags/v9.1.0)         | CANN 9.1.0   |
-| cann-pto-isa 9.1.0          | [v9.1.0](https://gitcode.com/cann/pto-isa/tags/v9.1.0)       | CANN 9.1.0   |
-| cann-ge-compiler 9.1.0      | [v9.1.0](https://gitcode.com/cann/ge/tags/v9.1.0)            | CANN 9.1.0   |
-| cann-ge-executor 9.1.0      | [v9.1.0](https://gitcode.com/cann/ge/tags/v9.1.0)            | CANN 9.1.0   |
-| cann-graph-autofusion 9.1.0 | [v9.1.0](https://gitcode.com/cann/graph-autofusion/tags/v9.1.0) | CANN 9.1.0   |
-| cann-metadef 9.1.0          | [v9.1.0](https://gitcode.com/cann/metadef/tags/v9.1.0)       | CANN 9.1.0   |
-| cann-dflow-executor 9.1.0   | [v9.1.0](https://gitcode.com/cann/ge/tags/v9.1.0)            | CANN 9.1.0   |
-| cann-hcomm 9.1.0            | [v9.1.0](https://gitcode.com/cann/hcomm/tags/v9.1.0)         | CANN 9.1.0   |
-| cann-npu-runtime 9.1.0      | [v9.1.0](https://gitcode.com/cann/runtime/tags/v9.1.0)       | CANN 9.1.0   |
-| cann-amct 9.1.0（独立发布）             | [v9.1.0](https://gitcode.com/cann/amct/tags/v9.1.0)          | CANN 9.1.0   |
+子包独立升级的具体操作请参考[子包独立升级](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/softwareinst/instg/instg_0030.html)。
 
-子包独立升级的具体操作请参考[子包独立升级](#子包独立升级)。
 
 ## 关键特性
 
@@ -160,7 +383,7 @@
     1）dX支持超大W输入场景对W切分；<br>
     2）dW支持确定性场景下开启性能优化特性；<br>
     3）dX支持stride=kernel和fmap=kernel场景转MM，优化性能。<br>
-- Ascend950新场景支持支持：<br>
+- Ascend950新场景支持：<br>
     1）引入ops-tensor，基于分层结构优化Cube类算子，减少偏移量计算和代码重复率([!5036](https://gitcode.com/cann/ops-nn/pull/5036))<br>
     2）完善低bit类算子，支持精度补偿，优化整网精度RmsNormDynamicMxQuant([!2894](https://gitcode.com/cann/ops-nn/pull/2894))，DynamicBlockMxQuant([!1824](https://gitcode.com/cann/ops-nn/pull/1824))，DualLevelQuantBatchMatmul([!1141](https://gitcode.com/cann/ops-nn/pull/1141))<br>
     3）HardswishBackwardV2([!4817](https://gitcode.com/cann/ops-nn/pull/4817))、SyncBatchNormGatherStatsWithCounts([!5973](https://gitcode.com/cann/ops-nn/pull/5973))
