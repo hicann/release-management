@@ -48,13 +48,13 @@ CANN与Ascend HDK版本兼容
       <td>Y</td>
     </tr>
     <tr>
-      <td>9.0.0</td>
+      <td>9.0.X</td>
       <td>Y</td>
       <td>Y</td>
       <td>Y</td>
     </tr>
     <tr>
-      <td>9.1.0</td>
+      <td>9.1.X</td>
       <td>Y</td>
       <td>Y</td>
       <td>Y</td>
@@ -571,8 +571,18 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 ## 已修复问题
 
 以下问题在9.1.0版本修复：  
-待补充
-
+- 修复了QuantBatchMatmulV3算子在Atlas推理系列产品上，编译时指定AUTO_SYNC=false导致算子读写冲突的问题。
+- 针对Atlas A2系列产品和Atlas A3系列产品，修复了MatmulReduceScatterV2算子在M小于512场景下，flag位清零过快导致其他卡检测不到，最终超时的问题。
+- 修复了Atlas A2系列产品的大EP场景下，D节点注入片上内存多bit故障，无法进入快速恢复流程的问题。
+- 修复了4k卡训练任务在500+step后，随机step位置概率性出现的通信超时问题。
+- 修复了PD分离场景，decode频繁任务中断重启导致的refill积压问题。
+- 修复了开源仓用户自定义算子和内置算子IR原型重名不生效的问题。
+- 修复了aclnnAddmv算子压测偶现coredump的问题。
+- 修复了万卡任务拉起时异常报错的问题。
+- 修复了aclgraph场景特定shape下，MatMulV3性能比MatMulV2差的问题。
+- 修复了fused_quant_mat_mul场景存在的精度问题。
+- 修复了BatchMatmulV2在特定bias场景下存在的精度问题。
+- 修复了FAG算子短序列GQA、NoMask场景存在的精度问题。
 ## 漏洞修补列表
 
 版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/maintenref/refdoc/refer002.html)。
