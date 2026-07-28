@@ -482,7 +482,7 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 - Hadamard算子支持Ascend 950芯片（[!76](https://gitcode.com/cann/sip/pull/76)）。
 
 ### 运行时
-- 支持Ascend 950DT AclGraph场景stream规格扩充至64K，解决大模型资源不足等问题([\#2976](https://gitcode.com/cann/runtime/pull/2976))
+- 支持Ascend 950DT AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题([\#2976](https://gitcode.com/cann/runtime/pull/2976))
 
 ###  算子编程
 
@@ -540,6 +540,9 @@ CostModel仿真：
 CPU-SIM：随NPU同步新增CPU仿真指令。
 
 ## 删除和废弃特性
+
+### 运行时
+- include/driver目录头文件已迁移到pkg_inc/driver目录，include/driver目录将在2027年06月30日下线，请尽快切换至pkg_inc/driver目录。
 
 ### aclblas与aclop接口编程
 - 自Ascend 950产品开始，aclblas和aclop接口不推荐使用，后续版本将逐步废弃，建议迁移至对应的aclnn算子接口。
