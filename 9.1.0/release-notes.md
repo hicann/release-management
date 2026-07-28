@@ -7,7 +7,7 @@
 ## 版本配套说明
 
 CANN软件版本配套表
-<table style="margin: 0 auto; text-align:center;">
+<table style="text-align:center;">
   <tr>
     <th>CANN</th>
     <th>驱动版本（Ascend HDK）</th>
@@ -190,7 +190,7 @@ CANN 9.1.0包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合�
       <td>arm/x86</td>
     </tr>
     <tr>
-      <td rowspan="9">算子包（ops）</td>
+      <td rowspan="10">算子包（ops）</td>
       <td>cann-dvpp</td>
       <td>9.1.0</td>
       <td>arm/x86</td>
@@ -235,6 +235,11 @@ CANN 9.1.0包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合�
       <td><a href="https://gitcode.com/cann/ops-transformer/tags/v9.1.0">9.1.0</a></td>
       <td>arm/x86</td>
     </tr>
+    <tr>
+      <td>ops-ras</td>
+      <td><a href="https://gitcode.com/cann/ops-ras/tags/v9.1.0">9.1.0</a></td>
+      <td>arm/x86</td>
+    </tr>    
     <tr>
       <td rowspan="2">加速库（NNAL）</td>
       <td><a href="https://gitcode.com/cann/ascend-transformer-boost">atb</a></td>
@@ -351,8 +356,8 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
     11）新增scaleandtranslate算子，支持指定缩放因子和平移量对图像进行仿射变换（[!693](https://gitcode.com/cann/ops-cv/pull/693)）；<br>
     12）新增BoundingBoxEncode算子，计算锚框与真实边界框之间的编码偏移量，生成目标检测回归目标（[!1049](https://gitcode.com/cann/ops-cv/pull/1049)）；<br>
     13）新增NMSWithMask算子，支持带掩码的非极大值抑制，用于目标检测后处理（[!560](https://gitcode.com/cann/ops-cv/pull/560)）；<br>
-    14）ExtractGlimpseV2、UpsampleBicubic2d新增Ascend950 SIMT实现。ExtractGlimpseV2从特征图中根据中心点和窗口大小截取局部区域，UpsampleBicubic2d实现双三次插值上采样（[!1039](https://gitcode.com/cann/ops-cv/pull/1039)）；<br>
-    15）UpsampleNearestExact1d及系列反向算子新增Ascend950支持（[!830](https://gitcode.com/cann/ops-cv/pull/830) [!798](https://gitcode.com/cann/ops-cv/pull/798)）；<br>
+    14）ExtractGlimpseV2、UpsampleBicubic2d新增Ascend 950PR/Ascend 950DT SIMT实现。ExtractGlimpseV2从特征图中根据中心点和窗口大小截取局部区域，UpsampleBicubic2d实现双三次插值上采样（[!1039](https://gitcode.com/cann/ops-cv/pull/1039)）；<br>
+    15）UpsampleNearestExact1d及系列反向算子新增Ascend 950PR/Ascend 950DT支持（[!830](https://gitcode.com/cann/ops-cv/pull/830) [!798](https://gitcode.com/cann/ops-cv/pull/798)）；<br>
     16）AIPP新增CSC色域转换能力，支持YUV420SP/U8、RGB888/U8、BGR888/U8、XRGB8888/U8等多种格式之间的色域转换（[!765](https://gitcode.com/cann/ops-cv/pull/765)），并新增动态AIPP通路支持（[!802](https://gitcode.com/cann/ops-cv/pull/802)）；<br>
     17）GridSample2D算子新增BF16数据类型支持（[!715](https://gitcode.com/cann/ops-cv/pull/715) [!751](https://gitcode.com/cann/ops-cv/pull/751)）；<br>
     18）新增cv常量折叠算子流程，支持CropAndResize等算子在编译期进行常量折叠优化（[!690](https://gitcode.com/cann/ops-cv/pull/690)）；<br>
@@ -383,12 +388,12 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
     1）dX支持超大W输入场景对W切分；<br>
     2）dW支持确定性场景下开启性能优化特性；<br>
     3）dX支持stride=kernel和fmap=kernel场景转MM，优化性能。<br>
-- Ascend950新场景支持：<br>
+- Ascend 950PR/Ascend 950DT新场景支持：<br>
     1）引入ops-tensor，基于分层结构优化Cube类算子，减少偏移量计算和代码重复率([!5036](https://gitcode.com/cann/ops-nn/pull/5036))<br>
     2）完善低bit类算子，支持精度补偿，优化整网精度RmsNormDynamicMxQuant([!2894](https://gitcode.com/cann/ops-nn/pull/2894))，DynamicBlockMxQuant([!1824](https://gitcode.com/cann/ops-nn/pull/1824))，DualLevelQuantBatchMatmul([!1141](https://gitcode.com/cann/ops-nn/pull/1141))<br>
     3）HardswishBackwardV2([!4817](https://gitcode.com/cann/ops-nn/pull/4817))、SyncBatchNormGatherStatsWithCounts([!5973](https://gitcode.com/cann/ops-nn/pull/5973))
 - nn仓工程优化：<br>
-    1）Ascend950支持静态库([!3623](https://gitcode.com/cann/ops-nn/pull/3623))<br>
+    1）Ascend 950PR/Ascend 950DT支持静态库([!3623](https://gitcode.com/cann/ops-nn/pull/3623))<br>
     2）kernel配置脚本优化([!3330](https://gitcode.com/cann/ops-nn/pull/3330))
 
 - A2A3 Cube类算子能力增强，优化网络性能并减少部分场景的内存占用：
@@ -403,7 +408,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 **注意力（Attention/MLA）类**
 - 新增SparseFlashMla（稀疏FlashMLA）算子，并支持稀疏注意力KV合并，提升长序列稀疏注意力场景的计算与访存效率([!6526](https://gitcode.com/cann/ops-transformer/pull/6526)、[!6429](https://gitcode.com/cann/ops-transformer/pull/6429))。
 - 新增LightningIndexerV2算子([!5635](https://gitcode.com/cann/ops-transformer/pull/5635))。
-- 新增aclnnBlockSparseAttentionV2接口，适配FP8量化的BlockSparseAttention算子；BlockSparseAttention在A5上支持FP8场景性能改进与BSND输入排布，950正向/推理的量化与非量化kernel支持LSE输出，并新增BlockSparseAttentionGrad反向算子([!4820](https://gitcode.com/cann/ops-transformer/pull/4820)、[!6620](https://gitcode.com/cann/ops-transformer/pull/6620)、[!6264](https://gitcode.com/cann/ops-transformer/pull/6264)、[!6565](https://gitcode.com/cann/ops-transformer/pull/6565)、[!6186](https://gitcode.com/cann/ops-transformer/pull/6186))。
+- 新增aclnnBlockSparseAttentionV2接口，适配FP8量化的BlockSparseAttention算子；BlockSparseAttention在A5上支持FP8场景性能改进与BSND输入排布，Ascend 950PR/Ascend 950DT正向/推理的量化与非量化kernel支持LSE输出，并新增BlockSparseAttentionGrad反向算子([!4820](https://gitcode.com/cann/ops-transformer/pull/4820)、[!6620](https://gitcode.com/cann/ops-transformer/pull/6620)、[!6264](https://gitcode.com/cann/ops-transformer/pull/6264)、[!6565](https://gitcode.com/cann/ops-transformer/pull/6565)、[!6186](https://gitcode.com/cann/ops-transformer/pull/6186))。
 - FusedInferAttentionScore支持LSE输出，AttentionUpdate在A2/A3支持sp128([!5505](https://gitcode.com/cann/ops-transformer/pull/5505)、[!5709](https://gitcode.com/cann/ops-transformer/pull/5709))。
 - ScatterPaKvCache/GatherPaKvCache新增cache首轴非连续tensor支持，MlaProlog支持KVCache非连续输入([!6214](https://gitcode.com/cann/ops-transformer/pull/6214)、[!6442](https://gitcode.com/cann/ops-transformer/pull/6442))。
 - RecurrentGatedDeltaRule支持state前两轴非连续，SMLAG新增torch适配及新特性支持([!6288](https://gitcode.com/cann/ops-transformer/pull/6288)、[!5916](https://gitcode.com/cann/ops-transformer/pull/5916))。
@@ -436,17 +441,17 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 	2）集合通信支持提供预留显存资源的预留、分配等管理功能；
 	3）集合通信支持识别PDCCL进程，并向内核态申请预留显存资源；
 
-- HIXL 底层通信接口开放：构建 Client-Server 模式单边通信能力，全面提升建链规格与建链性能。针对批量小 Buffer 传输场景深度优化，有效降低 HBM 占用与通信资源开销（[#138](https://gitcode.com/cann/hixl/issues/138)）
-- HIXL 网络传输协议扩展：单边通信新增 UBC、UBoE、Host RoCE 协议支持，完整覆盖 D2D、D2rH、rH2D、H2H 全场景数据传输（[#37](https://gitcode.com/cann/hixl/issues/37)），不同产品形态的协议支持清单可查阅 [HIXL](https://gitcode.com/cann/hixl) 社区
-- HIXL 智能链路管理升级：实现通信资源自动获取及智能路由选择（[#181](https://gitcode.com/cann/hixl/issues/181)），支持按需建链（[#245](https://gitcode.com/cann/hixl/issues/245)），简化使用流程，提升易用性
-- HIXL 编程 API 能力增强：扩展异步链路管理（[#207](https://gitcode.com/cann/hixl/issues/207)）、传输状态批量查询（[#208](https://gitcode.com/cann/hixl/issues/208)）两类接口，丰富异步编程范式，提升上层业务开发效率
+- HIXL 底层通信接口开放：构建 Client-Server 模式单边通信能力，全面提升建链规格与建链性能。针对批量小 Buffer 传输场景深度优化，有效降低 HBM 占用与通信资源开销（[!138](https://gitcode.com/cann/hixl/issues/138)）
+- HIXL 网络传输协议扩展：单边通信新增 UBC、UBoE、Host RoCE 协议支持，完整覆盖 D2D、D2rH、rH2D、H2H 全场景数据传输（[!37](https://gitcode.com/cann/hixl/issues/37)），不同产品形态的协议支持清单可查阅 [HIXL](https://gitcode.com/cann/hixl) 社区
+- HIXL 智能链路管理升级：实现通信资源自动获取及智能路由选择（[!181](https://gitcode.com/cann/hixl/issues/181)），支持按需建链（[!245](https://gitcode.com/cann/hixl/issues/245)），简化使用流程，提升易用性
+- HIXL 编程 API 能力增强：扩展异步链路管理（[!207](https://gitcode.com/cann/hixl/issues/207)）、传输状态批量查询（[!208](https://gitcode.com/cann/hixl/issues/208)）两类接口，丰富异步编程范式，提升上层业务开发效率
 
 
-- Ascend 950PR 支持CCU场景的allGatherV/reduceScatterV算子([\#303](https://gitcode.com/cann/hccl/pull/303) [\#207](https://gitcode.com/cann/hccl/pull/207))
-- Ascend 950PR 支持GE图模式&aclGraph模式下的通信算子入图([\#183](https://gitcode.com/cann/hccl/pull/183) [\#164](https://gitcode.com/cann/hccl/pull/164) [\#296](https://gitcode.com/cann/hccl/pull/296))
-- Ascend 950PR 支持N秒快恢能力，提升集合通信运行可靠性([\#1126](https://gitcode.com/cann/hcomm/pull/1126) [\#1609](https://gitcode.com/cann/hcomm/pull/1609) [\#421](https://gitcode.com/cann/hccl/pull/421))
-- Ascend 950PR 支持taskexception&profiling等维测能力，提升问题定位易用性([\#937](https://gitcode.com/cann/hcomm/pull/937) [\#1472](https://gitcode.com/cann/hcomm/pull/1472) [\#267](https://gitcode.com/cann/hccl/pull/267) [\#332](https://gitcode.com/cann/hccl/pull/332))
-- Ascend 950PR HcclChannelAcquire接口支持AIV直驱RoCE和URMA能力，支撑通算融合算子的自定义开发([\#2032](https://gitcode.com/cann/hcomm/pull/2032))
+- Ascend 950PR 支持CCU场景的allGatherV/reduceScatterV算子([!303](https://gitcode.com/cann/hccl/pull/303) [!207](https://gitcode.com/cann/hccl/pull/207))
+- Ascend 950PR 支持GE图模式&aclGraph模式下的通信算子入图([!183](https://gitcode.com/cann/hccl/pull/183) [!164](https://gitcode.com/cann/hccl/pull/164) [!296](https://gitcode.com/cann/hccl/pull/296))
+- Ascend 950PR 支持N秒快恢能力，提升集合通信运行可靠性([!1126](https://gitcode.com/cann/hcomm/pull/1126) [!1609](https://gitcode.com/cann/hcomm/pull/1609) [!421](https://gitcode.com/cann/hccl/pull/421))
+- Ascend 950PR 支持taskexception&profiling等维测能力，提升问题定位易用性([!937](https://gitcode.com/cann/hcomm/pull/937) [!1472](https://gitcode.com/cann/hcomm/pull/1472) [!267](https://gitcode.com/cann/hccl/pull/267) [!332](https://gitcode.com/cann/hccl/pull/332))
+- Ascend 950PR HcclChannelAcquire接口支持AIV直驱RoCE和URMA能力，支撑通算融合算子的自定义开发([!2032](https://gitcode.com/cann/hcomm/pull/2032))
 - [A2/A3]单卡多进程能力新增支持MC2场景([!1880](https://gitcode.com/cann/hcomm/pull/1880))
 - [A2/A3]aclGraph场景下资源管理优化，支撑通信资源增量刷新([!2405](https://gitcode.com/cann/hcomm/pull/2405) [!2502](https://gitcode.com/cann/hcomm/pull/2502))
 - [A3]跨超节点场景性能优化，ReduceScatter/AllGather算子支持跨超pipeline算法([!2071](https://gitcode.com/cann/hcomm/pull/2071) [!1931](https://gitcode.com/cann/hcomm/pull/1931))
@@ -464,7 +469,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 #### Ascend Transformer Boost加速库
 
-- **Ascend 950 核心算子接入**  
+- **Ascend 950PR/Ascend 950DT 核心算子接入**  
 批量落地 GELU、LayerNorm、MatmulEinSum、RmsNormQuant、SwiGluQuant（ACLNN V2）、Linear 反量化，以及 AllGather / AllReduce / ReduceScatter 等通信算子 A5 支持（[!1994](https://gitcode.com/cann/ascend-transformer-boost/pull/1994) [!2089](https://gitcode.com/cann/ascend-transformer-boost/pull/2089) [!2090](https://gitcode.com/cann/ascend-transformer-boost/pull/2090) [!2060](https://gitcode.com/cann/ascend-transformer-boost/pull/2060) [!2097](https://gitcode.com/cann/ascend-transformer-boost/pull/2097) [!2103](https://gitcode.com/cann/ascend-transformer-boost/pull/2103) [!2091](https://gitcode.com/cann/ascend-transformer-boost/pull/2091)）。
 
 - **Attention / KV Cache 推理增强**  
@@ -490,39 +495,39 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 
 #### 关键特性
 - 维测能力：
-  - AscendC框架基础API支持NPU Check（[PR#1557](https://gitcode.com/cann/asc-devkit/pull/1557) [PR#1467](https://gitcode.com/cann/asc-devkit/pull/1467)），增强算子运行时校验能力。
-  - SIMD VF内支持printf和reg dump打印（[PR#1605](https://gitcode.com/cann/asc-devkit/pull/1605)），提供调试打印和寄存器数据dump能力。
-  - Ascend 950支持L1 Tensor数据的DumpTensor（[PR#2175](https://gitcode.com/cann/asc-devkit/pull/2175)），扩展L1层数据调试支持。
-  - 新增optype_collector工具，支持检查optype重名（[PR#285](https://gitcode.com/cann/asc-tools/pull/285)）。
+  - AscendC框架基础API支持NPU Check（[!1557](https://gitcode.com/cann/asc-devkit/pull/1557) [!1467](https://gitcode.com/cann/asc-devkit/pull/1467)），增强算子运行时校验能力。
+  - SIMD VF内支持printf和reg dump打印（[!1605](https://gitcode.com/cann/asc-devkit/pull/1605)），提供调试打印和寄存器数据dump能力。
+  - Ascend 950PR/Ascend 950DT支持L1 Tensor数据的DumpTensor（[!2175](https://gitcode.com/cann/asc-devkit/pull/2175)），扩展L1层数据调试支持。
+  - 新增optype_collector工具，支持检查optype重名（[!285](https://gitcode.com/cann/asc-tools/pull/285)）。
 - 编译工程
-  - 编译工程CMakeModule支持CMAKE_\<LANG\>编译选项（[PR#2055](https://gitcode.com/cann/asc-devkit/pull/2055)）；
+  - 编译工程CMakeModule支持CMAKE_\<LANG\>编译选项（[!2055](https://gitcode.com/cann/asc-devkit/pull/2055)）；
 - 基础API
-  - 支持设置ctrl寄存器的饱和溢出管理（[PR#2077](https://gitcode.com/cann/asc-devkit/pull/2077)）。
+  - 支持设置ctrl寄存器的饱和溢出管理（[!2077](https://gitcode.com/cann/asc-devkit/pull/2077)）。
 - SIMT编程
-  - 新增ld/st接口（[PR#2058](https://gitcode.com/cann/asc-devkit/pull/2058)）和AddrSpace类接口（[PR#1597](https://gitcode.com/cann/asc-devkit/pull/1597)），丰富SIMT内存访问编程能力。
+  - 新增ld/st接口（[!2058](https://gitcode.com/cann/asc-devkit/pull/2058)）和AddrSpace类接口（[!1597](https://gitcode.com/cann/asc-devkit/pull/1597)），丰富SIMT内存访问编程能力。
 
 #### 样例更新
 - SIMD样例：
-  - 新增最佳实践样例：matmul+gelu融合、datacopy优化、bank冲突优化、group_matmul量化组矩阵乘、simt&simd高性能编程（[PR#1814](https://gitcode.com/cann/asc-devkit/pull/1814) [PR#2137](https://gitcode.com/cann/asc-devkit/pull/2137) [PR#2141](https://gitcode.com/cann/asc-devkit/pull/2141) [PR#2166](https://gitcode.com/cann/asc-devkit/pull/2166) [PR#2363](https://gitcode.com/cann/asc-devkit/pull/2363)）。
-  - 新增Ascend 950新特性样例及兼容性样例整改：loopmode数据搬运、interleave矢量计算、datacopy_gm2l1、loadmx（Load2DMX）、mmad_mx、data_copy_pad等（[PR#2336](https://gitcode.com/cann/asc-devkit/pull/2336) [PR#1899](https://gitcode.com/cann/asc-devkit/pull/1899) [PR#2124](https://gitcode.com/cann/asc-devkit/pull/2124)）。
-  - 新增RegBase基础样例：基础算术、数据类型转换、归约、比较、索引等样例（[PR#1459](https://gitcode.com/cann/asc-devkit/pull/1459) [PR#1575](https://gitcode.com/cann/asc-devkit/pull/1575) [PR#2024](https://gitcode.com/cann/asc-devkit/pull/2024)）。
-  - 新增SIMD VF print样例和dump样例（[PR#2558](https://gitcode.com/cann/asc-devkit/pull/2558)）。
-  - 新增Tensor API入门及最佳实践样例：Matmul入门、数据搬入搬出、搬出随路量化、MX FP4最佳实践（[PR#2553](https://gitcode.com/cann/asc-devkit/pull/2553)）。
+  - 新增最佳实践样例：matmul+gelu融合、datacopy优化、bank冲突优化、group_matmul量化组矩阵乘、simt&simd高性能编程（[!1814](https://gitcode.com/cann/asc-devkit/pull/1814) [!2137](https://gitcode.com/cann/asc-devkit/pull/2137) [!2141](https://gitcode.com/cann/asc-devkit/pull/2141) [!2166](https://gitcode.com/cann/asc-devkit/pull/2166) [!2363](https://gitcode.com/cann/asc-devkit/pull/2363)）。
+  - 新增Ascend 950PR/Ascend 950DT新特性样例及兼容性样例整改：loopmode数据搬运、interleave矢量计算、datacopy_gm2l1、loadmx（Load2DMX）、mmad_mx、data_copy_pad等（[!2336](https://gitcode.com/cann/asc-devkit/pull/2336) [!1899](https://gitcode.com/cann/asc-devkit/pull/1899) [!2124](https://gitcode.com/cann/asc-devkit/pull/2124)）。
+  - 新增RegBase基础样例：基础算术、数据类型转换、归约、比较、索引等样例（[!1459](https://gitcode.com/cann/asc-devkit/pull/1459) [!1575](https://gitcode.com/cann/asc-devkit/pull/1575) [!2024](https://gitcode.com/cann/asc-devkit/pull/2024)）。
+  - 新增SIMD VF print样例和dump样例（[!2558](https://gitcode.com/cann/asc-devkit/pull/2558)）。
+  - 新增Tensor API入门及最佳实践样例：Matmul入门、数据搬入搬出、搬出随路量化、MX FP4最佳实践（[!2553](https://gitcode.com/cann/asc-devkit/pull/2553)）。
 - SIMT样例：
-  - 新增SIMT优化特性样例：DCache访问优化样例（[PR#2453](https://gitcode.com/cann/asc-devkit/pull/2453)）、基于transpose的仿存合并和bank冲突样例（[PR#1753](https://gitcode.com/cann/asc-devkit/pull/1753)）、最佳实践样例：通过类型对齐提升搬运效率（[PR#2297](https://gitcode.com/cann/asc-devkit/pull/2297)）。
-  - 新增SIMT功能特性样例：pytorch注册自定义算子（[PR#2769](https://gitcode.com/cann/asc-devkit/pull/2769)）、编译相关样例（动态、静态、分离编译等）（[PR#2356](https://gitcode.com/cann/asc-devkit/pull/2356)）、profiling样例（[PR#1989](https://gitcode.com/cann/asc-devkit/pull/1989)）、内存屏障特性样例（[PR#1923](https://gitcode.com/cann/asc-devkit/pull/1923)）、Warp类特性样例（[PR#2876](https://gitcode.com/cann/asc-devkit/pull/2876)）、simulator样例（[PR#2692](https://gitcode.com/cann/asc-devkit/pull/2692)）、kernel log样例（[PR#2131](https://gitcode.com/cann/asc-devkit/pull/2131)）。
+  - 新增SIMT优化特性样例：DCache访问优化样例（[!2453](https://gitcode.com/cann/asc-devkit/pull/2453)）、基于transpose的仿存合并和bank冲突样例（[!1753](https://gitcode.com/cann/asc-devkit/pull/1753)）、最佳实践样例：通过类型对齐提升搬运效率（[!2297](https://gitcode.com/cann/asc-devkit/pull/2297)）。
+  - 新增SIMT功能特性样例：pytorch注册自定义算子（[!2769](https://gitcode.com/cann/asc-devkit/pull/2769)）、编译相关样例（动态、静态、分离编译等）（[!2356](https://gitcode.com/cann/asc-devkit/pull/2356)）、profiling样例（[!1989](https://gitcode.com/cann/asc-devkit/pull/1989)）、内存屏障特性样例（[!1923](https://gitcode.com/cann/asc-devkit/pull/1923)）、Warp类特性样例（[!2876](https://gitcode.com/cann/asc-devkit/pull/2876)）、simulator样例（[!2692](https://gitcode.com/cann/asc-devkit/pull/2692)）、kernel log样例（[!2131](https://gitcode.com/cann/asc-devkit/pull/2131)）。
 
 #### 资料文档
-- 新增矩阵计算概述和计算分形介绍的文档（[PR#2533](https://gitcode.com/cann/asc-devkit/pull/2533)）。
-- 优化矢量计算API文档，补充指令约束等（[PR#2676](https://gitcode.com/cann/asc-devkit/pull/2676)）。
-- 增加SIMD与SIMT混合编程性能优化概述（[PR#2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
-- 搭建VitePress文档站点，提供AscendC资料预览功能（[PR#2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
+- 新增矩阵计算概述和计算分形介绍的文档（[!2533](https://gitcode.com/cann/asc-devkit/pull/2533)）。
+- 优化矢量计算API文档，补充指令约束等（[!2676](https://gitcode.com/cann/asc-devkit/pull/2676)）。
+- 增加SIMD与SIMT混合编程性能优化概述（[!2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
+- 搭建VitePress文档站点，提供AscendC资料预览功能（[!2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
 
 ### 虚拟指令集
 
-- 基础Vector&Cube指令：支持Vector类指令的高精度版本（[#896](https://gitcode.com/cann/pto-isa/pull/896), [#782](https://gitcode.com/cann/pto-isa/pull/782), [#815](https://gitcode.com/cann/pto-isa/pull/815), [#717](https://gitcode.com/cann/pto-isa/pull/717), [#648](https://gitcode.com/cann/pto-isa/pull/648), [#695](https://gitcode.com/cann/pto-isa/pull/695)），新增transdata场景支持（[#950](https://gitcode.com/cann/pto-isa/pull/950), [#977](https://gitcode.com/cann/pto-isa/pull/977)），TSTORE、TLOAD支持卷积3D（[#904](https://gitcode.com/cann/pto-isa/pull/904), [#912](https://gitcode.com/cann/pto-isa/pull/912)），新增MGATHER/MSCATTER指令（[#935](https://gitcode.com/cann/pto-isa/pull/935), [#1136](https://gitcode.com/cann/pto-isa/pull/1136), [#309](https://gitcode.com/cann/pto-isa/pull/309), [#889](https://gitcode.com/cann/pto-isa/pull/889)），Reduce类指令支持返回值及对应索引（[#1124](https://gitcode.com/cann/pto-isa/pull/1124), [#928](https://gitcode.com/cann/pto-isa/pull/928)），TQUANT支持MXFP8/MXFP4量化（[#1187](https://gitcode.com/cann/pto-isa/pull/1187), [#1143](https://gitcode.com/cann/pto-isa/pull/1143)），合轴类指令支持类型增强，TMOV/TEXTRACT/TINSERT支持Vec到Vec（[#1196](https://gitcode.com/cann/pto-isa/pull/1196)）。
-- 通信类指令：新增A5 CCU异步通信类指令TGATHER、TBROADCAST、TSCATTER、TREDUCE（[#915](https://gitcode.com/cann/pto-isa/pull/915)），支持全核同步指令SYNCALL（[#907](https://gitcode.com/cann/pto-isa/pull/907)），新增异步prefetch指令（[#116](https://gitcode.com/cann/pto-isa/pull/116)），TPUT_ASYNC、TGET_ASYNC增加A5基于URMA的异步通信能力（[#991](https://gitcode.com/cann/pto-isa/pull/991)）。
-- CostModel仿真：新增A2A3算子级Costmodel，支持输出算子性能、Pipeline时间、泳道图等信息（[#1004](https://gitcode.com/cann/pto-isa/pull/1004)），接入CCE Mock方案，支持A2A3已有指令性能预测（[#772](https://gitcode.com/cann/pto-isa/pull/772)）。
+- 基础Vector&Cube指令：支持Vector类指令的高精度版本（[!896](https://gitcode.com/cann/pto-isa/pull/896), [!782](https://gitcode.com/cann/pto-isa/pull/782), [!815](https://gitcode.com/cann/pto-isa/pull/815), [!717](https://gitcode.com/cann/pto-isa/pull/717), [!648](https://gitcode.com/cann/pto-isa/pull/648), [!695](https://gitcode.com/cann/pto-isa/pull/695)），新增transdata场景支持（[!950](https://gitcode.com/cann/pto-isa/pull/950), [!977](https://gitcode.com/cann/pto-isa/pull/977)），TSTORE、TLOAD支持卷积3D（[!904](https://gitcode.com/cann/pto-isa/pull/904), [!912](https://gitcode.com/cann/pto-isa/pull/912)），新增MGATHER/MSCATTER指令（[!935](https://gitcode.com/cann/pto-isa/pull/935), [!1136](https://gitcode.com/cann/pto-isa/pull/1136), [!309](https://gitcode.com/cann/pto-isa/pull/309), [!889](https://gitcode.com/cann/pto-isa/pull/889)），Reduce类指令支持返回值及对应索引（[!1124](https://gitcode.com/cann/pto-isa/pull/1124), [!928](https://gitcode.com/cann/pto-isa/pull/928)），TQUANT支持MXFP8/MXFP4量化（[!1187](https://gitcode.com/cann/pto-isa/pull/1187), [!1143](https://gitcode.com/cann/pto-isa/pull/1143)），合轴类指令支持类型增强，TMOV/TEXTRACT/TINSERT支持Vec到Vec（[!1196](https://gitcode.com/cann/pto-isa/pull/1196)）。
+- 通信类指令：新增A5 CCU异步通信类指令TGATHER、TBROADCAST、TSCATTER、TREDUCE（[!915](https://gitcode.com/cann/pto-isa/pull/915)），支持全核同步指令SYNCALL（[!907](https://gitcode.com/cann/pto-isa/pull/907)），新增异步prefetch指令（[!116](https://gitcode.com/cann/pto-isa/pull/116)），TPUT_ASYNC、TGET_ASYNC增加A5基于URMA的异步通信能力（[!991](https://gitcode.com/cann/pto-isa/pull/991)）。
+- CostModel仿真：新增A2A3算子级Costmodel，支持输出算子性能、Pipeline时间、泳道图等信息（[!1004](https://gitcode.com/cann/pto-isa/pull/1004)），接入CCE Mock方案，支持A2A3已有指令性能预测（[!772](https://gitcode.com/cann/pto-isa/pull/772)）。
 - CPU-SIM：随NPU同步新增CPU仿真指令。
 
 ## 删除和废弃特性
@@ -560,8 +565,8 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 
 问题一：算子aclnnMatmulCompressDequant的输入参数deqScale的值为inf/-inf时，其精度详情中显示有inf或nan  
 【引入版本】CANN 8.5.0
-【缺陷影响】测试特殊构造用例触发，非新算子引入，且实际量化场景下不会有descale为-inf和inf场景，当前版本影响可控  
-【规避方案】实际量化场景下不会有descale为-inf和inf场景
+【缺陷影响】测试特殊构造用例触发，非新算子引入，且实际量化场景下不会有deqScale为-inf和inf场景，当前版本影响可控  
+【规避方案】实际量化场景下不会有deqScale为-inf和inf场景
 
 ## 已修复问题
 
@@ -570,4 +575,4 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 
 ## 漏洞修补列表
 
-版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900/maintenref/refdoc/refer002.html)。
+版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/maintenref/refdoc/refer002.html)。
