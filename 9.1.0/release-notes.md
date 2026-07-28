@@ -338,33 +338,30 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
     3）去除gawk外部依赖，采用纯bash实现时间戳格式化([!2407](https://gitcode.com/cann/ops-math/pull/2407))。<br>
 
 #### ops-cv库
-- Ascend 950PR/Ascend 950DT适配与场景支持：<br>
-    1）NMSWithMask算子适配([!560](https://gitcode.com/cann/ops-cv/pull/560))；<br>
-    2）GridSampler2DGrad算子适配Bicubic模式([!847](https://gitcode.com/cann/ops-cv/pull/847))；<br>
-    3）UpsampleNearestExact2d/3d算子适配([!851](https://gitcode.com/cann/ops-cv/pull/851))；<br>
-    4）UpsampleNearestExact1d算子适配([!830](https://gitcode.com/cann/ops-cv/pull/830))；<br>
-    5）UpsampleNearestExactGrad算子适配([!798](https://gitcode.com/cann/ops-cv/pull/798))；<br>
-    6）UpsampleTrilinear3d算子适配([!927](https://gitcode.com/cann/ops-cv/pull/927))；<br>
-    7）CIoU算子适配([!833](https://gitcode.com/cann/ops-cv/pull/833))；<br>
-    8）BlendFaceBgPartTwo算子适配([!825](https://gitcode.com/cann/ops-cv/pull/825))；<br>
-    9）新增SpatialTransformer算子，根据仿射变换参数对输入特征图进行空间扭曲变换，常用于图像配准和生成任务[!698](https://gitcode.com/cann/ops-cv/pull/698)）；<br>
-    10）新增adjust_saturation算子，支持对图像饱和度进行自适应调整（[!696](https://gitcode.com/cann/ops-cv/pull/696)）；<br>
-    11）新增scaleandtranslate算子，支持指定缩放因子和平移量对图像进行仿射变换（[!693](https://gitcode.com/cann/ops-cv/pull/693)）；<br>
-    12）新增BoundingBoxEncode算子，计算锚框与真实边界框之间的编码偏移量，生成目标检测回归目标（[!1049](https://gitcode.com/cann/ops-cv/pull/1049)）；<br>
-    13）新增NMSWithMask算子，支持带掩码的非极大值抑制，用于目标检测后处理（[!560](https://gitcode.com/cann/ops-cv/pull/560)）；<br>
-    14）ExtractGlimpseV2、UpsampleBicubic2d新增Ascend 950PR/Ascend 950DT SIMT实现。ExtractGlimpseV2从特征图中根据中心点和窗口大小截取局部区域，UpsampleBicubic2d实现双三次插值上采样（[!1039](https://gitcode.com/cann/ops-cv/pull/1039)）；<br>
-    15）UpsampleNearestExact1d及系列反向算子新增Ascend 950PR/Ascend 950DT支持（[!830](https://gitcode.com/cann/ops-cv/pull/830) [!798](https://gitcode.com/cann/ops-cv/pull/798)）；<br>
-    16）AIPP新增CSC色域转换能力，支持YUV420SP/U8、RGB888/U8、BGR888/U8、XRGB8888/U8等多种格式之间的色域转换（[!765](https://gitcode.com/cann/ops-cv/pull/765)），并新增动态AIPP通路支持（[!802](https://gitcode.com/cann/ops-cv/pull/802)）；<br>
-    17）GridSample2D算子新增BF16数据类型支持（[!715](https://gitcode.com/cann/ops-cv/pull/715) [!751](https://gitcode.com/cann/ops-cv/pull/751)）；<br>
-    18）新增cv常量折叠算子流程，支持CropAndResize等算子在编译期进行常量折叠优化（[!690](https://gitcode.com/cann/ops-cv/pull/690)）；<br>
-    19）新增算子多平台迁移指南文档，指导开发者将算子从Ascend 910B平台迁移至Ascend 950平台（[!639](https://gitcode.com/cann/ops-cv/pull/639)）。<br>
+- Ascend 950PR/Ascend 950DT新增适配以下算子：<br>
+  - 新增适配以下算子：<br>
+    - GridSampler2DGrad算子([!847](https://gitcode.com/cann/ops-cv/pull/847))；<br>
+    - UpsampleNearestExact2d/3d算子([!851](https://gitcode.com/cann/ops-cv/pull/851))；<br>
+    - UpsampleNearestExactGrad算子([!798](https://gitcode.com/cann/ops-cv/pull/798))；<br>
+    - UpsampleTrilinear3d算子([!927](https://gitcode.com/cann/ops-cv/pull/927))；<br>
+    - CIoU算子([!833](https://gitcode.com/cann/ops-cv/pull/833))；<br>
+    - BlendFaceBgPartTwo算子([!825](https://gitcode.com/cann/ops-cv/pull/825))；<br>
+    - SpatialTransformer算子([!698](https://gitcode.com/cann/ops-cv/pull/698))；<br>
+    - adjust_saturation算子([!696](https://gitcode.com/cann/ops-cv/pull/696))；<br>
+    - scaleandtranslate算子([!693](https://gitcode.com/cann/ops-cv/pull/693))；<br>
+    - BoundingBoxEncode算子([!1049](https://gitcode.com/cann/ops-cv/pull/1049))；<br>
+    - NMSWithMask算子([!560](https://gitcode.com/cann/ops-cv/pull/560))；<br>
+    - ExtractGlimpseV2、UpsampleBicubic2d算子([!1039](https://gitcode.com/cann/ops-cv/pull/1039))；<br>
+    - UpsampleNearestExact1d及系列反向算子([!830](https://gitcode.com/cann/ops-cv/pull/830) [!798](https://gitcode.com/cann/ops-cv/pull/798))；<br>
+  - 算子新增特性支持：<br>
+    - AIPP新增CSC色域转换能力，支持YUV420SP/U8、RGB888/U8、BGR888/U8、XRGB8888/U8等多种格式之间的色域转换([!765](https://gitcode.com/cann/ops-cv/pull/765)），并新增动态AIPP通路支持（[!802](https://gitcode.com/cann/ops-cv/pull/802))；<br>
+    - GridSample2D算子新增BF16数据类型支持([!715](https://gitcode.com/cann/ops-cv/pull/715) [!751](https://gitcode.com/cann/ops-cv/pull/751))；<br>
 - 性能优化：<br>
-    1）ResizeNearestNeighborV2算子NCHW格式性能优化([!822](https://gitcode.com/cann/ops-cv/pull/822))；<br>
-    2）GridSamplerGrad算子性能优化([!946](https://gitcode.com/cann/ops-cv/pull/946))。<br>
+    - ResizeNearestNeighborV2算子NCHW格式性能优化([!822](https://gitcode.com/cann/ops-cv/pull/822))；<br>
+    - GridSamplerGrad算子性能优化([!946](https://gitcode.com/cann/ops-cv/pull/946))。<br>
 - 工程优化：<br>
-    1）统一引用CANN公共仓构建API，精简冗余构建脚本([!820](https://gitcode.com/cann/ops-cv/pull/820))；<br>
-    2）统一使用CANN公共仓接口管理第三方依赖([!867](https://gitcode.com/cann/ops-cv/pull/867))；<br>
-    3）ops-cv安装优化改造，解压即安装。<br>
+    - ops-cv安装优化改造，解压即安装。<br>
+    - 新增cv常量折叠算子流程，支持CropAndResize等算子在编译期进行常量折叠优化([!690](https://gitcode.com/cann/ops-cv/pull/690))；<br>
 
 #### opbase仓
 - 新增特性：<br>
