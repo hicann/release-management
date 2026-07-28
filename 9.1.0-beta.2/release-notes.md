@@ -156,8 +156,8 @@
 - Ascend 950PR 支持taskexception&profiling等维测能力，提升问题定位易用性([\#937](https://gitcode.com/cann/hcomm/pull/937) [\#1472](https://gitcode.com/cann/hcomm/pull/1472) [\#267](https://gitcode.com/cann/hccl/pull/267) [\#332](https://gitcode.com/cann/hccl/pull/332))
 - Ascend 950PR HcclChannelAcquire接口支持AIV直驱RoCE和URMA能力，支撑通算融合算子的自定义开发([\#2032](https://gitcode.com/cann/hcomm/pull/2032))
 
-### 图框架
-- 支持Ascend 950DT形态图框架能力恢复.
+### 图引擎
+- 支持Ascend 950DT形态图引擎能力恢复.
 
 ### 运行时
 - 支持Ascend 950DT AclGraph场景stream规格扩充至64K，解决大模型资源不足等问题([\#32976](https://gitcode.com/cann/runtime/pull/2976))

@@ -453,7 +453,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
     AllReduce、ReduceScatter、AllGather、Reduce、Scatter、Alltoall、Alltoallv、Send、Recv等算子支持通信
 
 ### 图引擎
-- 支持Ascend 950DT形态图框架能力恢复。
+- 支持Ascend 950DT形态图引擎能力恢复。
 - ge.autoMultistreamParallelMode新增MainStream和LoadBalance选项，基于最小路径覆盖算法将静态Shape模型的计算节点自动划分至最少逻辑流，实现多流并行加速。
 - 新增PortableOp算子类型，面向离线推理场景提供自定义算子的序列化与反序列化能力。
 - ATC和aclgrph接口支持集群配置文件路径设置，用于生成含有HCCL通信任务的离线OM模型，满足多卡离线推理场景下的通信域配置需求。
