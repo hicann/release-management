@@ -306,36 +306,38 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 ### 算子库
 
 #### ops-math库
-- Ascend 950PR/Ascend 950DT适配与场景支持：<br>
-    1）Diag算子适配([!2185](https://gitcode.com/cann/ops-math/pull/2185))；<br>
-    2）Asin算子适配([!2216](https://gitcode.com/cann/ops-math/pull/2216))；<br>
-    3）PadV2算子适配([!1562](https://gitcode.com/cann/ops-math/pull/1562))；<br>
-    4）BitwiseOr/BitwiseXor整型数据类型支持([!2384](https://gitcode.com/cann/ops-math/pull/2384))；<br>
-    5）Cross算子适配([!2232](https://gitcode.com/cann/ops-math/pull/2232))；<br>
-    6）AngleV2算子适配([!2674](https://gitcode.com/cann/ops-math/pull/2674));<br>
-    7）CdistGrad（[!2981](https://gitcode.com/cann/ops-math/pull/2981)；<br>
-    8）ReduceLogSum（[!2628](https://gitcode.com/cann/ops-math/pull/2628)）；<br>
-    9）Complex（[!3742](https://gitcode.com/cann/ops-math/pull/3742)）；<br>
-    10）AmpUpdataScale（[!3224](https://gitcode.com/cann/ops-math/pull/3224)）；<br>
-    11）ReduceNansum（[!3153](https://gitcode.com/cann/ops-math/pull/3153)）；<br>
-    12）Polar（[!2827](https://gitcode.com/cann/ops-math/pull/2827)）；<br>
-    13）AngleV2（[!2674](https://gitcode.com/cann/ops-math/pull/2674)）；<br>
-    14）Atan2（[!2315](https://gitcode.com/cann/ops-math/pull/2315)）；<br>
-    15）LogAddExp（[!3150](https://gitcode.com/cann/ops-math/pull/3150)；<br>
-    16）TopK算子NPU内存占用优化，模型场景shape(n, s), s > 100000000,  s/200 > topk > s/50，额外申请内存相比输入+输出不超过100%，其余场景不劣化（[!3183](https://gitcode.com/cann/ops-math/pull/3183)）；<br>
-    17）AddN算子新增aclnn接口支持（[!2720](https://gitcode.com/cann/ops-math/pull/2720) [!3587](https://gitcode.com/cann/ops-math/pull/3587)）；<br>
-    18）cholesky算子支持大尾轴场景输入（[!2255](https://gitcode.com/cann/ops-math/pull/2255)）；<br>
-    19）ReduceSum算子支持bool输入（[!3014](https://gitcode.com/cann/ops-math/pull/3014)）
 
-- 性能优化：<br>
-    1）Sort算子小轴场景排序性能优化([!2985](https://gitcode.com/cann/ops-math/pull/2985))；<br>
-    2）随机数算子生成性能优化([!3590](https://gitcode.com/cann/ops-math/pull/3590))；<br>
-    3）TopkV2算子性能优化，提升int64索引场景计算效率([!2564](https://gitcode.com/cann/ops-math/pull/2564))；<br>
-    4）AICPU算子性能优化，覆盖ClipByValueV2([!2460](https://gitcode.com/cann/ops-math/pull/2460))、ConcatV2([!2395](https://gitcode.com/cann/ops-math/pull/2395))、CumSum([!2262](https://gitcode.com/cann/ops-math/pull/2262))。<br>
-- 工程优化：<br>
-    1）并行解压编译加速([!2332](https://gitcode.com/cann/ops-math/pull/2332))；<br>
-    2）统一引用CANN公共仓构建API，精简冗余构建脚本([!2372](https://gitcode.com/cann/ops-math/pull/2372))；<br>
-    3）去除gawk外部依赖，采用纯bash实现时间戳格式化([!2407](https://gitcode.com/cann/ops-math/pull/2407))。<br>
+- Ascend 950PR/Ascend 950DT适配与场景支持：
+  - 新增适配以下算子
+    - Diag（[!2185](https://gitcode.com/cann/ops-math/pull/2185)）；
+    - Asin（[!2216](https://gitcode.com/cann/ops-math/pull/2216)）；
+    - PadV2（[!1562](https://gitcode.com/cann/ops-math/pull/1562)）；
+    - Cross（[!2232](https://gitcode.com/cann/ops-math/pull/2232)）；
+    - AngleV2（[!2674](https://gitcode.com/cann/ops-math/pull/2674)）；
+    - CdistGrad（[!2981](https://gitcode.com/cann/ops-math/pull/2981)）；
+    - ReduceLogSum（[!2628](https://gitcode.com/cann/ops-math/pull/2628)）；
+    - Complex（[!3742](https://gitcode.com/cann/ops-math/pull/3742)）；
+    - AmpUpdateScale（[!3224](https://gitcode.com/cann/ops-math/pull/3224)）；
+    - ReduceNansum（[!3153](https://gitcode.com/cann/ops-math/pull/3153)）；
+    - Polar（[!2827](https://gitcode.com/cann/ops-math/pull/2827)）；
+    - Atan2（[!2315](https://gitcode.com/cann/ops-math/pull/2315)）；
+    - LogAddExp（[!3150](https://gitcode.com/cann/ops-math/pull/3150)）；
+  - 算子新增特性支持
+    - BitwiseOr/BitwiseXor支持整型数据类型（[!2384](https://gitcode.com/cann/ops-math/pull/2384)）；
+    - AddN算子支持aclnn接口调用（[!2720](https://gitcode.com/cann/ops-math/pull/2720) [!3587](https://gitcode.com/cann/ops-math/pull/3587)）；
+    - cholesky算子支持大尾轴场景输入（[!2255](https://gitcode.com/cann/ops-math/pull/2255)）；
+    - ReduceSum算子支持bool输入（[!3014](https://gitcode.com/cann/ops-math/pull/3014)）
+
+- 性能优化：
+  - Sort算子小轴场景排序性能优化([!2985](https://gitcode.com/cann/ops-math/pull/2985))；
+  - 随机数算子生成性能优化([!3590](https://gitcode.com/cann/ops-math/pull/3590))；
+  - TopkV2算子性能优化，提升int64索引场景计算效率([!2564](https://gitcode.com/cann/ops-math/pull/2564))；
+  - TopK算子长序列场景显存、性能优化（[!3183](https://gitcode.com/cann/ops-math/pull/3183)）；
+  - AICPU算子性能优化，覆盖ClipByValueV2([!2460](https://gitcode.com/cann/ops-math/pull/2460))、ConcatV2([!2395](https://gitcode.com/cann/ops-math/pull/2395))、CumSum([!2262](https://gitcode.com/cann/ops-math/pull/2262))。
+
+- 工程优化：
+  - 并行解压编译加速([!2332](https://gitcode.com/cann/ops-math/pull/2332))；
+  - 去除gawk外部依赖，采用纯bash实现时间戳格式化([!2407](https://gitcode.com/cann/ops-math/pull/2407))。
 
 #### ops-cv库
 - Ascend 950PR/Ascend 950DT新增适配以下算子：<br>
