@@ -525,10 +525,26 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 
 ### 虚拟指令集
 
-- 基础Vector&Cube指令：支持Vector类指令的高精度版本（[!896](https://gitcode.com/cann/pto-isa/pull/896), [!782](https://gitcode.com/cann/pto-isa/pull/782), [!815](https://gitcode.com/cann/pto-isa/pull/815), [!717](https://gitcode.com/cann/pto-isa/pull/717), [!648](https://gitcode.com/cann/pto-isa/pull/648), [!695](https://gitcode.com/cann/pto-isa/pull/695)），新增transdata场景支持（[!950](https://gitcode.com/cann/pto-isa/pull/950), [!977](https://gitcode.com/cann/pto-isa/pull/977)），TSTORE、TLOAD支持卷积3D（[!904](https://gitcode.com/cann/pto-isa/pull/904), [!912](https://gitcode.com/cann/pto-isa/pull/912)），新增MGATHER/MSCATTER指令（[!935](https://gitcode.com/cann/pto-isa/pull/935), [!1136](https://gitcode.com/cann/pto-isa/pull/1136), [!309](https://gitcode.com/cann/pto-isa/pull/309), [!889](https://gitcode.com/cann/pto-isa/pull/889)），Reduce类指令支持返回值及对应索引（[!1124](https://gitcode.com/cann/pto-isa/pull/1124), [!928](https://gitcode.com/cann/pto-isa/pull/928)），TQUANT支持MXFP8/MXFP4量化（[!1187](https://gitcode.com/cann/pto-isa/pull/1187), [!1143](https://gitcode.com/cann/pto-isa/pull/1143)），合轴类指令支持类型增强，TMOV/TEXTRACT/TINSERT支持Vec到Vec（[!1196](https://gitcode.com/cann/pto-isa/pull/1196)）。
-- 通信类指令：新增A5 CCU异步通信类指令TGATHER、TBROADCAST、TSCATTER、TREDUCE（[!915](https://gitcode.com/cann/pto-isa/pull/915)），支持全核同步指令SYNCALL（[!907](https://gitcode.com/cann/pto-isa/pull/907)），新增异步prefetch指令（[!116](https://gitcode.com/cann/pto-isa/pull/116)），TPUT_ASYNC、TGET_ASYNC增加A5基于URMA的异步通信能力（[!991](https://gitcode.com/cann/pto-isa/pull/991)）。
-- CostModel仿真：新增A2A3算子级Costmodel，支持输出算子性能、Pipeline时间、泳道图等信息（[!1004](https://gitcode.com/cann/pto-isa/pull/1004)），接入CCE Mock方案，支持A2A3已有指令性能预测（[!772](https://gitcode.com/cann/pto-isa/pull/772)）。
-- CPU-SIM：随NPU同步新增CPU仿真指令。
+基础Vector&Cube指令：
+  - 支持Vector类指令的高精度版本（[!896](https://gitcode.com/cann/pto-isa/pull/896), [!782](https://gitcode.com/cann/pto-isa/pull/782), [!815](https://gitcode.com/cann/pto-isa/pull/815), [!717](https://gitcode.com/cann/pto-isa/pull/717), [!648](https://gitcode.com/cann/pto-isa/pull/648), [!695](https://gitcode.com/cann/pto-isa/pull/695)）。
+  - 新增transdata场景支持（[!950](https://gitcode.com/cann/pto-isa/pull/950), [!977](https://gitcode.com/cann/pto-isa/pull/977)）。
+  - TSTORE、TLOAD支持卷积3D（[!904](https://gitcode.com/cann/pto-isa/pull/904), [!912](https://gitcode.com/cann/pto-isa/pull/912)）。
+  - 新增MGATHER/MSCATTER指令（[!935](https://gitcode.com/cann/pto-isa/pull/935), [!1136](https://gitcode.com/cann/pto-isa/pull/1136), [!309](https://gitcode.com/cann/pto-isa/pull/309), [!889](https://gitcode.com/cann/pto-isa/pull/889)）。
+  - Reduce类指令支持返回值及对应索引（[!1124](https://gitcode.com/cann/pto-isa/pull/1124), [!928](https://gitcode.com/cann/pto-isa/pull/928)）。
+  - TQUANT支持MXFP8/MXFP4量化（[!1187](https://gitcode.com/cann/pto-isa/pull/1187), [!1143](https://gitcode.com/cann/pto-isa/pull/1143)）。
+  - 合轴类指令支持类型增强，TMOV/TEXTRACT/TINSERT支持Vec到Vec（[!1196](https://gitcode.com/cann/pto-isa/pull/1196)）。
+
+通信类指令：
+  - 新增A5 CCU异步通信类指令TGATHER、TBROADCAST、TSCATTER、TREDUCE（[!915](https://gitcode.com/cann/pto-isa/pull/915)）。
+  - 支持全核同步指令SYNCALL（[!907](https://gitcode.com/cann/pto-isa/pull/907)）。
+  - 新增异步prefetch指令（[!116](https://gitcode.com/cann/pto-isa/pull/116)）。
+  - TPUT_ASYNC、TGET_ASYNC增加A5基于URMA的异步通信能力（[!991](https://gitcode.com/cann/pto-isa/pull/991)）。
+
+CostModel仿真：
+  - 新增A2A3算子级Costmodel，支持输出算子性能、Pipeline时间、泳道图等信息（[!1004](https://gitcode.com/cann/pto-isa/pull/1004)）。
+  - 接入CCE Mock方案，支持A2A3已有指令性能预测（[!772](https://gitcode.com/cann/pto-isa/pull/772)）。
+
+CPU-SIM：随NPU同步新增CPU仿真指令。
 
 ## 删除和废弃特性
 
