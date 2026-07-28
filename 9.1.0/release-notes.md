@@ -392,12 +392,12 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
     1）Ascend 950PR/Ascend 950DT支持静态库([!3623](https://gitcode.com/cann/ops-nn/pull/3623))<br>
     2）kernel配置脚本优化([!3330](https://gitcode.com/cann/ops-nn/pull/3330))
 
-- A2A3 Cube类算子能力增强，优化网络性能并减少部分场景的内存占用：
-    1）aclnnMatmulWeightNz性能优化([!5444](https://gitcode.com/cann/ops-nn/pull/5444))([!5105](https://gitcode.com/cann/ops-nn/pull/5105))
-    2）aclnnTransposeBatchMatmul放开B*K < 65536的限制([!4240](https://gitcode.com/cann/ops-nn/pull/4240))
-    3）aclnnBatchMatmul FP32数据类型下大Batch小MKN场景性能优化([!6103](https://gitcode.com/cann/ops-nn/pull/6103))([!7264](https://gitcode.com/cann/ops-nn/pull/7264))
-    4）Cube类算子支持配置out_dtype([!4823](https://gitcode.com/cann/ops-nn/pull/4823))([!5481](https://gitcode.com/cann/ops-nn/pull/5481))([!5602](https://gitcode.com/cann/ops-nn/pull/5602))
-    5）Cube类算子内存占用优化([!5356](https://gitcode.com/cann/ops-nn/pull/5356))([!5864](https://gitcode.com/cann/ops-nn/pull/5864))
+- Atlas A2A3系列产品 Cube类算子能力增强，优化网络性能并减少部分场景的内存占用：<br>
+    1）aclnnMatmulWeightNz性能优化([!5444](https://gitcode.com/cann/ops-nn/pull/5444))([!5105](https://gitcode.com/cann/ops-nn/pull/5105))<br>
+    2）aclnnTransposeBatchMatmul放开B*K < 65536的限制([!4240](https://gitcode.com/cann/ops-nn/pull/4240))<br>
+    3）aclnnBatchMatmul FP32数据类型下大Batch小MKN场景性能优化([!6103](https://gitcode.com/cann/ops-nn/pull/6103))([!7264](https://gitcode.com/cann/ops-nn/pull/7264))<br>
+    4）Cube类算子支持配置out_dtype([!4823](https://gitcode.com/cann/ops-nn/pull/4823))([!5481](https://gitcode.com/cann/ops-nn/pull/5481))([!5602](https://gitcode.com/cann/ops-nn/pull/5602))<br>
+    5）Cube类算子内存占用优化([!5356](https://gitcode.com/cann/ops-nn/pull/5356))([!5864](https://gitcode.com/cann/ops-nn/pull/5864))<br>
 
 #### ops-transformer库
 
