@@ -239,7 +239,7 @@ CANN 9.1.0包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合�
       <td>ops-ras</td>
       <td><a href="https://gitcode.com/cann/ops-ras/tags/v9.1.0">9.1.0</a></td>
       <td>arm/x86</td>
-    </tr>    
+    </tr>
     <tr>
       <td rowspan="2">加速库（NNAL）</td>
       <td><a href="https://gitcode.com/cann/ascend-transformer-boost">atb</a></td>
@@ -257,7 +257,7 @@ CANN 9.1.0包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合�
 ### CANN ops与Toolkit配套关系
 CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需求灵活安装。
 
-|ops版本  |配套toolkit版本  |  
+|ops版本  |配套toolkit版本  |
 |--|--|
 | [ascend-cann-ops 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0)<br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
 | [ascend-cann-ops 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0)<br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
@@ -277,35 +277,31 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 子包独立升级的具体操作请参考[子包独立升级](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/softwareinst/instg/instg_0030.html)。
 
-
 ## 关键特性
 
-**CANN新增支持Ascend 950DT产品，提供更完备的算子/通信/图等多维度能力，深度优化模型训练/Decode推理场景。**
+- **CANN新增支持Ascend 950DT产品，提供更完备的算子/通信/图等多维度能力，深度优化模型训练/Decode推理场景。**
 
-**在Ascend 950系列产品，SHMEM 首发支持 AICore 直驱 MTE/UDMA/RDMA，使能UB和RoCE通信，提供相应编程接口。**
+- **在Ascend 950系列产品，SHMEM 首发支持 AICore 直驱 MTE/UDMA/RDMA，使能UB和RoCE通信，提供相应编程接口。**
 
-**在Ascend 950系列产品，Catlass新增Tile组件支持，提供丰富的MxFP8/MxFP4量化模板及样例库。**
+- **在Ascend 950系列产品，Catlass新增Tile组件支持，提供丰富的MxFP8/MxFP4量化模板及样例库。**
 
-**新增支持DeepSeekV4相关结构融合算子SMLA/mHC，在Atlas A2 系列产品和Atlas A3 系列产品上，模型提升至1.3+以上([SMLA](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_flash_mla/docs/aclnnSparseFlashMla.md),[SMLAG](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_flash_mla_grad/docs/aclnnSparseFlashMlaGrad.md),[LI](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/lightning_indexer_v2/docs/aclnnLightningIndexerV2.md),[SLIG](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_lightning_indexer_kl_loss_grad/docs/aclnnSparseLightningIndexerKLLossGrad.md),[mhc](https://gitcode.com/cann/ops-transformer/tree/9.1.0/mhc))。**
+- **新增支持DeepSeekV4相关结构融合算子SMLA/mHC，在Atlas A2 系列产品和Atlas A3 系列产品上，模型提升至1.3+以上([SMLA](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_flash_mla/docs/aclnnSparseFlashMla.md),[SMLAG](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_flash_mla_grad/docs/aclnnSparseFlashMlaGrad.md),[LI](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/lightning_indexer_v2/docs/aclnnLightningIndexerV2.md),[SLIG](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_lightning_indexer_kl_loss_grad/docs/aclnnSparseLightningIndexerKLLossGrad.md),[mhc](https://gitcode.com/cann/ops-transformer/tree/9.1.0/mhc))。**
 
-**新增支持[MegaMoe](https://gitcode.com/cann/ops-transformer/blob/9.1.0/mc2/mega_moe/README.md)通算融合算子，在Atlas A2 系列产品和Atlas A3 系列产品上，在Deepseek/Qwen/GLM系列模型提升至1.2+。**
+- **新增支持[MegaMoe](https://gitcode.com/cann/ops-transformer/blob/9.1.0/mc2/mega_moe/README.md)通算融合算子，在Atlas A2 系列产品和Atlas A3 系列产品上，在Deepseek/Qwen/GLM系列模型提升至1.2+。**
 
-**发布Host CPU 亲和性绑核工具，支持Host CPU 亲和性绑核与资源隔离，实现性能调优([msboost](https://gitcode.com/Ascend/msboost))。**
+- **发布Host CPU 亲和性绑核工具，支持Host CPU 亲和性绑核与资源隔离，实现性能调优([msboost](https://gitcode.com/Ascend/msboost))。**
 
 ## 新增特性
 
 ### 公共模块
 
-- cpu性能调优：  
-  - Toolkit 新增 mindstudio-boost 子包，面向 HostBound 业务场景，支持对关键线程自动化绑核与资源隔离，实现性能调优([!1](https://gitcode.com/Ascend/msboost/pull/1))。
-
-- cann适配不同昇腾硬件产品，新增os兼容性支持。  
-  - Atlas 350 适配tlinux 3.3、tlinux 4.4、anolis os 8.9。  
-  - Atlas 800i a2、Atlas 800i a3、Atlas 850/850e 适配hce 3.0 。  
-  - Atlas 800i a3 适配euler 2.15。  
-  - Atlas 950 superpod、Atlas 850/850e 适配 openeuler 24.03 lts sp4
-
-- cann支持python 3.14.*版本，支持cann在高版本python下运行
+- CPU性能调优：
+  - Toolkit新增mindstudio-boost子包，面向HostBound业务场景，支持对关键线程自动化绑核与资源隔离，实现性能调优([!1](https://gitcode.com/Ascend/msboost/pull/1))。
+- CANN适配不同昇腾硬件产品，新增OS兼容性支持。
+  - Atlas 350 加速卡适配Tlinux 3.3、Tlinux 4.4、Anolis OS 8.9。
+  - Atlas 950 SuperPoD、Atlas 850/850E 适配 openEuler 24.03 lts sp4。
+- CANN支持Python 3.14.*版本，支持CANN在高版本Python下运行。
+- 提供query_pkg_version.sh软件版本信息查询脚本，一键查询各组件的版本信息。
 
 ### 算子库
 
@@ -459,7 +455,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 - [A5]标卡支持跨PCIE SW进行通信([!1997](https://gitcode.com/cann/hcomm/pull/1799) [!707](https://gitcode.com/cann/hccl/pull/707))
     AllReduce、ReduceScatter、AllGather、Reduce、Scatter、Alltoall、Alltoallv、Send、Recv等算子支持通信
 
-### 图框架
+### 图引擎
 - 支持Ascend 950DT形态图框架能力恢复。
 - ge.autoMultistreamParallelMode新增MainStream和LoadBalance选项，基于最小路径覆盖算法将静态Shape模型的计算节点自动划分至最少逻辑流，实现多流并行加速。
 - 新增PortableOp算子类型，面向离线推理场景提供自定义算子的序列化与反序列化能力。
@@ -469,16 +465,16 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 #### Ascend Transformer Boost加速库
 
-- **Ascend 950PR/Ascend 950DT 核心算子接入**  
+- **Ascend 950PR/Ascend 950DT 核心算子接入**
 批量落地 GELU、LayerNorm、MatmulEinSum、RmsNormQuant、SwiGluQuant（ACLNN V2）、Linear 反量化，以及 AllGather / AllReduce / ReduceScatter 等通信算子 A5 支持（[!1994](https://gitcode.com/cann/ascend-transformer-boost/pull/1994) [!2089](https://gitcode.com/cann/ascend-transformer-boost/pull/2089) [!2090](https://gitcode.com/cann/ascend-transformer-boost/pull/2090) [!2060](https://gitcode.com/cann/ascend-transformer-boost/pull/2060) [!2097](https://gitcode.com/cann/ascend-transformer-boost/pull/2097) [!2103](https://gitcode.com/cann/ascend-transformer-boost/pull/2103) [!2091](https://gitcode.com/cann/ascend-transformer-boost/pull/2091)）。
 
-- **Attention / KV Cache 推理增强**  
+- **Attention / KV Cache 推理增强**
 Paged Attention 950 升级 ACLNN FIA v5；Paged Attention / Flash Attention 新增 NORM_COMPRESS 掩码；MLA decode 支持 SWA 滑动窗口；950 ReshapeAndCache 单入单出能力落地（[!2069](https://gitcode.com/cann/ascend-transformer-boost/pull/2069) [!2114](https://gitcode.com/cann/ascend-transformer-boost/pull/2114) [!2116](https://gitcode.com/cann/ascend-transformer-boost/pull/2116) [!2078](https://gitcode.com/cann/ascend-transformer-boost/pull/2078) [!2065](https://gitcode.com/cann/ascend-transformer-boost/pull/2065)）。
 
-- **torch_atb 独立编译与 ABI 体系**  
+- **torch_atb 独立编译与 ABI 体系**
 torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel 命名规范、安装脚本自动检测/安装 torch，安装部署链路打通（[!2021](https://gitcode.com/cann/ascend-transformer-boost/pull/2021) [!2086](https://gitcode.com/cann/ascend-transformer-boost/pull/2086) [!2118](https://gitcode.com/cann/ascend-transformer-boost/pull/2118)）。
 
-- **开发者文档与测试框架**  
+- **开发者文档与测试框架**
 新增测试框架指南，补齐 cxx_abi 判断、CANN 9.1 / PyTorch 26.0.0 版本配套说明（[!2120](https://gitcode.com/cann/ascend-transformer-boost/pull/2120) [!2121](https://gitcode.com/cann/ascend-transformer-boost/pull/2121) [!2126](https://gitcode.com/cann/ascend-transformer-boost/pull/2126) [!2136](https://gitcode.com/cann/ascend-transformer-boost/pull/2136)）。
 
 #### Ascend Signal Processing Boost加速库
@@ -523,7 +519,7 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 - 增加SIMD与SIMT混合编程性能优化概述（[!2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
 - 搭建VitePress文档站点，提供AscendC资料预览功能（[!2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
 
-### 虚拟指令集
+### PTO虚拟指令集
 
 基础Vector&Cube指令：
   - 支持Vector类指令的高精度版本（[!896](https://gitcode.com/cann/pto-isa/pull/896), [!782](https://gitcode.com/cann/pto-isa/pull/782), [!815](https://gitcode.com/cann/pto-isa/pull/815), [!717](https://gitcode.com/cann/pto-isa/pull/717), [!648](https://gitcode.com/cann/pto-isa/pull/648), [!695](https://gitcode.com/cann/pto-isa/pull/695)）。
@@ -579,14 +575,15 @@ CPU-SIM：随NPU同步新增CPU仿真指令。
 
 ## 已知问题
 
-问题一：算子aclnnMatmulCompressDequant的输入参数deqScale的值为inf/-inf时，其精度详情中显示有inf或nan  
+问题：算子aclnnMatmulCompressDequant的输入参数deqScale的值为inf/-inf时，其精度详情中显示有inf或nan
 【引入版本】CANN 8.5.0
-【缺陷影响】测试特殊构造用例触发，非新算子引入，且实际量化场景下不会有deqScale为-inf和inf场景，当前版本影响可控  
+【缺陷影响】测试特殊构造用例触发，非新算子引入，且实际量化场景下不会有deqScale为-inf和inf场景，当前版本影响可控
 【规避方案】实际量化场景下不会有deqScale为-inf和inf场景
 
 ## 已修复问题
 
-以下问题在9.1.0版本修复：  
+以下问题在9.1.0版本修复：
+
 - 修复了QuantBatchMatmulV3算子在Atlas推理系列产品上，编译时指定AUTO_SYNC=false导致算子读写冲突的问题。
 - 针对Atlas A2系列产品和Atlas A3系列产品，修复了MatmulReduceScatterV2算子在M小于512场景下，flag位清零过快导致其他卡检测不到，最终超时的问题。
 - 修复了Atlas A2系列产品的大EP场景下，D节点注入片上内存多bit故障，无法进入快速恢复流程的问题。
@@ -599,6 +596,71 @@ CPU-SIM：随NPU同步新增CPU仿真指令。
 - 修复了fused_quant_mat_mul场景存在的精度问题。
 - 修复了BatchMatmulV2在特定bias场景下存在的精度问题。
 - 修复了FAG算子短序列GQA、NoMask场景存在的精度问题。
+
+## 文档变更说明
+
+### 编程指南
+
+#### Ascend C算子开发
+
+- 优化“入门教程”章节：
+  - 更新Ascend C学习路径。
+  - 新增异构系统和编程模型概括性描述。
+- “编程指南”中SIMD编程模型章节进行优化调整，按照基于语言扩展层C API编程、基于Tensor的C++编程、基于Tpipe和TQue编程的维度进行分类。
+- “编程指南”新增高级编程 > SuperKernel、高级编程 > SIMT协作组章节。
+- 对《Ascend C API》进行了大规模重构，变更点如下：
+  - 对数据搬运API和矩阵计算API等进行了目录结构调整：相关性强的API放置在临近位置，比如将矩阵计算相关的搬运接口放置在矩阵计算目录下。
+  - 按照场景进行API的目录结构组织：比如矩阵计算分为矩阵计算的搬入、Mmad计算、矩阵计算的搬出。
+  - 针对一类API增加必要的背景知识、概念原理介绍、通用的约束、关键特性等说明。
+  - 针对每一个API补充约束说明、参数特殊值相关说明。
+  - 新增API附录，附录中包含API流水类型汇总、理论性能汇总、接口边界值汇总等。
+- 新增Tensor API参考文档。
+
+#### 通信算子开发
+
+- 新增“编程模型与概念 > CCU编程模型与概念”章节。
+- 新增“通信算子开发 > CCU算子开发”章节。
+- 通信算子开发API新增以下接口。
+  - 控制面接口 > CCU Kernel生命周期与内存Token管理。
+  - 数据面接口 > CCU接口。
+
+#### 图开发
+
+新增以下章节：
+
+- 自定义Pass开发 > 使用自定义Pass修改Graph > 基于Pattern匹配实现Pass（Python）。
+- 编程指南 > SuperKernel融合范围标定。
+- 自定义算子入图 > 自定义算子入图。
+
+### API参考
+
+#### GE图引擎 API
+
+- 接口参考 > Python语言接口 > pyatc接口：新增Python场景的atc命令行工具。
+- 图基础数据结构和接口 > options参数名说明 > ge.tiling_schedule_optimize：修改该参数级别，由原来global session级修改为all所有级别。
+
+### 算子库
+
+#### ops-cv
+
+新增算子多平台迁移指南文档，指导开发者将算子从Atlas A2 系列产品迁移至Ascend 950PR/Ascend 950DT 系列产品。
+
+### 通信库
+
+#### HCCL集合通信库
+
+相关参考 > 通信算子支持度清单：新增“Ascend 950PR/Ascend 950 DT”支持度清单。
+
+### 开发工具
+
+#### ATC离线模型编译工具
+
+参数说明--framework：补充说明Caffe框架在当前形态已不再演进，转模型不保证可用性的说明。
+
+#### AMCT模型压缩工具
+
+新增“基于LLM的量化”章节。
+
 ## 漏洞修补列表
 
 版本开源及第三方软件漏洞修复情况详见[漏洞修补列表](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/maintenref/refdoc/refer002.html)。
