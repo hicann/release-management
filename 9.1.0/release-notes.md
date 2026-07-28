@@ -475,11 +475,11 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
 新增测试框架指南，补齐 cxx_abi 判断、CANN 9.1 / PyTorch 26.0.0 版本配套说明（[!2120](https://gitcode.com/cann/ascend-transformer-boost/pull/2120) [!2121](https://gitcode.com/cann/ascend-transformer-boost/pull/2121) [!2126](https://gitcode.com/cann/ascend-transformer-boost/pull/2126) [!2136](https://gitcode.com/cann/ascend-transformer-boost/pull/2136)）。
 
 #### Ascend Signal Processing Boost加速库
-
-- FFT 1D C2C算子支持Ascend 950芯片（[!69](https://gitcode.com/cann/sip/pull/69)）。
-- FFT 1D C2R算子支持Ascend 950芯片（[!73](https://gitcode.com/cann/sip/pull/73)）。
-- FFT 1D R2C算子支持Ascend 950芯片（[!73](https://gitcode.com/cann/sip/pull/73)）。
-- Hadamard算子支持Ascend 950芯片（[!76](https://gitcode.com/cann/sip/pull/76)）。
+- 在Ascend 950PR/Ascend 950DT上新增适配以下算子：
+  - FFT 1D C2C算子（[!69](https://gitcode.com/cann/sip/pull/69)）。
+  - FFT 1D C2R算子（[!73](https://gitcode.com/cann/sip/pull/73)）。
+  - FFT 1D R2C算子（[!73](https://gitcode.com/cann/sip/pull/73)）。
+  - Hadamard算子（[!76](https://gitcode.com/cann/sip/pull/76)）。
 
 ### 运行时
 - 支持Ascend 950DT AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题([\#2976](https://gitcode.com/cann/runtime/pull/2976))
