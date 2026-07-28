@@ -482,7 +482,7 @@ torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel
   - Hadamard算子（[!76](https://gitcode.com/cann/sip/pull/76)）。
 
 ### 运行时
-- 支持Ascend 950DT AclGraph场景stream规格扩充至64k，解决大模型资源不足等问题([\#2976](https://gitcode.com/cann/runtime/pull/2976))
+- 支持Ascend 950DT AclGraph场景stream规格扩充，解决大模型资源不足等问题([\#2976](https://gitcode.com/cann/runtime/pull/2976))
 
 ###  算子编程
 
