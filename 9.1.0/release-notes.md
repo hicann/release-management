@@ -468,13 +468,10 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 批量落地 GELU、LayerNorm、MatmulEinSum、RmsNormQuant、SwiGluQuant（ACLNN V2）、Linear 反量化，以及 AllGather / AllReduce / ReduceScatter 等通信算子 A5 支持（[!1994](https://gitcode.com/cann/ascend-transformer-boost/pull/1994) [!2089](https://gitcode.com/cann/ascend-transformer-boost/pull/2089) [!2090](https://gitcode.com/cann/ascend-transformer-boost/pull/2090) [!2060](https://gitcode.com/cann/ascend-transformer-boost/pull/2060) [!2097](https://gitcode.com/cann/ascend-transformer-boost/pull/2097) [!2103](https://gitcode.com/cann/ascend-transformer-boost/pull/2103) [!2091](https://gitcode.com/cann/ascend-transformer-boost/pull/2091)）。
 
 - **Attention / KV Cache 推理增强**
-Paged Attention 950 升级 ACLNN FIA v5；Paged Attention / Flash Attention 新增 NORM_COMPRESS 掩码；MLA decode 支持 SWA 滑动窗口；950 ReshapeAndCache 单入单出能力落地（[!2069](https://gitcode.com/cann/ascend-transformer-boost/pull/2069) [!2114](https://gitcode.com/cann/ascend-transformer-boost/pull/2114) [!2116](https://gitcode.com/cann/ascend-transformer-boost/pull/2116) [!2078](https://gitcode.com/cann/ascend-transformer-boost/pull/2078) [!2065](https://gitcode.com/cann/ascend-transformer-boost/pull/2065)）。
+Paged Attention 在 Ascend 950 上升级 FusedInferAttention V5；Paged Attention / Flash Attention 新增 NORM_COMPRESS 掩码；MLA decode 支持 SWA 滑动窗口；ReshapeAndCache 在 Ascend 950 上支持单入单出（[!2069](https://gitcode.com/cann/ascend-transformer-boost/pull/2069) [!2114](https://gitcode.com/cann/ascend-transformer-boost/pull/2114) [!2116](https://gitcode.com/cann/ascend-transformer-boost/pull/2116) [!2078](https://gitcode.com/cann/ascend-transformer-boost/pull/2078) [!2065](https://gitcode.com/cann/ascend-transformer-boost/pull/2065)）。
 
 - **torch_atb 独立编译与 ABI 体系**
-torch*atb 从主库解耦独立编译，默认出包 ABI 切换 cxx*abi1；wheel 命名规范、安装脚本自动检测/安装 torch，安装部署链路打通（[!2021](https://gitcode.com/cann/ascend-transformer-boost/pull/2021) [!2086](https://gitcode.com/cann/ascend-transformer-boost/pull/2086) [!2118](https://gitcode.com/cann/ascend-transformer-boost/pull/2118)）。
-
-- **开发者文档与测试框架**
-新增测试框架指南，补齐 cxx_abi 判断、CANN 9.1 / PyTorch 26.0.0 版本配套说明（[!2120](https://gitcode.com/cann/ascend-transformer-boost/pull/2120) [!2121](https://gitcode.com/cann/ascend-transformer-boost/pull/2121) [!2126](https://gitcode.com/cann/ascend-transformer-boost/pull/2126) [!2136](https://gitcode.com/cann/ascend-transformer-boost/pull/2136)）。
+torch_atb 从主库解耦独立编译，默认出包 ABI 切换 cxx_abi_1；wheel 命名规范、安装脚本自动检测/安装 torch，安装部署链路打通（[!2021](https://gitcode.com/cann/ascend-transformer-boost/pull/2021) [!2086](https://gitcode.com/cann/ascend-transformer-boost/pull/2086) [!2118](https://gitcode.com/cann/ascend-transformer-boost/pull/2118)）。
 
 #### Ascend Signal Processing Boost加速库
 - 在Ascend 950PR/Ascend 950DT上新增适配以下算子：
@@ -654,6 +651,15 @@ CPU-SIM：随NPU同步新增CPU仿真指令。
 #### HCCL集合通信库
 
 相关参考 > 通信算子支持度清单：新增“Ascend 950PR/Ascend 950 DT”支持度清单。
+
+### 领域加速库
+
+#### Ascend Transformer Boost加速库
+
+- 新增测试框架指南，补充testframework编译运行依赖使用说明（[!2120](https://gitcode.com/cann/ascend-transformer-boost/pull/2120)）。
+- 补充cxx_abi版本判断方法说明（[!2121](https://gitcode.com/cann/ascend-transformer-boost/pull/2121)）。
+- 更新文档链接至CANN 9.1和PyTorch 26.0.0（[!2126](https://gitcode.com/cann/ascend-transformer-boost/pull/2126)）。
+- 修正ATB_BUILD_DEPENDENCY_PATH及ABI判断说明，覆盖README/FAQ/测试框架指南（[!2136](https://gitcode.com/cann/ascend-transformer-boost/pull/2136)）。
 
 ### 开发工具
 
