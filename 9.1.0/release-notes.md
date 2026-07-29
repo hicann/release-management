@@ -1,4 +1,4 @@
-# CANN 9.1.0版本说明（开发中）
+# CANN 9.1.0版本说明
 
 ## 版本下载地址
 
@@ -367,36 +367,35 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 #### opbase仓
 - 新增特性：<br>
-    1）支持float8/float6/float4数据类型及资料([!298](https://gitcode.com/cann/opbase/pull/298)、[!479](https://gitcode.com/cann/opbase/pull/479)、[!486](https://gitcode.com/cann/opbase/pull/486))；<br>
-    2）reduce模板混合精度支持([!255](https://gitcode.com/cann/opbase/pull/255))；<br>
-    3）新增非连续输入算子静态支持([!346](https://gitcode.com/cann/opbase/pull/346)、[!353](https://gitcode.com/cann/opbase/pull/353))；<br>
-    4）日志接口DFX增强([!350](https://gitcode.com/cann/opbase/pull/350)、[!448](https://gitcode.com/cann/opbase/pull/448)、[!513](https://gitcode.com/cann/opbase/pull/513)、[!299](https://gitcode.com/cann/opbase/pull/299))。<br>
+  - 支持float8/float6/float4数据类型及资料([!298](https://gitcode.com/cann/opbase/pull/298)、[!479](https://gitcode.com/cann/opbase/pull/479)、[!486](https://gitcode.com/cann/opbase/pull/486))。<br>
+  - reduce模板混合精度支持([!255](https://gitcode.com/cann/opbase/pull/255))。<br>
+  - 新增非连续输入算子静态支持([!346](https://gitcode.com/cann/opbase/pull/346)、[!353](https://gitcode.com/cann/opbase/pull/353))。<br>
+  - 日志接口DFX增强([!350](https://gitcode.com/cann/opbase/pull/350)、[!448](https://gitcode.com/cann/opbase/pull/448)、[!513](https://gitcode.com/cann/opbase/pull/513)、[!299](https://gitcode.com/cann/opbase/pull/299))。<br>
 - 性能优化：<br>
-    1）broadcast非连续tensor性能优化([!317](https://gitcode.com/cann/opbase/pull/317))；<br>
-    2）优化build.sh增量编译性能，复用CMake缓存避免重复配置([!391](https://gitcode.com/cann/opbase/pull/391))。<br>
+  - broadcast非连续tensor性能优化([!317](https://gitcode.com/cann/opbase/pull/317))。<br>
+  - 优化build.sh增量编译性能，复用CMake缓存避免重复配置([!391](https://gitcode.com/cann/opbase/pull/391))。<br>
 - 工程优化：<br>
-    1）切换工程构建打包依赖至CANN公共仓([!361](https://gitcode.com/cann/opbase/pull/361))；<br>
-    2）安装优化改造，解压即安装([!308](https://gitcode.com/cann/opbase/pull/308))。<br>
+  - 切换工程构建打包依赖至CANN公共仓([!361](https://gitcode.com/cann/opbase/pull/361))。<br>
+  - 安装优化改造，解压即安装([!308](https://gitcode.com/cann/opbase/pull/308))。<br>
 
 #### ops-nn库
-- 卷积算子功能性能优化，优化多模态网络性能，内存占用不劣化([!735](https://gitcode.com/cann/ops-nn/pull/735))。<br>
-    1）dX支持超大W输入场景对W切分；<br>
-    2）dW支持确定性场景下开启性能优化特性；<br>
-    3）dX支持stride=kernel和fmap=kernel场景转MM，优化性能。<br>
+- 卷积算子功能性能优化，优化多模态网络性能，内存占用不劣化([!735](https://gitcode.com/cann/ops-nn/pull/735))：<br>
+  - dX支持超大W输入场景对W切分。<br>
+  - dW支持确定性场景下开启性能优化特性。<br>
+  - dX支持stride=kernel和fmap=kernel场景转MM，优化性能。<br>
 - Ascend 950PR/Ascend 950DT新场景支持：<br>
-    1）引入ops-tensor，基于分层结构优化Cube类算子，减少偏移量计算和代码重复率([!5036](https://gitcode.com/cann/ops-nn/pull/5036))<br>
-    2）完善低bit类算子，支持精度补偿，优化整网精度RmsNormDynamicMxQuant([!2894](https://gitcode.com/cann/ops-nn/pull/2894))，DynamicBlockMxQuant([!1824](https://gitcode.com/cann/ops-nn/pull/1824))，DualLevelQuantBatchMatmul([!1141](https://gitcode.com/cann/ops-nn/pull/1141))<br>
-    3）HardswishBackwardV2([!4817](https://gitcode.com/cann/ops-nn/pull/4817))、SyncBatchNormGatherStatsWithCounts([!5973](https://gitcode.com/cann/ops-nn/pull/5973))
+  - 引入ops-tensor，基于分层结构优化Cube类算子，减少偏移量计算和代码重复率([!5036](https://gitcode.com/cann/ops-nn/pull/5036))。<br>
+  - 完善低bit类算子，支持精度补偿，优化整网精度RmsNormDynamicMxQuant([!2894](https://gitcode.com/cann/ops-nn/pull/2894))，DynamicBlockMxQuant([!1824](https://gitcode.com/cann/ops-nn/pull/1824))，DualLevelQuantBatchMatmul([!1141](https://gitcode.com/cann/ops-nn/pull/1141))。<br>
+  - HardswishBackwardV2([!4817](https://gitcode.com/cann/ops-nn/pull/4817))、SyncBatchNormGatherStatsWithCounts([!5973](https://gitcode.com/cann/ops-nn/pull/5973))。
 - nn仓工程优化：<br>
-    1）Ascend 950PR/Ascend 950DT支持静态库([!3623](https://gitcode.com/cann/ops-nn/pull/3623))<br>
-    2）kernel配置脚本优化([!3330](https://gitcode.com/cann/ops-nn/pull/3330))
-
-- Atlas A2A3系列产品 Cube类算子能力增强，优化网络性能并减少部分场景的内存占用：<br>
-    1）aclnnMatmulWeightNz性能优化([!5444](https://gitcode.com/cann/ops-nn/pull/5444))([!5105](https://gitcode.com/cann/ops-nn/pull/5105))<br>
-    2）aclnnTransposeBatchMatmul放开B*K < 65536的限制([!4240](https://gitcode.com/cann/ops-nn/pull/4240))<br>
-    3）aclnnBatchMatmul FP32数据类型下大Batch小MKN场景性能优化([!6103](https://gitcode.com/cann/ops-nn/pull/6103))([!7264](https://gitcode.com/cann/ops-nn/pull/7264))<br>
-    4）Cube类算子支持配置out_dtype([!4823](https://gitcode.com/cann/ops-nn/pull/4823))([!5481](https://gitcode.com/cann/ops-nn/pull/5481))([!5602](https://gitcode.com/cann/ops-nn/pull/5602))<br>
-    5）Cube类算子内存占用优化([!5356](https://gitcode.com/cann/ops-nn/pull/5356))([!5864](https://gitcode.com/cann/ops-nn/pull/5864))<br>
+  - Ascend 950PR/Ascend 950DT支持静态库([!3623](https://gitcode.com/cann/ops-nn/pull/3623))。<br>
+  - kernel配置脚本优化([!3330](https://gitcode.com/cann/ops-nn/pull/3330))。
+- Atlas A2系列产品和Atlas A3系列产品的Cube类算子能力增强，优化网络性能并减少部分场景的内存占用：<br>
+  - aclnnMatmulWeightNz性能优化([!5444](https://gitcode.com/cann/ops-nn/pull/5444))([!5105](https://gitcode.com/cann/ops-nn/pull/5105))。<br>
+  - aclnnTransposeBatchMatmul放开B*K < 65536的限制([!4240](https://gitcode.com/cann/ops-nn/pull/4240))。<br>
+  - aclnnBatchMatmul FP32数据类型下大Batch小MKN场景性能优化([!6103](https://gitcode.com/cann/ops-nn/pull/6103))([!7264](https://gitcode.com/cann/ops-nn/pull/7264))。<br>
+  - Cube类算子支持配置out_dtype([!4823](https://gitcode.com/cann/ops-nn/pull/4823))([!5481](https://gitcode.com/cann/ops-nn/pull/5481))([!5602](https://gitcode.com/cann/ops-nn/pull/5602))。<br>
+  - Cube类算子内存占用优化([!5356](https://gitcode.com/cann/ops-nn/pull/5356))([!5864](https://gitcode.com/cann/ops-nn/pull/5864))。<br>
 
 #### ops-transformer库
 
@@ -423,10 +422,11 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 - MatmulReduceScatterV2适配AICPU通信([!5515](https://gitcode.com/cann/ops-transformer/pull/5515))。
 
 **Mhc类**
-- 【A2/A3】支持MhcPost算子([!3670](https://gitcode.com/cann/ops-transformer/pull/3670))。
-- 【A2/A3】支持MhcPostBackward算子([!4377](https://gitcode.com/cann/ops-transformer/pull/4377))。
-- 【A2/A3】支持MhcPreSinkhorn算子([!5033](https://gitcode.com/cann/ops-transformer/pull/5033))。
-- 【A2/A3】支持MhcPreSinkhornBackward算子([!4760](https://gitcode.com/cann/ops-transformer/pull/4760))。
+针对Atlas A2系列产品和Atlas A3系列产品新增支持以下算子：
+- MhcPost算子([!3670](https://gitcode.com/cann/ops-transformer/pull/3670))。
+- MhcPostBackward算子([!4377](https://gitcode.com/cann/ops-transformer/pull/4377))。
+- MhcPreSinkhorn算子([!5033](https://gitcode.com/cann/ops-transformer/pull/5033))。
+- MhcPreSinkhornBackward算子([!4760](https://gitcode.com/cann/ops-transformer/pull/4760))。
 
 ### 通信库
 
@@ -440,7 +440,6 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 - HIXL 网络传输协议扩展：单边通信新增 UBC、UBoE、Host RoCE 协议支持，完整覆盖 D2D、D2rH、rH2D、H2H 全场景数据传输（[!37](https://gitcode.com/cann/hixl/issues/37)），不同产品形态的协议支持清单可查阅 [HIXL](https://gitcode.com/cann/hixl) 社区
 - HIXL 智能链路管理升级：实现通信资源自动获取及智能路由选择（[!181](https://gitcode.com/cann/hixl/issues/181)），支持按需建链（[!245](https://gitcode.com/cann/hixl/issues/245)），简化使用流程，提升易用性
 - HIXL 编程 API 能力增强：扩展异步链路管理（[!207](https://gitcode.com/cann/hixl/issues/207)）、传输状态批量查询（[!208](https://gitcode.com/cann/hixl/issues/208)）两类接口，丰富异步编程范式，提升上层业务开发效率
-
 
 - Ascend 950PR 支持CCU场景的allGatherV/reduceScatterV算子([!303](https://gitcode.com/cann/hccl/pull/303) [!207](https://gitcode.com/cann/hccl/pull/207))
 - Ascend 950PR 支持GE图模式&aclGraph模式下的通信算子入图([!183](https://gitcode.com/cann/hccl/pull/183) [!164](https://gitcode.com/cann/hccl/pull/164) [!296](https://gitcode.com/cann/hccl/pull/296))
@@ -465,7 +464,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 #### Ascend Transformer Boost加速库
 
 - **Ascend 950PR/Ascend 950DT 核心算子接入**
-批量落地 GELU、LayerNorm、MatmulEinSum、RmsNormQuant、SwiGluQuant（ACLNN V2）、Linear 反量化，以及 AllGather / AllReduce / ReduceScatter 等通信算子 A5 支持（[!1994](https://gitcode.com/cann/ascend-transformer-boost/pull/1994) [!2089](https://gitcode.com/cann/ascend-transformer-boost/pull/2089) [!2090](https://gitcode.com/cann/ascend-transformer-boost/pull/2090) [!2060](https://gitcode.com/cann/ascend-transformer-boost/pull/2060) [!2097](https://gitcode.com/cann/ascend-transformer-boost/pull/2097) [!2103](https://gitcode.com/cann/ascend-transformer-boost/pull/2103) [!2091](https://gitcode.com/cann/ascend-transformer-boost/pull/2091)）。
+  批量落地 GELU、LayerNorm、MatmulEinSum、RmsNormQuant、SwiGluQuant（ACLNN V2）、Linear 反量化，以及 AllGather / AllReduce / ReduceScatter 等通信算子 A5 支持（[!1994](https://gitcode.com/cann/ascend-transformer-boost/pull/1994) [!2089](https://gitcode.com/cann/ascend-transformer-boost/pull/2089) [!2090](https://gitcode.com/cann/ascend-transformer-boost/pull/2090) [!2060](https://gitcode.com/cann/ascend-transformer-boost/pull/2060) [!2097](https://gitcode.com/cann/ascend-transformer-boost/pull/2097) [!2103](https://gitcode.com/cann/ascend-transformer-boost/pull/2103) [!2091](https://gitcode.com/cann/ascend-transformer-boost/pull/2091)）。
 
 - **Attention / KV Cache 推理增强**
 Paged Attention 在 Ascend 950 上升级 FusedInferAttention V5；Paged Attention / Flash Attention 新增 NORM_COMPRESS 掩码；MLA decode 支持 SWA 滑动窗口；ReshapeAndCache 在 Ascend 950 上支持单入单出（[!2069](https://gitcode.com/cann/ascend-transformer-boost/pull/2069) [!2114](https://gitcode.com/cann/ascend-transformer-boost/pull/2114) [!2116](https://gitcode.com/cann/ascend-transformer-boost/pull/2116) [!2078](https://gitcode.com/cann/ascend-transformer-boost/pull/2078) [!2065](https://gitcode.com/cann/ascend-transformer-boost/pull/2065)）。
@@ -481,7 +480,7 @@ torch_atb 从主库解耦独立编译，默认出包 ABI 切换 cxx_abi_1；whee
   - Hadamard算子（[!76](https://gitcode.com/cann/sip/pull/76)）。
 
 ### 运行时
-- 支持Ascend 950DT AclGraph场景stream规格扩充，解决大模型资源不足等问题([\#2976](https://gitcode.com/cann/runtime/pull/2976))
+支持Ascend 950DT AclGraph场景stream规格扩充，解决大模型资源不足等问题([\#2976](https://gitcode.com/cann/runtime/pull/2976))
 
 ###  算子编程
 
@@ -508,12 +507,6 @@ torch_atb 从主库解耦独立编译，默认出包 ABI 切换 cxx_abi_1；whee
 - SIMT样例：
   - 新增SIMT优化特性样例：DCache访问优化样例（[!2453](https://gitcode.com/cann/asc-devkit/pull/2453)）、基于transpose的仿存合并和bank冲突样例（[!1753](https://gitcode.com/cann/asc-devkit/pull/1753)）、最佳实践样例：通过类型对齐提升搬运效率（[!2297](https://gitcode.com/cann/asc-devkit/pull/2297)）。
   - 新增SIMT功能特性样例：pytorch注册自定义算子（[!2769](https://gitcode.com/cann/asc-devkit/pull/2769)）、编译相关样例（动态、静态、分离编译等）（[!2356](https://gitcode.com/cann/asc-devkit/pull/2356)）、profiling样例（[!1989](https://gitcode.com/cann/asc-devkit/pull/1989)）、内存屏障特性样例（[!1923](https://gitcode.com/cann/asc-devkit/pull/1923)）、Warp类特性样例（[!2876](https://gitcode.com/cann/asc-devkit/pull/2876)）、simulator样例（[!2692](https://gitcode.com/cann/asc-devkit/pull/2692)）、kernel log样例（[!2131](https://gitcode.com/cann/asc-devkit/pull/2131)）。
-
-#### 资料文档
-- 新增矩阵计算概述和计算分形介绍的文档（[!2533](https://gitcode.com/cann/asc-devkit/pull/2533)）。
-- 优化矢量计算API文档，补充指令约束等（[!2676](https://gitcode.com/cann/asc-devkit/pull/2676)）。
-- 增加SIMD与SIMT混合编程性能优化概述（[!2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
-- 搭建VitePress文档站点，提供AscendC资料预览功能（[!2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
 
 ### PTO虚拟指令集
 
@@ -616,6 +609,10 @@ CPU-SIM：随NPU同步新增CPU仿真指令。
   - 针对每一个API补充约束说明、参数特殊值相关说明。
   - 新增API附录，附录中包含API流水类型汇总、理论性能汇总、接口边界值汇总等。
 - 新增Tensor API参考文档。
+- 新增矩阵计算概述和计算分形介绍的文档（[!2533](https://gitcode.com/cann/asc-devkit/pull/2533)）。
+- 优化矢量计算API文档，补充指令约束等（[!2676](https://gitcode.com/cann/asc-devkit/pull/2676)）。
+- 增加SIMD与SIMT混合编程性能优化概述（[!2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
+- 搭建VitePress文档站点，提供AscendC资料预览功能（[!2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
 
 #### 通信算子开发
 
@@ -642,9 +639,10 @@ CPU-SIM：随NPU同步新增CPU仿真指令。
 
 ### 算子库
 
-#### ops-cv
-
-新增算子多平台迁移指南文档，指导开发者将算子从Atlas A2 系列产品迁移至Ascend 950PR/Ascend 950DT 系列产品。
+- 将历史版本中“算子库 > AI框架算子支持清单”章节独立出来，在当前版本新增《AI框架算子支持清单》手册。
+- 新增“算子库 > 算子接口（torch_extension）”章节。
+- “算子接口（aclnn）”新增RAS类接口章节。
+- ops-cv库新增算子多平台迁移指南文档，指导开发者将算子从Atlas A2 系列产品迁移至Ascend 950PR/Ascend 950DT 系列产品。
 
 ### 通信库
 
