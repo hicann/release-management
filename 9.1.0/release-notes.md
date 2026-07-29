@@ -279,17 +279,17 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 ## 关键特性
 
-- **CANN新增支持Ascend 950DT产品，提供更完备的算子/通信/图等多维度能力，深度优化模型训练/Decode推理场景。**
+- **新增支持Ascend 950DT产品，在训练和Decode推理场景下，提供更高带宽能力。**
 
-- **在Ascend 950系列产品，SHMEM 首发支持 AICore 直驱 MTE/UDMA/RDMA，使能UB和RoCE通信，提供相应编程接口。**
+- **基于Atlas A2系列产品、Atlas A3系列产品和Ascend 950系列产品，新增核心算子SMLA、mHC等，支持DeepSeekV4、Qwen3.6、Kimi-K2.6、GLM5.2等多个开源模型适配。**
 
-- **在Ascend 950系列产品，Catlass新增Tile组件支持，提供丰富的MxFP8/MxFP4量化模板及样例库。**
+- **算子开发场景资料上线，提供入门、进阶、深度创新多路径参考资料。[点击查看详情](https://www.hiascend.com/cn/developer/operator?tab=ascendc)**
 
-- **新增支持DeepSeekV4相关结构融合算子SMLA/mHC，在Atlas A2 系列产品和Atlas A3 系列产品上，模型提升至1.3+以上([SMLA](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_flash_mla/docs/aclnnSparseFlashMla.md),[SMLAG](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_flash_mla_grad/docs/aclnnSparseFlashMlaGrad.md),[LI](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/lightning_indexer_v2/docs/aclnnLightningIndexerV2.md),[SLIG](https://gitcode.com/cann/ops-transformer/blob/9.1.0/attention/sparse_lightning_indexer_kl_loss_grad/docs/aclnnSparseLightningIndexerKLLossGrad.md),[mhc](https://gitcode.com/cann/ops-transformer/tree/9.1.0/mhc))。**
+- **基于Ascend 950系列产品，SHMEM 首发支持 AICore 直驱 MTE/UDMA/RDMA，使能UB和RoCE通信，并配套提供编程接口。[点击查看详情](https://gitcode.com/cann/shmem/blob/master/README.md)**
 
-- **新增支持[MegaMoe](https://gitcode.com/cann/ops-transformer/blob/9.1.0/mc2/mega_moe/README.md)通算融合算子，在Atlas A2 系列产品和Atlas A3 系列产品上，在Deepseek/Qwen/GLM系列模型提升至1.2+。**
+- **基于Ascend 950系列产品，CATLASS新增支持Tile组件，提供丰富的MxFP8/MxFP4量化模板及样例库。[点击查看详情](https://gitcode.com/cann/catlass/blob/master/README.md)**
 
-- **发布Host CPU 亲和性绑核工具，支持Host CPU 亲和性绑核与资源隔离，实现性能调优([msboost](https://gitcode.com/Ascend/msboost))。**
+- **算子精度标准开源，通过混合容差指标实现浮点计算类算子的精度判定。[点击查看详情](https://gitcode.com/cann/opbase/blob/9.1.0/docs/zh/ops_precision_standard/experimental_standard.md)**
 
 ## 新增特性
 
