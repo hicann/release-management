@@ -431,27 +431,23 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 ### 通信库
 
 #### 集合通信
-- 集合通信：PDCCL支持显存资源预留功能，显存资源预留相关需求功能CANN领域内部涉及组件统一由集合通信进行分解(NPU Driver/CANN/HCCL)，包含以下功能([!1593](https://gitcode.com/cann/hcomm/pull/1593))：
-	1）集合通信支持根据HDK的npu-smi或HCCN_TOOL工具提供显存资源预留配置预留显存资源；
-	2）集合通信支持提供预留显存资源的预留、分配等管理功能；
-	3）集合通信支持识别PDCCL进程，并向内核态申请预留显存资源；
-
-- HIXL 底层通信接口开放：构建 Client-Server 模式单边通信能力，全面提升建链规格与建链性能。针对批量小 Buffer 传输场景深度优化，有效降低 HBM 占用与通信资源开销（[!138](https://gitcode.com/cann/hixl/issues/138)）
-- HIXL 网络传输协议扩展：单边通信新增 UBC、UBoE、Host RoCE 协议支持，完整覆盖 D2D、D2rH、rH2D、H2H 全场景数据传输（[!37](https://gitcode.com/cann/hixl/issues/37)），不同产品形态的协议支持清单可查阅 [HIXL](https://gitcode.com/cann/hixl) 社区
-- HIXL 智能链路管理升级：实现通信资源自动获取及智能路由选择（[!181](https://gitcode.com/cann/hixl/issues/181)），支持按需建链（[!245](https://gitcode.com/cann/hixl/issues/245)），简化使用流程，提升易用性
-- HIXL 编程 API 能力增强：扩展异步链路管理（[!207](https://gitcode.com/cann/hixl/issues/207)）、传输状态批量查询（[!208](https://gitcode.com/cann/hixl/issues/208)）两类接口，丰富异步编程范式，提升上层业务开发效率
-
 - Ascend 950PR 支持CCU场景的allGatherV/reduceScatterV算子([!303](https://gitcode.com/cann/hccl/pull/303) [!207](https://gitcode.com/cann/hccl/pull/207))
 - Ascend 950PR 支持GE图模式&aclGraph模式下的通信算子入图([!183](https://gitcode.com/cann/hccl/pull/183) [!164](https://gitcode.com/cann/hccl/pull/164) [!296](https://gitcode.com/cann/hccl/pull/296))
 - Ascend 950PR 支持N秒快恢能力，提升集合通信运行可靠性([!1126](https://gitcode.com/cann/hcomm/pull/1126) [!1609](https://gitcode.com/cann/hcomm/pull/1609) [!421](https://gitcode.com/cann/hccl/pull/421))
 - Ascend 950PR 支持taskexception&profiling等维测能力，提升问题定位易用性([!937](https://gitcode.com/cann/hcomm/pull/937) [!1472](https://gitcode.com/cann/hcomm/pull/1472) [!267](https://gitcode.com/cann/hccl/pull/267) [!332](https://gitcode.com/cann/hccl/pull/332))
 - Ascend 950PR HcclChannelAcquire接口支持AIV直驱RoCE和URMA能力，支撑通算融合算子的自定义开发([!2032](https://gitcode.com/cann/hcomm/pull/2032))
-- [A2/A3]单卡多进程能力新增支持MC2场景([!1880](https://gitcode.com/cann/hcomm/pull/1880))
-- [A2/A3]aclGraph场景下资源管理优化，支撑通信资源增量刷新([!2405](https://gitcode.com/cann/hcomm/pull/2405) [!2502](https://gitcode.com/cann/hcomm/pull/2502))
-- [A3]跨超节点场景性能优化，ReduceScatter/AllGather算子支持跨超pipeline算法([!2071](https://gitcode.com/cann/hcomm/pull/2071) [!1931](https://gitcode.com/cann/hcomm/pull/1931))
-- [A3]新增支持双机背靠背RoCE直连机型通信([!2642](https://gitcode.com/cann/hcomm/pull/2642) [!3433](https://gitcode.com/cann/hcomm/pull/3433))
-- [A5]标卡支持跨PCIE SW进行通信([!1997](https://gitcode.com/cann/hcomm/pull/1799) [!707](https://gitcode.com/cann/hccl/pull/707))
+- Atlas A2/A3系列产品 单卡多进程能力新增支持MC2场景([!1880](https://gitcode.com/cann/hcomm/pull/1880))
+- Atlas A2/A3系列产品 aclGraph场景下资源管理优化，支撑通信资源增量刷新([!2405](https://gitcode.com/cann/hcomm/pull/2405) [!2502](https://gitcode.com/cann/hcomm/pull/2502))
+- Atlas A2/A3系列产品 跨超节点场景性能优化，ReduceScatter/AllGather算子支持跨超pipeline算法([!2071](https://gitcode.com/cann/hcomm/pull/2071) [!1931](https://gitcode.com/cann/hcomm/pull/1931))
+- Atlas A2/A3系列产品 新增支持双机背靠背RoCE直连机型通信([!2642](https://gitcode.com/cann/hcomm/pull/2642) [!3433](https://gitcode.com/cann/hcomm/pull/3433))
+- Atlas 350 加速卡 标卡支持跨PCIE SW进行通信([!1799](https://gitcode.com/cann/hcomm/pull/1799) [!707](https://gitcode.com/cann/hccl/pull/707))
     AllReduce、ReduceScatter、AllGather、Reduce、Scatter、Alltoall、Alltoallv、Send、Recv等算子支持通信
+
+#### 单边通信
+- HIXL 底层通信接口开放：构建 Client-Server 模式单边通信能力，全面提升建链规格与建链性能。针对批量小 Buffer 传输场景深度优化，有效降低 HBM 占用与通信资源开销（[!138](https://gitcode.com/cann/hixl/issues/138)）
+- HIXL 网络传输协议扩展：单边通信新增 UBC、UBoE、Host RoCE 协议支持，完整覆盖 D2D、D2rH、rH2D、H2H 全场景数据传输（[!37](https://gitcode.com/cann/hixl/issues/37)），不同产品形态的协议支持清单可查阅 [HIXL](https://gitcode.com/cann/hixl) 社区
+- HIXL 智能链路管理升级：实现通信资源自动获取及智能路由选择（[!181](https://gitcode.com/cann/hixl/issues/181)），支持按需建链（[!245](https://gitcode.com/cann/hixl/issues/245)），简化使用流程，提升易用性
+- HIXL 编程 API 能力增强：扩展异步链路管理（[!207](https://gitcode.com/cann/hixl/issues/207)）、传输状态批量查询（[!208](https://gitcode.com/cann/hixl/issues/208)）两类接口，丰富异步编程范式，提升上层业务开发效率
 
 ### 图引擎
 - 支持Ascend 950DT形态图引擎能力恢复。
