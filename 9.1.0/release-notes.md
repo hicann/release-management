@@ -335,9 +335,6 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
   - TopK算子长序列场景显存、性能优化（[!3183](https://gitcode.com/cann/ops-math/pull/3183)）。
   - AICPU算子性能优化，覆盖ClipByValueV2([!2460](https://gitcode.com/cann/ops-math/pull/2460))、ConcatV2([!2395](https://gitcode.com/cann/ops-math/pull/2395))、CumSum([!2262](https://gitcode.com/cann/ops-math/pull/2262))。
 
-- 工程优化：
-  - 并行解压编译加速([!2332](https://gitcode.com/cann/ops-math/pull/2332))。
-  - 去除gawk外部依赖，采用纯bash实现时间戳格式化([!2407](https://gitcode.com/cann/ops-math/pull/2407))。
 
 #### ops-cv库
 - <term>Ascend 950PR/Ascend 950DT</term>新增适配以下算子：<br>
@@ -361,22 +358,16 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 - 性能优化：<br>
     - ResizeNearestNeighborV2算子NCHW格式性能优化([!822](https://gitcode.com/cann/ops-cv/pull/822))。<br>
     - GridSamplerGrad算子性能优化([!946](https://gitcode.com/cann/ops-cv/pull/946))。<br>
-- 工程优化：<br>
-    - ops-cv安装优化改造，解压即安装。<br>
-    - 新增cv常量折叠算子流程，支持CropAndResize等算子在编译期进行常量折叠优化([!690](https://gitcode.com/cann/ops-cv/pull/690))。<br>
 
-#### opbase仓
+#### opbase库
 - 新增特性：<br>
   - 支持float8/float6/float4数据类型及资料([!298](https://gitcode.com/cann/opbase/pull/298)、[!479](https://gitcode.com/cann/opbase/pull/479)、[!486](https://gitcode.com/cann/opbase/pull/486))。<br>
-  - reduce模板混合精度支持([!255](https://gitcode.com/cann/opbase/pull/255))。<br>
+  - reduce模板支持混合精度([!255](https://gitcode.com/cann/opbase/pull/255))。<br>
   - 新增非连续输入算子静态支持([!346](https://gitcode.com/cann/opbase/pull/346)、[!353](https://gitcode.com/cann/opbase/pull/353))。<br>
-  - 日志接口DFX增强([!350](https://gitcode.com/cann/opbase/pull/350)、[!448](https://gitcode.com/cann/opbase/pull/448)、[!513](https://gitcode.com/cann/opbase/pull/513)、[!299](https://gitcode.com/cann/opbase/pull/299))。<br>
+  - 日志接口DFX能力增强，支持日志输出标准化([!350](https://gitcode.com/cann/opbase/pull/350)、[!448](https://gitcode.com/cann/opbase/pull/448)、[!513](https://gitcode.com/cann/opbase/pull/513)、[!299](https://gitcode.com/cann/opbase/pull/299))。<br>
 - 性能优化：<br>
   - broadcast非连续tensor性能优化([!317](https://gitcode.com/cann/opbase/pull/317))。<br>
   - 优化build.sh增量编译性能，复用CMake缓存避免重复配置([!391](https://gitcode.com/cann/opbase/pull/391))。<br>
-- 工程优化：<br>
-  - 切换工程构建打包依赖至CANN公共仓([!361](https://gitcode.com/cann/opbase/pull/361))。<br>
-  - 安装优化改造，解压即安装([!308](https://gitcode.com/cann/opbase/pull/308))。<br>
 
 #### ops-nn库
 - 卷积算子功能性能优化，优化多模态网络性能，内存占用不劣化([!735](https://gitcode.com/cann/ops-nn/pull/735))：<br>
