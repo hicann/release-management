@@ -603,7 +603,7 @@ include/driver目录头文件已迁移到pkg_inc/driver目录，include/driver�
   - 针对一类API增加必要的背景知识、概念原理介绍、通用的约束、关键特性等说明。
   - 针对每一个API补充约束说明、参数特殊值相关说明。
   - 新增API附录，附录中包含API流水类型汇总、理论性能汇总、接口边界值汇总等。
-- 新增Tensor API参考文档。
+- 新增Tensor API参考文档。Tensor API接口为试验接口，在后续版本中可能会调整或改进，不保证后续兼容性。请开发者在使用过程中关注后续版本更新。
 - 新增矩阵计算概述和计算分形介绍的文档（[!2533](https://gitcode.com/cann/asc-devkit/pull/2533)）。
 - 优化矢量计算API文档，补充指令约束等（[!2676](https://gitcode.com/cann/asc-devkit/pull/2676)）。
 - 增加SIMD与SIMT混合编程性能优化概述（[!2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
