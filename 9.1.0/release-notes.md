@@ -334,7 +334,9 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
   - TopkV2算子性能优化，提升int64索引场景计算效率([!2564](https://gitcode.com/cann/ops-math/pull/2564))。
   - TopK算子长序列场景显存、性能优化（[!3183](https://gitcode.com/cann/ops-math/pull/3183)）。
   - AICPU算子性能优化，覆盖ClipByValueV2([!2460](https://gitcode.com/cann/ops-math/pull/2460))、ConcatV2([!2395](https://gitcode.com/cann/ops-math/pull/2395))、CumSum([!2262](https://gitcode.com/cann/ops-math/pull/2262))。
-
+  
+- 算子接口迁移变更：
+  - aclnnMatmulCompressDequant 及其对应的kernel文件由math仓迁移至nn仓([!2728](https://gitcode.com/cann/ops-math/pull/2728))。<br>
 
 #### ops-cv库
 - <term>Ascend 950PR/Ascend 950DT</term>新增适配以下算子：<br>
@@ -387,6 +389,8 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
   - aclnnBatchMatmul FP32数据类型下大Batch小MKN场景性能优化([!6103](https://gitcode.com/cann/ops-nn/pull/6103))([!7264](https://gitcode.com/cann/ops-nn/pull/7264))。<br>
   - Cube类算子支持配置out_dtype([!4823](https://gitcode.com/cann/ops-nn/pull/4823))([!5481](https://gitcode.com/cann/ops-nn/pull/5481))([!5602](https://gitcode.com/cann/ops-nn/pull/5602))。<br>
   - Cube类算子内存占用优化([!5356](https://gitcode.com/cann/ops-nn/pull/5356))([!5864](https://gitcode.com/cann/ops-nn/pull/5864))。<br>
+- 算子接口迁移变更：
+  - aclnnMatmulCompressDequant 及其对应的kernel文件由math仓迁移至nn仓([!4166](https://gitcode.com/cann/ops-nn/pull/4166))。<br>
 
 #### ops-transformer库
 
