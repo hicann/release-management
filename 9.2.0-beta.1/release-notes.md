@@ -300,15 +300,11 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 ## 新增特性
 
-### 公共模块
+### ops-nn库
 
-- CPU性能调优：
-  - Toolkit新增mindstudio-boost子包，面向HostBound业务场景，支持对关键线程自动化绑核与资源隔离，实现性能调优([!1](https://gitcode.com/Ascend/msboost/pull/1))。
-- CANN适配不同昇腾硬件产品，新增OS兼容性支持：
-  - Atlas 350 加速卡适配Tlinux 3.3、Tlinux 4.4、Anolis OS 8.9。
-  - Atlas 950 SuperPoD、Atlas 850/850E 适配 openEuler 24.03 lts sp4。
-- CANN支持Python 3.14.*版本，支持CANN在高版本Python下运行。
-- 提供query_pkg_version.sh软件版本信息查询脚本，一键查询各组件的版本信息。
+- Atlas A2 训练系列产品/Atlas A2 推理系列产品 和 Atlas A3 训练系列产品/Atlas A3 推理系列产品适配与场景支持：
+  - 新增适配以下算子
+    - FusedSgd（[!6220](https://gitcode.com/cann/ops-nn/pull/6220)）。
 
 ## 删除和废弃特性
 
