@@ -286,17 +286,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 ## 关键特性
 
-- **新增支持<term>Ascend 950DT</term>产品，在训练和Decode推理场景下，提供更高带宽能力。**
-
-- **基于Atlas A2 系列产品、Atlas A3 系列产品和<term>Ascend 950 系列产品</term>，新增核心算子SMLA、mHC等，支持DeepSeekV4、Qwen3.6、Kimi-K2.6、GLM5.2等多个开源模型适配。**
-
-- **算子开发场景资料上线，提供入门、进阶、深度创新多路径参考资料。[点击查看详情](https://www.hiascend.com/cn/developer/operator?tab=ascendc)**
-
-- **基于<term>Ascend 950 系列产品</term>，SHMEM首发支持AICore直驱MTE/UDMA/RDMA，开启UB和RoCE通信，并配套提供编程接口。[点击查看详情](https://gitcode.com/cann/shmem/blob/master/README.md)**
-
-- **基于<term>Ascend 950 系列产品</term>，CATLASS新增支持Tile组件，提供丰富的MxFP8/MxFP4量化模板及样例库。[点击查看详情](https://gitcode.com/cann/catlass/blob/master/README.md)**
-
-- **算子精度标准开源，通过混合容差指标实现浮点计算类算子的精度判定。[点击查看详情](https://gitcode.com/cann/opbase/blob/9.2.0-beta.1/docs/zh/ops_precision_standard/experimental_standard.md)**
+- **昇腾社区新增版本配套查询助手，帮忙开发者快速获取上下游软件配套关系，通过产品型号自动匹配软件包，提升环境部署效率。[点击查看详情](https://www.hiascend.com/developer/download/compatibility)**
 
 ## 新增特性
 
