@@ -21,8 +21,10 @@ CANN软件版本配套表
 ## 版本兼容性说明
 
 CANN与Ascend HDK版本兼容
-<table style="table-layout: fixed; width: 750px; text-align:center;">
+<table style="table-layout: fixed; width: 1050px; text-align:center; border-collapse: collapse;">
   <colgroup>
+    <col style="width: 150px">
+    <col style="width: 150px">
     <col style="width: 150px">
     <col style="width: 150px">
     <col style="width: 150px">
@@ -31,40 +33,55 @@ CANN与Ascend HDK版本兼容
   </colgroup>
   <thead>
     <tr>
-      <th rowspan="2">CANN</th>
-      <th colspan="3">驱动版本（Ascend HDK）</th>
+      <th rowspan="5" style="width">CANN</th>
+      <th colspan="6" style="width">驱动版本（Ascend HDK）</th>
     </tr>
     <tr>
-      <th>25.5.X</th>
-      <th>26.0.RC1/25.7.RC1</th>
-      <th>26.1.0</th>
+      <th style="width">25.0.X</th>
+      <th style="width">25.2.X</th>
+      <th style="width">25.3.X</th>
+      <th style="width">25.5.X</th>
+      <th style="width">26.0.RC1/25.7.RC1</th>
+      <th style="width">26.1.0</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>8.5.2</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
+      <td style="width">8.5.2</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
     </tr>
     <tr>
-      <td>9.0.X</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
+      <td style="width">9.0.X</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
     </tr>
     <tr>
-      <td>9.1.X</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
+      <td style="width">9.1.X</td>
+      <td style="width">/</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
     </tr>
     <tr>
-      <td>9.2.0-beta.1</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-    </tr>    
+      <td style="width">9.2.0-beta.1</td>
+      <td style="width">/</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+      <td style="width">Y</td>
+    </tr>
   </tbody>
 </table>
 
@@ -72,7 +89,7 @@ CANN与Ascend HDK版本兼容
 
 ### CANN组合配套关系
 
-CANN 9.1.0包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合包，CANN组合包与子包的配套关系如下。其中6个子包支持独立升级，用户可根据需求灵活安装。
+CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合包，CANN组合包与子包的配套关系如下。其中6个子包支持独立升级，用户可根据需求灵活安装。
 
 <table>
   <thead>
@@ -261,26 +278,21 @@ CANN 9.1.0包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合�
 </table>
 
 ### CANN ops与Toolkit配套关系
-CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需求灵活安装。
 
-|ops版本  |配套toolkit版本  |
-|--|--|
-| [ascend-cann-ops 9.2.0-beta.1](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.2.0-beta.1) |[ascend-cann-toolkit 9.2.0-beta.1](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.2.0-beta.1)<br> [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) <br> [ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
-| [ascend-cann-ops 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0)<br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
-| [ascend-cann-ops 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0)<br>[ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
-| [ascend-cann-ops 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) | [ascend-cann-toolkit 9.1.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.1.0)<br> [ascend-cann-toolkit 9.0.0](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.0.0) <br> [ascend-cann-toolkit 8.5.2](https://www.hiascend.com/developer/download/community/result?module=cann&cann=8.5.2) |
+| ops版本                                                      | 配套toolkit版本                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [ascend-cann-ops 9.2.0-beta.1](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.2.0-beta.1) | [ascend-cann-toolkit 9.2.0-beta.1](https://www.hiascend.com/developer/download/community/result?module=cann&cann=9.2.0-beta.1) |
 
+### CANN ops组合包内可独立升级子包配套关系
 
-### CANN ops子包内可独立升级子包配套关系
-
-| CANN子包版本                                                 | 版本源码标签                                                 | 配套CANN版本                           |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------- |
-| [cann-ops-math 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/ops-math/tags/v9.2.0-beta.1)      | CANN 9.2.0-beta.1<br>CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
-| [cann-ops-nn 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/ops-nn/tags/v9.2.0-beta.1)        | CANN 9.2.0-beta.1<br>CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
-| [cann-ops-cv 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/ops-cv/tags/v9.2.0-beta.1)        | CANN 9.2.0-beta.1<br>CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
-| [cann-ops-transformer 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/ops-transformer/tags/v9.2.0-beta.1) | CANN 9.2.0-beta.1<br>CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
-| [cann-hccl 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/hccl/tags/v9.2.0-beta.1)          | CANN 9.2.0-beta.1<br>CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
-| [cann-hixl 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/hixl/tags/v9.2.0-beta.1)          | CANN 9.2.0-beta.1<br>CANN 9.1.0<br>CANN 9.0.0<br>CANN 8.5.2 |
+| CANN子包版本                                                 | 版本源码标签                                                 | 配套CANN版本      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------- |
+| [cann-ops-math 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/ops-math/tags/v9.2.0-beta.1) | CANN 9.2.0-beta.1 |
+| [cann-ops-nn 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/ops-nn/tags/v9.2.0-beta.1) | CANN 9.2.0-beta.1 |
+| [cann-ops-cv 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/ops-cv/tags/v9.2.0-beta.1) | CANN 9.2.0-beta.1 |
+| [cann-ops-transformer 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/ops-transformer/tags/v9.2.0-beta.1) | CANN 9.2.0-beta.1 |
+| [cann-hccl 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/hccl/tags/v9.2.0-beta.1) | CANN 9.2.0-beta.1 |
+| [cann-hixl 9.2.0-beta.1](https://ascend.devcloud.huaweicloud.com/cann/run/software/9.2.0-beta.1/) | [v9.2.0-beta.1](https://gitcode.com/cann/hixl/tags/v9.2.0-beta.1) | CANN 9.2.0-beta.1 |
 
 子包独立升级的具体操作请参考[子包独立升级](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/softwareinst/instg/instg_0030.html)。
 
@@ -298,55 +310,138 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 ## 删除和废弃特性
 
+### 说明
+
+- 删除特性为当前版本已删除的特性。
+- 废弃特性为当前版本标记为废弃特性，未来版本即将下线的特性。
+- 本节中的${install_path}请替换为CANN软件安装路径。
+
 ### 运行时
 
-include/driver目录头文件已迁移到pkg_inc/driver目录，include/driver目录将在2027年06月30日下线，请尽快切换至pkg_inc/driver目录。
+**以下目录、文件和接口 在CANN 9.1.0中被标记为废弃，计划在2027.6.30之后的版本删除。**
+
+| 废弃的目录、文件和接口   | 替换的目录、文件和接口 |
+| ------------------------ | ---------------------- |
+| include/driver目录头文件 | pkg_inc/driver目录     |
+
+**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
+
+| 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ${install_path}/ascend-toolkit/latest/runtime/include/acl    | ${install_path}/cann/include/acl                             |
+| ${install_path}/ascend-toolkit/latest/runtime/include/aclnn  | ${install_path}/cann/include/aclnn                           |
+| ${install_path}/ascend-toolkit/latest/runtime/include/graph  | ${install_path}/cann/include/graph                           |
+| ${install_path}/cann/pkg_inc/runtime/runtime目录下的所有头文件将下线 | 后续不提供相关功能                                           |
+| rtGetC2cCtrlAddr接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_ffts.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtGetHardwareSyncAddr接口替换 |
+| rtFftsTaskLaunch和rtFftsTaskLaunchWithFlag接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_ffts.h中废弃 | 后续不提供相关功能                                           |
+| rtBindHostPid、rtUnbindHostPid、rtProfSetProSwitch、rtQueryProcessHostPid、rtGetDeviceIdByGeModelIdx、rtGetExceptionRegInfo、rtGetMaxModelNum、rtLabelGoto、rtLabelGotoEx、rtProfilerConfig、rtProfilerInit、rtProfilerTrace、rtProfilingCommandHandle、rtProfRegisterCtrlCallback、rtSetDeviceIdByGeModelIdx、rtSetExceptCallback、rtSetMsprofReporterCallback、rtSetProfDirEx、rtUnsetDeviceIdByGeModelIdx接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 后续不提供相关功能                                           |
+| rtGetBinaryDeviceBaseAddr接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtBinaryGetDevAddress接口替换 |
+| rtGetTaskIdAndStreamID接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtGetThreadLastTaskId和aclrtStreamGetId接口替换 |
+| rtLabelCreate、rtLabelCreateEx、rtLabelCreateExV2、rtLabelCreateV2接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtCreateLabel接口替换 |
+| rtLabelListCpy接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtCreateLabelList和aclrtDestroyLabelList接口替换 |
+| rtLabelSet接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtSetLabel接口替换 |
+| rtLabelSwitchByIndex接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtSwitchLabelByIndex接口替换 |
+| rtProfilerTraceEx接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtProfTrace接口替换 |
+| rtRegDeviceStateCallbackEx接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtRegDeviceStateCallback接口替换 |
+| rtRegTaskFailCallbackByModule接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtSetExceptionInfoCallback接口替换 |
+| rtSetIpcMemorySuperPodPid接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中aclrtIpcMemImportPidInterServer接口替换 |
+| rtSetIpcNotifySuperPodPid接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtNotifySetImportPidInterServer接口替换 |
+| rtSetTaskAbortCallBack接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtSetTaskAbortCallBack接口替换 |
+| rtSetTaskFailCallback接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtSetExceptionInfoCallback接口替换 |
+| rtStreamGetMode接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtGetStreamAttribute接口替换 |
+| rtStreamSetMode接口从${install_path}/ascend-toolkit/latest/toolkit/include/experiment/runtime/runtime/rt_base.h中废弃 | 使用${install_path}/cann/include/acl/aclrt.h中的aclrtSetStreamFailureMode和aclrtSetStreamOverflowSwitch接口替换 |
+| aclsysGetCANNVersion接口从${install_path}/ascend-toolkit/latest/include/acl/acl.h中废弃 | 使用${install_path}/cann/include/acl/acl.h中的aclsysGetVersionStr和aclsysGetVersionNum接口替换 |
+| libascendcl.so从${install_path}/ascend-toolkit/latest/lib64中废弃 | 使用${install_path}/cann/lib64中的libacl_rt.so、libacl_mdl.so、libacl_op_executor.so库文件替换 |
 
 ### 图引擎
 
-自<term>Ascend 950 系列产品</term>开始，aclblas和aclop接口不推荐使用，后续版本将逐步废弃，建议迁移至对应的aclnn算子接口。
+**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
+
+| 废弃的目录                                                   | 替换的目录                                                 |
+| ------------------------------------------------------------ | ---------------------------------------------------------- |
+| ${install_path}/ascend-toolkit/latest/runtime/include/graph  | ${install_path}/cann/include/graph                         |
+| ${install_path}/ascend-toolkit/latest/compiler/python/func2graph | ${install_path}/cann/x86_64-linux/python目录下的func2graph |
+
+自Ascend 950 系列产品开始，aclblas和aclop接口不推荐使用，后续版本将逐步废弃，建议迁移至对应的aclnn算子接口。
 
 ### 算子库
 
-- **不兼容变更**：控制类算子Identity、IdentityN、Rank、Shape和ShapeN从ops-nn迁移至ops-math。这些算子从`ops_proto_nn.h`和`es_nn`目录迁移到`ops_proto_math.h`和`es_math`目录，用户需更新相关头文件引用（[!2333](https://gitcode.com/cann/ops-math/pull/2333)、[!3995](https://gitcode.com/cann/ops-nn/pull/3995)）。
+**以下目录、文件和接口在CANN 9.0.0中被标记为废弃，将在2027.3.30之后的版本删除**
 
-**transformer库以下接口在CANN 9.0.0中被标记为废弃，将在2027年3月30日之后的版本删除**
+| 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                           |
+| ------------------------------------------------------------ | ------------------------------------------------ |
+| aclnnGroupedMatMulAllReduce接口                              | aclnnMatmulAllReduce                             |
+| aclnnGroupedMatmul、aclnnGroupedMatmulV2、aclnnGroupedMatmulV3、aclnnGroupedMatmulV4接口 | aclnnGroupedMatmulV5                             |
+| aclnnFusedInferAttentionScore、aclnnFusedInferAttentionScoreV2、aclnnFusedInferAttentionScoreV3接口 | aclnnFusedInferAttentionScoreV4                  |
+| aclnnIncreFlashAttention、aclnnIncreFlashAttentionV2、aclnnIncreFlashAttentionV3接口 | aclnnIncreFlashAttentionV4                       |
+| aclnnPromptFlashAttention、aclnnPromptFlashAttentionV2接口   | aclnnPromptFlashAttentionV3                      |
+| aclnnMlaProlog、aclnnMlaPrologV2WeightNz接口                 | aclnnMlaPrologV3WeightNz                         |
+| aclnnMatmulAllReduceAddRmsNorm接口                           | aclnnMatmulAllReduce和aclnnAddRmsNorm            |
+| aclnnQuantMatmulAllReduceAddRmsNorm接口                      | aclnnQuantMatmulAllReduceV2和aclnnAddRmsNorm     |
+| aclnnWeightQuantMatmulAllReduceAddRmsNorm接口废弃            | aclnnWeightQuantMatmulAllReduce和aclnnAddRmsNorm |
+| aclnnInplaceQuantMatmulAllReduceAddRmsNorm接口               | aclnnQuantMatmulAllReduceV2和aclnnAddRmsNorm     |
+| aclnnInplaceMatmulAllReduceAddRmsNorm接口                    | aclnnMatmulAllReduce和aclnnAddRmsNorm            |
+| aclnnInplaceWeightQuantMatmulAllReduceAddRmsNorm接口         | aclnnWeightQuantMatmulAllReduce和aclnnAddRmsNorm |
 
-- aclnnGroupedMatMulAllReduce接口废弃，替换为：aclnnMatmulAllReduce。
-- aclnnGroupedMatmul/aclnnGroupedMatmulV2/aclnnGroupedMatmulV3/aclnnGroupedMatmulV4接口废弃，替换为：aclnnGroupedMatmulV5。
-- aclnnFusedInferAttentionScore/aclnnFusedInferAttentionScoreV2/aclnnFusedInferAttentionScoreV3接口废弃，替换为：aclnnFusedInferAttentionScoreV4。
-- aclnnIncreFlashAttention/aclnnIncreFlashAttentionV2/aclnnIncreFlashAttentionV3接口废弃，替换为：aclnnIncreFlashAttentionV4。
-- aclnnPromptFlashAttention/aclnnPromptFlashAttentionV2接口废弃，替换为：aclnnPromptFlashAttentionV3。
-- aclnnMlaProlog/aclnnMlaPrologV2WeightNz接口废弃，替换为：aclnnMlaPrologV3WeightNz。
-- aclnnMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnMatmulAllReduce和aclnnAddRmsNorm。
-- aclnnQuantMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnQuantMatmulAllReduceV2和aclnnAddRmsNorm。
-- aclnnWeightQuantMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnWeightQuantMatmulAllReduce和aclnnAddRmsNorm。
-- aclnnInplaceQuantMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnQuantMatmulAllReduceV2和aclnnAddRmsNorm。
-- aclnnInplaceMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnMatmulAllReduce和aclnnAddRmsNorm。
-- aclnnInplaceWeightQuantMatmulAllReduceAddRmsNorm接口废弃，替换为：aclnnWeightQuantMatmulAllReduce和aclnnAddRmsNorm。
 
-## 文档变更说明
+**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
 
-### 编程指南
+其中算子被拆分成了组件包，不同的算子独立组件包均包含多个对应的库和头文件，下表中${ops_project}表示实际的cv、math、nn、transformer和legacy。
 
-#### Ascend C算子开发
+| 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/*.h | ${install_path}/cann/opp/built-in/op_graph/inc/\${ops_project}_ops_proto.h |
+| ${install_path}/ascend-toolkit/latest/lib64/libopapi.so      | ${install_path}/cann/lib64/libopapi_\${ops_project}.so |
+| aclnnGroupedMatMulAllReduce接口                              | 无可替换功能                                                 |
+| aclnnWeightQuantBatchMatmul接口                              | aclnnWeightQuantBatchMatmulV3接口                            |
+| aclnnQuantMatmul、aclnnQuantMatmulV2、aclnnQuantMatmulV3和aclnnQuantMatmulV4接口 | aclnnQuantMatmulV5接口                                       |
+| aclnnGroupedMatmul、aclnnGroupedMatmulV2、aclnnGroupedMatmulV3、aclnnGroupedMatmulV4接口 | aclnnGroupedMatmulV5接口                                     |
+| aclnnIncreFlashAttentionV2和aclnnIncreFlashAttentionV3接口   | aclnnIncreFlashAttentionV5接口                               |
+| aclnnPromptFlashAttentionV2接口                              | aclnnPromptFlashAttentionV3接口                              |
+| aclnnFusedInferAttentionScoreV2和aclnnFusedInferAttentionScoreV3接口 | aclnnFusedInferAttentionScoreV4接口                          |
 
-- 优化“入门教程”章节：
-  - 更新Ascend C学习路径。
-  - 新增异构系统和编程模型概括性描述。
-- “编程指南”中SIMD编程模型章节进行优化调整，按照基于语言扩展层C API编程、基于Tensor的C++编程、基于Tpipe和TQue编程的维度进行分类。
-- “编程指南”新增高级编程 > SuperKernel、高级编程 > SIMT协作组章节。
-- 对《Ascend C API》进行了大规模重构，变更点如下：
-  - 对数据搬运API和矩阵计算API等进行了目录结构调整：相关性强的API放置在临近位置，比如将矩阵计算相关的搬运接口放置在矩阵计算目录下。
-  - 按照场景进行API的目录结构组织：比如矩阵计算分为矩阵计算的搬入、Mmad计算、矩阵计算的搬出。
-  - 针对一类API增加必要的背景知识、概念原理介绍、通用的约束、关键特性等说明。
-  - 针对每一个API补充约束说明、参数特殊值相关说明。
-  - 新增API附录，附录中包含API流水类型汇总、理论性能汇总、接口边界值汇总等。
-- 新增Tensor API参考文档。Tensor API接口为试验接口，在后续版本中可能会调整或改进，不保证后续兼容性。请开发者在使用过程中关注后续版本更新。
-- 新增矩阵计算概述和计算分形介绍的文档（[!2533](https://gitcode.com/cann/asc-devkit/pull/2533)）。
-- 优化矢量计算API文档，补充指令约束等（[!2676](https://gitcode.com/cann/asc-devkit/pull/2676)）。
-- 增加SIMD与SIMT混合编程性能优化概述（[!2736](https://gitcode.com/cann/asc-devkit/pull/2736)）。
-- 搭建VitePress文档站点，提供AscendC资料预览功能（[!2547](https://gitcode.com/cann/asc-devkit/pull/2547)）。
+
+### 媒体加速库
+
+**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+
+如下算子IR废弃使用的DVPP加速功能：Crop、CropAndResize、DecodeAndCropJpeg、DecodeJpeg、PadV3D、Resize、ResizeV2、ResizeBicubic、ResizeBilinearV2、ResizeNearestNeighborV2、ReverseV2、WarpPerspective 、WarpAffineV2、AdjustContrast、AdjustHue、AdjustSaturation。
+
+| 废弃的目录、文件和接口                                       | 替换的目录、文件和接口      |
+| ------------------------------------------------------------ | --------------------------- |
+| AdjustBrightness算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image.h中废弃 | acldvppAdjustBrightness接口 |
+| AdjustBrightnessV2算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image.h中废弃 | acldvppAdjustBrightness接口 |
+| AdjustContrastWithMean算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image.h中废弃 | acldvppAdjustContrast接口   |
+| AdjustSaturationV2算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image.h中废弃 | acldvppAdjustSaturation接口 |
+| GaussianBlur算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image.h中废弃 | acldvppGaussianBlur接口     |
+| ImgCrop算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image.h中废弃 | acldvppCrop接口             |
+| RgbToGrayscale算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image.h中废弃 | acldvppRgbToGrayscale接口   |
+| Rotate算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image.h中废弃 | acldvppRotate接口           |
+| CropAndResizeV2算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image_ops.h中废弃 | acldvppCropAndResize接口    |
+| ImgToTensor算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image_ops.h中废弃 | acldvppImgToTensor接口      |
+| NormalizeV2算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image_ops.h中废弃 | acldvppNormalize接口        |
+
+### 开发工具
+
+**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+
+| 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 将Profiling头文件aprof_pub.h、prof_api.h、prof_common.h从${install_path}/ascend-toolkit/latest/include/experiment/msprof/toolchain路径下废弃 | Profiling头文件aprof_pub.h、prof_api.h、prof_common.h存放路径变更为${install_path}/cann/pkg_inc/profiling |
+
+### 维测能力
+
+**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+
+| 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Error Manager头文件${install_path}/ascend-toolkit/latest/include/experiment/metadef/common/util/error_manager/error_manager.h | Error Manager头文件${install_path}/cann/include/base/err_msg.h |
+| ${install_path}/ascend-toolkit/latest/include/experiment/metadef/common/util/error_manager/error_manager.h中的REPORT_INNER_ERROR和REPORT_CALL_ERROR接口 | REPORT_INNER_ERR_MSG接口                                     |
+| REPORT_INPUT_ERROR、REPORT_ENV_ERROR接口                     | REPORT_PREDEFINED_ERR_MSG接口                                |
+| 日志头文件${install_path}/ascend-toolkit/latest/include/toolchain/slog.h | 日志头文件${install_path}/cann/pkg_inc/base/dlog_pub.h       |
+| 日志头文件${install_path}/ascend-toolkit/latest/include/base/alog_pub.h | 日志头文件${install_path}/cann/pkg_inc/base/dlog_pub.h       |
+| ${install_path}/ascend-toolkit/latest/include/base/alog_pub.h中的AlogCheckDebugLevel接口 | ${install_path}/cann/pkg_inc/base/dlog_pub.h中的CheckLogLevel接口 |
+| ${install_path}/ascend-toolkit/latest/include/base/alog_pub.h中的AlogRecord接口 | ${install_path}/cann/pkg_inc/base/dlog_pub.h中的DlogRecord接口或封装的dlog_error、dlog_warn等宏 |
 
 ## 漏洞修补列表
 
