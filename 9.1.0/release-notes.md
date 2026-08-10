@@ -14,7 +14,7 @@ CANN软件版本配套表
   </tr>
   <tr>
     <td>9.1.0</td>
-    <td>26.1.0</td>
+    <td><a href="https://www.hiascend.com/hardware/firmware-drivers?ids=d803%2C886091ec9faa4d2ba560c408fbe55aa6%2C13%2CAArch64%2Conline_Yum">26.1.0</a></td>
   </tr>
 </table>
 

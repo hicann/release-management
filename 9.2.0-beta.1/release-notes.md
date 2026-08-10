@@ -1,4 +1,4 @@
-# CANN 9.2.0-beta.1版本说明（开发中）
+# CANN 9.2.0-beta.1版本说明
 
 ## 版本下载地址
 
@@ -14,75 +14,8 @@ CANN软件版本配套表
   </tr>
   <tr>
     <td>9.2.0-beta.1</td>
-    <td>26.1.0</td>
+    <td><a href="https://www.hiascend.com/hardware/firmware-drivers?ids=d803%2C886091ec9faa4d2ba560c408fbe55aa6%2C13%2CAArch64%2Conline_Yum">26.1.0</a></td>
   </tr>
-</table>
-
-## 版本兼容性说明
-
-CANN与Ascend HDK版本兼容
-<table style="table-layout: fixed; width: 1050px; text-align:center; border-collapse: collapse;">
-  <colgroup>
-    <col style="width: 150px">
-    <col style="width: 150px">
-    <col style="width: 150px">
-    <col style="width: 150px">
-    <col style="width: 150px">
-    <col style="width: 150px">
-    <col style="width: 150px">
-  </colgroup>
-  <thead>
-    <tr>
-      <th rowspan="5" style="width">CANN</th>
-      <th colspan="6" style="width">驱动版本（Ascend HDK）</th>
-    </tr>
-    <tr>
-      <th style="width">25.0.X</th>
-      <th style="width">25.2.X</th>
-      <th style="width">25.3.X</th>
-      <th style="width">25.5.X</th>
-      <th style="width">26.0.RC1/25.7.RC1</th>
-      <th style="width">26.1.0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="width">8.5.2</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-    </tr>
-    <tr>
-      <td style="width">9.0.X</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-    </tr>
-    <tr>
-      <td style="width">9.1.X</td>
-      <td style="width">/</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-    </tr>
-    <tr>
-      <td style="width">9.2.0-beta.1</td>
-      <td style="width">/</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-      <td style="width">Y</td>
-    </tr>
-  </tbody>
 </table>
 
 ## CANN软件包内部配套关系
