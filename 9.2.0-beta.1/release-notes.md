@@ -22,7 +22,7 @@ CANN软件版本配套表
 
 ### CANN组合配套关系
 
-CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合包，CANN组合包与子包的配套关系如下。其中6个子包支持独立升级，用户可根据需求灵活安装。
+CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合包，CANN组合包与子包的配套关系如下。
 
 <table>
   <thead>
@@ -231,7 +231,8 @@ CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 
 ## 关键特性
 
-- **昇腾社区新增版本配套查询助手，帮忙开发者快速获取上下游软件配套关系，通过产品型号自动匹配软件包，提升环境部署效率。[点击查看详情](https://www.hiascend.com/developer/download/compatibility)**
+- **昇腾社区上线CANN版本配套查询助手，用户可快速获取CANN与上下游软件配套关系，点击[查看详情](https://www.hiascend.com/developer/download/compatibility)。**
+- **昇腾社区上线固件与驱动（HDK）快速安装页面，自动匹配产品型号与软件包，提高开发者选包效率，点击[查看详情](https://www.hiascend.com/hardware/firmware-drivers?ids=d803%2C89dda9ba9de741349efa03687a487678%2C19%2CAArch64%2Conline_Yum)。**
 
 ## 新增特性
 
@@ -251,13 +252,13 @@ CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 
 ### 运行时
 
-**以下目录、文件和接口 在CANN 9.1.0中被标记为废弃，计划在2027.6.30之后的版本删除。**
+**以下目录、文件和接口等在CANN 9.1.0中被标记为废弃，计划在2027.6.30之后的版本删除。**
 
 | 废弃的目录、文件和接口   | 替换的目录、文件和接口 |
 | ------------------------ | ---------------------- |
 | include/driver目录头文件 | pkg_inc/driver目录     |
 
-**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
 
 | 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -288,7 +289,7 @@ CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 
 ### 图引擎
 
-**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
 
 | 废弃的目录                                                   | 替换的目录                                                 |
 | ------------------------------------------------------------ | ---------------------------------------------------------- |
@@ -299,7 +300,7 @@ CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 
 ### 算子库
 
-**以下目录、文件和接口在CANN 9.0.0中被标记为废弃，将在2027.3.30之后的版本删除**
+**以下目录、文件和接口等在CANN 9.0.0中被标记为废弃，将在2027.3.30之后的版本删除**
 
 | 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                           |
 | ------------------------------------------------------------ | ------------------------------------------------ |
@@ -317,7 +318,7 @@ CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 | aclnnInplaceWeightQuantMatmulAllReduceAddRmsNorm接口         | aclnnWeightQuantMatmulAllReduce和aclnnAddRmsNorm |
 
 
-**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
 
 其中算子被拆分成了组件包，不同的算子独立组件包均包含多个对应的库和头文件，下表中${ops_project}表示实际的cv、math、nn、transformer和legacy。
 
@@ -334,9 +335,9 @@ CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 | aclnnFusedInferAttentionScoreV2和aclnnFusedInferAttentionScoreV3接口 | aclnnFusedInferAttentionScoreV4接口                          |
 
 
-### 媒体加速库
+### 加速库
 
-**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
 
 如下算子IR废弃使用的DVPP加速功能：Crop、CropAndResize、DecodeAndCropJpeg、DecodeJpeg、PadV3D、Resize、ResizeV2、ResizeBicubic、ResizeBilinearV2、ResizeNearestNeighborV2、ReverseV2、WarpPerspective 、WarpAffineV2、AdjustContrast、AdjustHue、AdjustSaturation。
 
@@ -354,9 +355,9 @@ CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 | ImgToTensor算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image_ops.h中废弃 | acldvppImgToTensor接口      |
 | NormalizeV2算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image_ops.h中废弃 | acldvppNormalize接口        |
 
-### 开发工具
+### 调试与分析工具
 
-**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
 
 | 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -364,7 +365,7 @@ CANN 9.2.0-beta.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 
 ### 维测能力
 
-**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
 
 | 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |

@@ -550,13 +550,13 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 ### 运行时
 
-**以下目录、文件和接口 在CANN 9.1.0中被标记为废弃，计划在2027.6.30之后的版本删除。**
+**以下目录、文件和接口等在CANN 9.1.0中被标记为废弃，计划在2027.6.30之后的版本删除。**
 
 | 废弃的目录、文件和接口   | 替换的目录、文件和接口 |
 | ------------------------ | ---------------------- |
 | include/driver目录头文件 | pkg_inc/driver目录     |
 
-**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
 
 | 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -587,7 +587,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 ### 图引擎
 
-**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
 
 | 废弃的目录                                                   | 替换的目录                                                 |
 | ------------------------------------------------------------ | ---------------------------------------------------------- |
@@ -600,7 +600,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 - **不兼容变更**：控制类算子Identity、IdentityN、Rank、Shape和ShapeN从ops-nn迁移至ops-math。这些算子从`ops_proto_nn.h`和`es_nn`目录迁移到`ops_proto_math.h`和`es_math`目录，用户需更新相关头文件引用（[!2333](https://gitcode.com/cann/ops-math/pull/2333)、[!3995](https://gitcode.com/cann/ops-nn/pull/3995)）。
 
-**以下目录、文件和接口在CANN 9.0.0中被标记为废弃，将在2027.3.30之后的版本删除**
+**以目录、文件和接口等在CANN 9.0.0中被标记为废弃，将在2027.3.30之后的版本删除**
 
 | 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                           |
 | ------------------------------------------------------------ | ------------------------------------------------ |
@@ -617,7 +617,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 | aclnnInplaceMatmulAllReduceAddRmsNorm接口                    | aclnnMatmulAllReduce和aclnnAddRmsNorm            |
 | aclnnInplaceWeightQuantMatmulAllReduceAddRmsNorm接口         | aclnnWeightQuantMatmulAllReduce和aclnnAddRmsNorm |
 
-**以下目录、文件和接口在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，计划在2026.12.30之后的版本删除。**
 
 其中算子被拆分成了组件包，不同的算子独立组件包均包含多个对应的库和头文件，下表中${ops_project}表示实际的cv、math、nn、transformer和legacy。
 
@@ -634,9 +634,9 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 | aclnnFusedInferAttentionScoreV2和aclnnFusedInferAttentionScoreV3接口 | aclnnFusedInferAttentionScoreV4接口                          |
 
 
-### 媒体加速库
+### 加速库
 
-**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
 
 如下算子IR废弃使用的DVPP加速功能：Crop、CropAndResize、DecodeAndCropJpeg、DecodeJpeg、PadV3D、Resize、ResizeV2、ResizeBicubic、ResizeBilinearV2、ResizeNearestNeighborV2、ReverseV2、WarpPerspective 、WarpAffineV2、AdjustContrast、AdjustHue、AdjustSaturation。
 
@@ -654,9 +654,9 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 | ImgToTensor算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image_ops.h中废弃 | acldvppImgToTensor接口      |
 | NormalizeV2算子IR将从${install_path}/ascend-toolkit/latest/opp/built-in/op_proto/inc/image_ops.h中废弃 | acldvppNormalize接口        |
 
-### 开发工具
+### 调试与分析工具
 
-**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
 
 | 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -664,7 +664,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 ### 维测能力
 
-**以下目录、文件、目录和算子在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
+**以下目录、文件和接口等在CANN 8.5.0中被标记为废弃，将在2026.12.30之后的版本删除**
 
 | 废弃的目录、文件和接口                                       | 替换的目录、文件和接口                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
