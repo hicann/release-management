@@ -14,7 +14,7 @@ CANN软件版本配套表
   </tr>
   <tr>
     <td>9.2.0-beta.1</td>
-    <td><a href="https://www.hiascend.com/hardware/firmware-drivers?ids=d803%2C886091ec9faa4d2ba560c408fbe55aa6%2C13%2CAArch64%2Conline_Yum">26.1.0</a></td>
+    <td><a href="https://www.hiascend.com/hardware/firmware-drivers?ids=d803%2C89dda9ba9de741349efa03687a487678%2C18%2CAArch64%2Conline_Yum">26.0.RC1</a></td>
   </tr>
 </table>
 
