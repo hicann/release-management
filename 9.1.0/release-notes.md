@@ -37,7 +37,7 @@ CANN与Ascend HDK版本兼容
     <tr>
       <th>25.0.X</th>
       <th>25.2.X</th>
-      <th>25.3.X</th>          
+      <th>25.3.X</th>
       <th>25.5.X</th>
       <th>26.0.RC1/25.7.RC1</th>
       <th>26.1.0</th>
@@ -51,7 +51,7 @@ CANN与Ascend HDK版本兼容
       <td>Y</td>
       <td>Y</td>
       <td>Y</td>
-      <td>Y</td>      
+      <td>Y</td>
     </tr>
     <tr>
       <td>9.0.X</td>
@@ -60,7 +60,7 @@ CANN与Ascend HDK版本兼容
       <td>Y</td>
       <td>Y</td>
       <td>Y</td>
-      <td>Y</td>      
+      <td>Y</td>
     </tr>
     <tr>
       <td>9.1.X</td>
@@ -69,7 +69,7 @@ CANN与Ascend HDK版本兼容
       <td>Y</td>
       <td>Y</td>
       <td>Y</td>
-      <td>Y</td>      
+      <td>Y</td>
     </tr>
   </tbody>
 </table>
@@ -346,7 +346,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
   - TopkV2算子性能优化，提升int64索引场景计算效率([!2564](https://gitcode.com/cann/ops-math/pull/2564))。
   - TopK算子长序列场景显存、性能优化（[!3183](https://gitcode.com/cann/ops-math/pull/3183)）。
   - AICPU算子性能优化，覆盖ClipByValueV2([!2460](https://gitcode.com/cann/ops-math/pull/2460))、ConcatV2([!2395](https://gitcode.com/cann/ops-math/pull/2395))、CumSum([!2262](https://gitcode.com/cann/ops-math/pull/2262))。
-  
+
 - 算子接口迁移变更：
   - aclnnMatmulCompressDequant 及其对应的kernel文件由math仓迁移至nn仓([!2728](https://gitcode.com/cann/ops-math/pull/2728))。<br>
 
@@ -367,7 +367,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
     - ExtractGlimpseV2、UpsampleBicubic2d算子([!1039](https://gitcode.com/cann/ops-cv/pull/1039))。<br>
     - UpsampleNearestExact1d及系列反向算子([!830](https://gitcode.com/cann/ops-cv/pull/830) [!798](https://gitcode.com/cann/ops-cv/pull/798))。<br>
   - 算子新增特性支持：<br>
-    - AIPP新增CSC色域转换能力，支持YUV420SP/U8、RGB888/U8、BGR888/U8、XRGB8888/U8等多种格式之间的色域转换([!765](https://gitcode.com/cann/ops-cv/pull/765))，并新增动态AIPP通路支持（）[!802](https://gitcode.com/cann/ops-cv/pull/802)）。<br>
+    - AIPP新增CSC色域转换能力，支持YUV420SP/U8、RGB888/U8、BGR888/U8、XRGB8888/U8等多种格式之间的色域转换([!765](https://gitcode.com/cann/ops-cv/pull/765))，并新增动态AIPP通路支持[!802](https://gitcode.com/cann/ops-cv/pull/802)）。<br>
     - GridSample2D算子新增BF16数据类型支持([!715](https://gitcode.com/cann/ops-cv/pull/715) [!751](https://gitcode.com/cann/ops-cv/pull/751))。<br>
 - 性能优化：<br>
     - ResizeNearestNeighborV2算子NCHW格式性能优化([!822](https://gitcode.com/cann/ops-cv/pull/822))。<br>
