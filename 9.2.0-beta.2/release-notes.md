@@ -241,7 +241,14 @@ CANN 9.2.0-beta.2包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 - Atlas A2 训练系列产品/Atlas A2 推理系列产品 和 Atlas A3 训练系列产品/Atlas A3 推理系列产品适配与场景支持：
   - 新增适配以下算子
     - FusedSgd（[!6220](https://gitcode.com/cann/ops-nn/pull/6220)）。
-
+    - SituGlu （[!8651](https://gitcode.com/cann/ops-nn/pull/8651)）。
+    - SituGluGrad（[!8651](https://gitcode.com/cann/ops-nn/pull/8651)）。
+    - DequantSituQuant （[!8798](https://gitcode.com/cann/ops-nn/pull/8798)）。
+- Ascend 950PR/Ascend 950DT系列产品适配与场景支持：
+  - 新增适配以下算子
+    - SituGlu （[!8651](https://gitcode.com/cann/ops-nn/pull/8651)）。
+    - SituGluGrad（[!8651](https://gitcode.com/cann/ops-nn/pull/8651)）。
+    - SituMxQuant （[!8798](https://gitcode.com/cann/ops-nn/pull/8798)）。
 ## 删除和废弃特性
 
 ### 说明
