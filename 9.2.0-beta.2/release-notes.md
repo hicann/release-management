@@ -249,6 +249,13 @@ CANN 9.2.0-beta.2包含Toolkit包、算子包（ops）、加速库（NNAL）3个
     - SituGlu （[!8651](https://gitcode.com/cann/ops-nn/pull/8651)）。
     - SituGluGrad（[!8651](https://gitcode.com/cann/ops-nn/pull/8651)）。
     - SituMxQuant （[!8798](https://gitcode.com/cann/ops-nn/pull/8798)）。
+
+### ops-transformer库
+
+- Atlas A2 训练系列产品/Atlas A2 推理系列产品 和 Atlas A3 训练系列产品/Atlas A3 推理系列产品适配与场景支持：
+  - 新增 MsaIndexScore 算子（[!9503](https://gitcode.com/cann/ops-transformer/pull/9503)）。
+  - MlaProlog算子增设RoPE计算操作开关并支持cache输入非连续（[!10296](https://gitcode.com/cann/ops-transformer/pull/10296)）（[!9472](https://gitcode.com/cann/ops-transformer/pull/9472)）。
+
 ## 删除和废弃特性
 
 ### 说明
