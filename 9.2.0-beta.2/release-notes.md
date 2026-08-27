@@ -231,8 +231,7 @@ CANN 9.2.0-beta.2包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 
 ## 关键特性
 
-- **昇腾社区上线CANN版本配套查询助手，用户可快速获取CANN与上下游软件配套关系，点击[查看详情](https://www.hiascend.com/developer/download/compatibility)。**
-- **昇腾社区上线固件与驱动（HDK）快速安装页面，自动匹配产品型号与软件包，提高开发者选包效率，点击[查看详情](https://www.hiascend.com/hardware/firmware-drivers?ids=d803%2C89dda9ba9de741349efa03687a487678%2C19%2CAArch64%2Conline_Yum)。**
+- **新增支持KDA、situ等融合算子，支持Kimi K3模型性能优化。点击[查看详情](https://gitcode.com/cann/ops-transformer/blob/9.2.0-beta.2/attention/chunk_kda_fwd/README.md)。**
 
 ## 新增特性
 
