@@ -1,4 +1,4 @@
-# CANN 9.2.0-beta.2版本说明（开发中）
+# CANN 9.2.0-beta.2版本说明
 
 ## 版本下载地址
 
@@ -198,13 +198,13 @@ CANN 9.2.0-beta.2包含Toolkit包、算子包（ops）、加速库（NNAL）3个
     </tr>
     <tr>
       <td rowspan="2">加速库（NNAL）</td>
-      <td><a href="https://gitcode.com/cann/ascend-transformer-boost">atb</a></td>
-      <td>9.2.0-beta.2</td>
+      <td>atb</td>
+      <td><a href="https://gitcode.com/cann/ascend-transformer-boost/tags/v9.2.0-beta.2">9.2.0-beta.2</a></td>
       <td>arm/x86</td>
     </tr>
     <tr>
-      <td><a href="https://gitcode.com/cann/sip">sip</a></td>
-      <td>9.2.0-beta.2</td>
+      <td>sip</td>
+      <td><a href="https://gitcode.com/cann/sip/tags/v9.2.0-beta.2">9.2.0-beta.2</a></td>
       <td>arm/x86</td>
     </tr>
   </tbody>
@@ -239,7 +239,6 @@ CANN 9.2.0-beta.2包含Toolkit包、算子包（ops）、加速库（NNAL）3个
 
 - Atlas A2 训练系列产品/Atlas A2 推理系列产品 和 Atlas A3 训练系列产品/Atlas A3 推理系列产品适配与场景支持：
   - 新增适配以下算子
-    - FusedSgd（[!6220](https://gitcode.com/cann/ops-nn/pull/6220)）。
     - SituGlu （[!8651](https://gitcode.com/cann/ops-nn/pull/8651)）。
     - SituGluGrad（[!8651](https://gitcode.com/cann/ops-nn/pull/8651)）。
     - DequantSituQuant （[!8798](https://gitcode.com/cann/ops-nn/pull/8798)）。

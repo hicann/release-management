@@ -254,13 +254,13 @@ CANN 9.1.0包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合�
     </tr>
     <tr>
       <td rowspan="2">加速库（NNAL）</td>
-      <td><a href="https://gitcode.com/cann/ascend-transformer-boost">atb</a></td>
-      <td>9.1.0</td>
+      <td>atb</td>
+      <td><a href="https://gitcode.com/cann/ascend-transformer-boost/tags/v9.1.0">9.1.0</a></td>
       <td>arm/x86</td>
     </tr>
     <tr>
-      <td><a href="https://gitcode.com/cann/sip">sip</a></td>
-      <td>9.1.0</td>
+      <td>sip</td>
+      <td><a href="https://gitcode.com/cann/sip/tags/v9.1.0">9.1.0</a></td>
       <td>arm/x86</td>
     </tr>
   </tbody>

@@ -254,13 +254,13 @@ CANN 9.1.1包含Toolkit包、算子包（ops）、加速库（NNAL）3个组合�
     </tr>
     <tr>
       <td rowspan="2">加速库（NNAL）</td>
-      <td><a href="https://gitcode.com/cann/ascend-transformer-boost">atb</a></td>
-      <td>9.1.1</td>
+      <td>atb</td>
+      <td><a href="https://gitcode.com/cann/ascend-transformer-boost/tags/v9.1.1">9.1.1</a></td>
       <td>arm/x86</td>
     </tr>
     <tr>
-      <td><a href="https://gitcode.com/cann/sip">sip</a></td>
-      <td>9.1.1</td>
+      <td>sip</td>
+      <td><a href="https://gitcode.com/cann/sip/tags/v9.1.1">9.1.1</a></td>
       <td>arm/x86</td>
     </tr>
   </tbody>
@@ -449,9 +449,9 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 - 修复 Atlas A2和Atlas A3系列产品RmsNorm算子在输入shape超过int32最大值有精度误差的问题。 
 - 修复 Atlas A2和Atlas A3系列产品 matmul 算子融合通路转为 matmulv2 场景下的 _deterministic_level 属性未继承导致后续节点属性丢失的问题。
 - 修复 Atlas A2和Atlas A3系列产品 matmul 算子 host 端性能劣化场景下的 FSDP 通信与计算细粒度流水受阻导致模型整体性能下降的问题。
-- 修复FAG算子在EOD场景下存在偶现清空pad不完整的问题 
-- 修复Atlas A3系列产品 aclgraph aicpu展开HCCL主流和capture主流为同一条stream时，orderStream图规则校验失败的问题
-- 修复Atlas A3系列产品 AllGatherRingConcurrentDirect算法在大集群规模场景下，主从流任务下发死锁的问题
+- 修复FAG算子在EOD场景下存在偶现清空pad不完整的问题。
+- 修复Atlas A3系列产品 aclgraph aicpu展开HCCL主流和capture主流为同一条stream时，orderStream图规则校验失败的问题。
+- 修复Atlas A3系列产品 AllGatherRingConcurrentDirect算法在大集群规模场景下，主从流任务下发死锁的问题。
 - 修复Atlas A2和Atlas A3系列产品导入非主线版本环境变量时RingMLAOperation接口demo运行失败问题。
 - 修复Atlas A2和Atlas A3系列产品torch_npu.npu_format_cast接口format和shape不匹配的场景下，从拦截fallback到aclop的问题。
 
