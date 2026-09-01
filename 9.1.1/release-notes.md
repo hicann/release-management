@@ -1,4 +1,4 @@
-# CANN 9.1.1版本说明
+# CANN 9.1.1补丁说明
 
 ## 版本下载地址
 
@@ -37,7 +37,7 @@ CANN与Ascend HDK版本兼容
     <tr>
       <th>25.0.X</th>
       <th>25.2.X</th>
-      <th>25.3.X</th>          
+      <th>25.3.X</th>
       <th>25.5.X</th>
       <th>26.0.RC1/25.7.RC1</th>
       <th>26.1.1</th>
@@ -51,7 +51,7 @@ CANN与Ascend HDK版本兼容
       <td>Y</td>
       <td>Y</td>
       <td>Y</td>
-      <td>Y</td>      
+      <td>Y</td>
     </tr>
     <tr>
       <td>9.0.X</td>
@@ -60,7 +60,7 @@ CANN与Ascend HDK版本兼容
       <td>Y</td>
       <td>Y</td>
       <td>Y</td>
-      <td>Y</td>      
+      <td>Y</td>
     </tr>
     <tr>
       <td>9.1.X</td>
@@ -69,7 +69,7 @@ CANN与Ascend HDK版本兼容
       <td>Y</td>
       <td>Y</td>
       <td>Y</td>
-      <td>Y</td>      
+      <td>Y</td>
     </tr>
   </tbody>
 </table>
@@ -446,7 +446,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 
 以下问题在9.1.1版本修复：
 - 修复 Atlas A2和Atlas A3系列产品及Ascend 950系列NPU MM 算子通过 GE aclnn fallback 回调执行场景下的 HF32 属性未正确传递至底层导致性能不达预期的问题。 
-- 修复 Atlas A2和Atlas A3系列产品RmsNorm算子在输入shape超过int32最大值有精度误差的问题。 
+- 修复 Atlas A2和Atlas A3系列产品RmsNorm算子在输入shape超过int32最大值有精度误差的问题。
 - 修复 Atlas A2和Atlas A3系列产品 matmul 算子融合通路转为 matmulv2 场景下的 _deterministic_level 属性未继承导致后续节点属性丢失的问题。
 - 修复 Atlas A2和Atlas A3系列产品 matmul 算子 host 端性能劣化场景下的 FSDP 通信与计算细粒度流水受阻导致模型整体性能下降的问题。
 - 修复FAG算子在EOD场景下存在偶现清空pad不完整的问题。
