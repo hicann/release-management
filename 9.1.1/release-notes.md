@@ -454,6 +454,7 @@ CANN ops包已与Toolkit解耦，支持独立升级，用户可根据使用需�
 - 修复Atlas A3系列产品 AllGatherRingConcurrentDirect算法在大集群规模场景下，主从流任务下发死锁的问题。
 - 修复Atlas A2和Atlas A3系列产品导入非主线版本环境变量时RingMLAOperation接口demo运行失败问题。
 - 修复Atlas A2和Atlas A3系列产品torch_npu.npu_format_cast接口format和shape不匹配的场景下，从拦截fallback到aclop的问题。
+- （**不兼容变更**）修复 Atlas A2和Atlas A3系列产品SparseFlashMLA算子torch接口参数默认值错误的问题（ori_mask_mode、cmp_mask_mode、ori_win_left、ori_win_right）。
 
 以下问题在9.1.0版本修复：
 - 修复了QuantBatchMatmulV3算子在Atlas推理系列产品上，编译时指定AUTO_SYNC=false导致算子读写冲突的问题。
